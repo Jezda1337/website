@@ -18,7 +18,7 @@ export default component$(() => {
       <div class="flex flex-col items-start gap-2 mt-6 md:flex-row md:gap-5 md:mt-12">
         <a
           target="_blank"
-          class="text-center px-4 py-2 bg-black text-white rounded w-40 md:border md:rounded md:hover:bg-white md:hover:text-black md:transition-all
+          class="btn_linkedin text-center px-4 py-2 bg-black text-white rounded w-40 md:border md:rounded md:hover:bg-white md:hover:text-black md:transition-all
 					"
           href="#"
         >
@@ -26,14 +26,16 @@ export default component$(() => {
         </a>
         <a
           target="_blank"
-          class="text-center px-4 py-2 text-black border rounded w-40 md:hover:bg-black md:transition-all md:hover:text-white"
+          class="btn_gh text-center px-4 py-2 text-black border rounded w-40 md:hover:bg-black md:transition-all md:hover:text-white"
           href="https://github.com/Jezda1337"
         >
           View GitHub
         </a>
       </div>
       <div class="absolute bottom-5 md:bottom-32 left-1/2 -translate-x-1/2">
-        <Mouse hash="projects">scroll</Mouse>
+        <Mouse classIcon="btn_hash" hash="projects">
+          scroll
+        </Mouse>
       </div>
     </section>
   );

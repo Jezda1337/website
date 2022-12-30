@@ -1,5 +1,13 @@
 import { component$ } from "@builder.io/qwik";
-import ProjectCard from "./ProjectCard";
+import ProjectCard from "~/components/ProjectCard";
+
+interface Project {
+  id: number;
+  name: string;
+  description: string;
+  url: string;
+  picture: string;
+}
 
 export default component$(() => {
   const projects = [
@@ -22,15 +30,11 @@ export default component$(() => {
   ];
 
   return (
-    <section id="projects">
-      <div>
-        <h2 class="text-2xl mb-2">Projects</h2>
-        <p class="text-sm text-slate-500">
-          Some of the side projects I’m currently working on.
-        </p>
-      </div>
+    <section class="px-3 md:px-28 mt-12 lg:p-0 lg:max-w-3xl lg:mx-auto lg:mt-24">
+      <h2 class="text-2xl">Other projects that I'm working on</h2>
+
       <div class="flex w-full flex-wrap gap-5 justify-between mt-12 flex-col md:flex-row items-center">
-        {projects.map((project: any) => (
+        {projects.map((project: Project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
       </div>
