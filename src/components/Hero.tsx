@@ -33,7 +33,7 @@ export default component$(() => {
         </a>
       </div>
       <div class="absolute bottom-5 md:bottom-32 left-1/2 -translate-x-1/2">
-        <Mouse />
+        <Mouse hash="projects">scroll</Mouse>
       </div>
     </section>
   );

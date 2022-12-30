@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
-// import styles from "./header.css?inline";
+import Mouse from "../Mouse";
 
 export default component$(() => {
   return (
@@ -13,25 +13,18 @@ export default component$(() => {
         <button class="md:hidden px-4 py-1 border rounded">menu</button>
 
         <ul class="hidden md:flex">
-          <li>
-            <Link class="px-3" href="/about">
-              about
-            </Link>
+          <li class="mr-3">
+            <Link href="/about">about</Link>
+          </li>
+          <li class="mr-3">
+            <Link href="/projects">projects</Link>
+          </li>
+          <li class="mr-3">
+            <Link href="/blog">blog</Link>
           </li>
           <li>
-            <Link class="px-3" href="/projects">
-              projects
-            </Link>
-          </li>
-          <li>
-            <Link class="px-3" href="/blog">
-              blog
-            </Link>
-          </li>
-          <li>
-            <Link class="pl-3" href="/contact">
-              contact
-            </Link>
+            {/* <Link href="/contact">contact</Link> */}
+            <Mouse hash="contact">Contact</Mouse>
           </li>
         </ul>
       </nav>
