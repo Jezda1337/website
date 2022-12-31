@@ -1,4 +1,9 @@
-import { component$, useStore, useTask$ } from "@builder.io/qwik";
+import {
+  component$,
+  useClientEffect$,
+  useStore,
+  useTask$,
+} from "@builder.io/qwik";
 import { Link, useLocation } from "@builder.io/qwik-city";
 import Mouse from "../Mouse";
 import ThemeSwitcher from "../ThemeSwitcher";
@@ -6,13 +11,22 @@ import ThemeSwitcher from "../ThemeSwitcher";
 export default component$(() => {
   const state = useStore({
     isDisabled: false,
-    currentTheme: "dark",
+    theme: "light",
+    isDark: false,
   });
   const currentPath = useLocation();
 
   useTask$(({ track }) => {
     track(() => currentPath.pathname);
     state.isDisabled = currentPath.pathname !== "/" ? true : false;
+  });
+
+  useClientEffect$(() => {
+    localStorage.theme
+      ? (state.theme = JSON.parse(localStorage.theme))
+      : (localStorage.theme = JSON.stringify(state.theme));
+
+    state.theme === "dark" ? (state.isDark = true) : (state.isDark = false);
   });
 
   return (
@@ -28,7 +42,7 @@ export default component$(() => {
 
         <ul class="hidden md:flex">
           <li class="mr-5">
-            <ThemeSwitcher />
+            <ThemeSwitcher state={state} />
           </li>
           <li class="mr-3">
             <Link class="" href="/about">
