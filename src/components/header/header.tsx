@@ -1,9 +1,5 @@
-import {
-  component$,
-  useClientEffect$,
-  useStore,
-  useTask$,
-} from "@builder.io/qwik";
+import { component$, useStore, useTask$ } from "@builder.io/qwik";
+import { isBrowser } from "@builder.io/qwik/build";
 import { Link, useLocation } from "@builder.io/qwik-city";
 import Mouse from "../Mouse";
 import ThemeSwitcher from "../ThemeSwitcher";
@@ -16,18 +12,20 @@ export default component$(() => {
   });
   const currentPath = useLocation();
 
-  useTask$(({ track }) => {
-    track(() => currentPath.pathname);
-    state.isDisabled = currentPath.pathname !== "/" ? true : false;
-  });
+  useTask$(
+    ({ track }) => {
+      track(() => currentPath.pathname);
+      state.isDisabled = currentPath.pathname !== "/" ? true : false;
 
-  useClientEffect$(() => {
-    localStorage.theme
-      ? (state.theme = JSON.parse(localStorage.theme))
-      : (localStorage.theme = JSON.stringify(state.theme));
-
-    state.theme === "dark" ? (state.isDark = true) : (state.isDark = false);
-  });
+      if (isBrowser) {
+        localStorage.theme
+          ? (state.theme = JSON.parse(localStorage.theme))
+          : (localStorage.theme = JSON.stringify(state.theme));
+        state.theme === "dark" ? (state.isDark = true) : (state.isDark = false);
+      }
+    },
+    { eagerness: "load" }
+  );
 
   return (
     <header class="px-3 md:px-28 mt-12 lg:p-0 lg:max-w-3xl lg:mx-auto lg:mt-24">
@@ -53,7 +51,13 @@ export default component$(() => {
             <Link href="/projects">projects</Link>
           </li>
           <li class="mr-3">
-            <Link href="/blog">blog</Link>
+            <Link
+              title="under construction"
+              class="text-slate-300"
+              href="/blog"
+            >
+              blog
+            </Link>
           </li>
           <li>
             <Mouse

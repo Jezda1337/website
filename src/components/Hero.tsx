@@ -8,17 +8,19 @@ export default component$(() => {
         Hello! I’m Radoje, a developer based in Serbia.
       </h1>
       <p class="mt-4">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-        cupiditate ducimus quod saepe aperiam nemo labore provident pariatur,
-        obcaecati quidem asperiores voluptatem, neque enim? Mollitia nesciunt
-        optio, aspernatur rem similique labore nisi culpa ad, dolore magni
-        suscipit id odio iste iure est accusantium asperiores iusto consectetur
-        deleniti nostrum quibusdam! Nobis.
+        As I've grown as a web developer, I've worked alongside senior designers
+        and developers who have raised my standards for whats expected of any
+        web application.
+        <span class="mt-4 block">
+          Throught these experiences. I've had the opportunity to create
+          memorable products that are not only enjoyable to use, but are writen
+          in code thats maintainable and ease to understand.
+        </span>
       </p>
       <div class="flex flex-col items-start gap-2 mt-6 md:flex-row md:gap-5 md:mt-12">
         <a
           target="_blank"
-          class="btn_linkedin text-center px-4 py-2 bg-black text-white rounded w-40 md:border md:rounded md:hover:bg-white md:hover:text-black md:transition-all
+          class="btn_linkedin text-center px-4 py-2 bg-black text-white rounded w-40 md:border md:rounded md:hover:bg-white md:hover:text-black md:transition-all dark:text-white dark:bg-slate-800
 					"
           href="#"
         >
@@ -26,7 +28,7 @@ export default component$(() => {
         </a>
         <a
           target="_blank"
-          class="btn_gh text-center px-4 py-2 text-black border rounded w-40 md:hover:bg-black md:transition-all md:hover:text-white"
+          class="btn_gh text-center px-4 py-2 text-black border rounded w-40 md:hover:bg-black md:transition-all md:hover:text-white dark:text-white dark:hover:bg-white dark:hover:text-black"
           href="https://github.com/Jezda1337"
         >
           View GitHub

@@ -1,4 +1,4 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useClientEffect$ } from "@builder.io/qwik";
 
 interface Props {
   state: {
@@ -9,6 +9,24 @@ interface Props {
 }
 
 export default component$(({ state }: { state: Props["state"] }) => {
+  useClientEffect$(
+    ({ track }) => {
+      track(() => state.isDark);
+
+      state.isDark
+        ? document.documentElement.classList.add(
+            "dark",
+            "bg-slate-800",
+            "text-white"
+          )
+        : document.documentElement.classList.remove(
+            "dark",
+            "bg-slate-800",
+            "text-white"
+          );
+    },
+    { eagerness: "load" }
+  );
   return (
     <>
       <button
@@ -19,11 +37,11 @@ export default component$(({ state }: { state: Props["state"] }) => {
         }}
         class={`w-16 bg-slate-300 flex justify-between px-2 rounded-full relative after:absolute after:w-1/2 after:h-full after:bg-white after:rounded-full after:transition-all transition-all duration-700 ease-in-out after:duration-500 h-6  ${
           state.theme === "dark"
-            ? "after:left-1/2 bg-blue-900"
+            ? "after:left-1/2 bg-slate-600"
             : "bg-orange-400 after:left-0"
         }`}
       >
-        <div>
+        <div class="text-white">
           <svg
             width="22"
             height="22"

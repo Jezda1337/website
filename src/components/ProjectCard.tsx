@@ -16,7 +16,7 @@ export default component$((project: Props) => {
   const { id, name, description, picture } = project.project;
   return (
     <div class="flex-1">
-      <div class="border rounded max-w-[350px] min-w-[300px]">
+      <div class="border rounded max-w-full min-w-[300px]">
         <div class="bg-slate-100 p-2 flex items-center gap-2 justify-between">
           <div class="flex gap-1">
             <span class="w-3 h-3 rounded-xl bg-red-500"></span>
@@ -37,7 +37,7 @@ export default component$((project: Props) => {
       <div class="mt-6">
         <a
           href={`/project/${id}`}
-          class="px-4 py-1 border rounded md:hover:bg-black md:hover:text-white md:transition-all
+          class="px-4 py-1 border rounded md:hover:bg-black md:hover:text-white md:transition-all dark:hover:bg-white dark:hover:text-black
 							"
         >
           View Project
