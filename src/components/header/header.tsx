@@ -31,7 +31,7 @@ export default component$(() => {
   });
 
   return (
-    <header class="px-3 md:px-28 mt-12 lg:p-0 lg:max-w-3xl lg:mx-auto lg:mt-24">
+    <header class="px-3 md:px-28 lg:p-0 lg:max-w-3xl lg:mx-auto">
       <nav class="flex justify-between w-full py-3">
         <div>
           <Link
@@ -81,7 +81,7 @@ export default component$(() => {
               blog
             </Link>
           </li>
-          <li>
+          <li class="">
             <Mouse
               disabled={state.isDisabled}
               hash="contact"

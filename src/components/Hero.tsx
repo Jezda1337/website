@@ -3,9 +3,10 @@ import Mouse from "./Mouse";
 
 export default component$(() => {
   return (
-    <section class="mt-12 min-h-screen md:min-h-[calc(100vh-260px)] lg:mt-28">
-      <h1 class="text-4xl md:text-5xl font-medium mb-7">
-        Hello! 👋 I’m Radoje, a developer based in Serbia.
+    <section class="mt-12 min-h-screen md:min-h-[calc(100vh-60px)] lg:min-h-[calc(100vh-260px)] xl:min-h-[calc(100vh-200px)] lg:mt-28">
+      <h1 class="text-4xl md:text-5xl font-medium mb-9 md:leading-[1.15]">
+        Hello! <span class="animate-waving-hand">👋🏻</span> I’m Radoje, a
+        developer based in Serbia.
       </h1>
       <p class="mt-4">
         As I've grown as a web developer, I've worked alongside senior designers
@@ -22,7 +23,7 @@ export default component$(() => {
           target="_blank"
           class="btn_linkedin text-center px-4 py-[10px] bg-black text-white rounded w-40 md:border md:rounded md:hover:bg-white md:hover:text-black md:transition-all dark:text-black dark:bg-white hover:dark:text-white hover:dark:bg-slate-800 border border-white md:border-black md:dark:border-white
 					"
-          href="#"
+          href="https://www.linkedin.com/in/radoje-jezdic/"
         >
           View Linkedin
         </a>
@@ -34,7 +35,7 @@ export default component$(() => {
           View GitHub
         </a>
       </div>
-      <div class="absolute bottom-5 md:bottom-32 left-1/2 -translate-x-1/2">
+      <div class="animate-bounce absolute bottom-5 md:bottom-32 left-1/2 -translate-x-1/2 hidden md:block">
         <Mouse classIcon="btn_hash" hash="projects">
           scroll
         </Mouse>

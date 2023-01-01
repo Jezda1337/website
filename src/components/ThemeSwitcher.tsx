@@ -9,6 +9,7 @@ interface Props {
 }
 
 export default component$(({ state }: { state: Props["state"] }) => {
+  // this hook need to to be changed
   useClientEffect$(({ track }) => {
     track(() => state.isDark);
 
@@ -23,6 +24,11 @@ export default component$(({ state }: { state: Props["state"] }) => {
           "bg-slate-800",
           "text-white"
         );
+    state.isDark
+      ? (document.body.classList.add("darkDots"),
+        document.body.classList.remove("lightDots"))
+      : (document.body.classList.add("lightDots"),
+        document.body.classList.remove("darkDots"));
   });
 
   return (

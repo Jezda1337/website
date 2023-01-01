@@ -30,7 +30,10 @@ export default component$(() => {
 if(theme === "dark"){document.documentElement.classList.add("dark", "bg-slate-800", "text-white");} else if (typeof theme === 'undefined') {if(window.matchMedia("(prefers-color-scheme: dark)").matches){document.documentElement.classList.add("dark", "bg-slate-800", "text-white");}}}`}
         </script>
       </head>
-      <body lang="en">
+      <body
+        lang="en"
+        class="pt-12 lg:pt-28 overflow-x-hidden min-h-screen pb-56"
+      >
         <RouterOutlet />
         <ServiceWorkerRegister />
       </body>
