@@ -25,7 +25,7 @@ export default component$(() => {
     <section id="projects">
       <div>
         <h2 class="text-2xl mb-2">Projects</h2>
-        <p class="text-sm text-slate-500">
+        <p class="text-sm text-slate-500 dark:text-white">
           Some of the side projects I’m currently working on.
         </p>
       </div>

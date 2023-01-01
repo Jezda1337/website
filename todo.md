@@ -5,3 +5,6 @@
 [ ] - blog is under construction
 [ ] - if path is not / then clicking on contact should drow you back to / and
 scroll to contact section
+[ ] - active route shoud have active indicator
+[ ] - mobile menu
+[ ] - images needs to be optimzed

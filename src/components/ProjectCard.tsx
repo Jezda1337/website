@@ -32,7 +32,7 @@ export default component$((project: Props) => {
           <img src={picture} alt="" />
         </div>
       </div>
-      <h3 class="text-xl">{name}</h3>
+      <h3 class="text-xl mt-4">{name}</h3>
       <p class="my-4">{description}</p>
       <div class="mt-6">
         <a

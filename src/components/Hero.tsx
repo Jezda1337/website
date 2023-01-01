@@ -5,7 +5,7 @@ export default component$(() => {
   return (
     <section class="mt-12 min-h-screen md:min-h-[calc(100vh-260px)] lg:mt-28">
       <h1 class="text-4xl md:text-5xl font-medium mb-7">
-        Hello! I’m Radoje, a developer based in Serbia.
+        Hello! 👋 I’m Radoje, a developer based in Serbia.
       </h1>
       <p class="mt-4">
         As I've grown as a web developer, I've worked alongside senior designers
@@ -20,7 +20,7 @@ export default component$(() => {
       <div class="flex flex-col items-start gap-2 mt-6 md:flex-row md:gap-5 md:mt-12">
         <a
           target="_blank"
-          class="btn_linkedin text-center px-4 py-2 bg-black text-white rounded w-40 md:border md:rounded md:hover:bg-white md:hover:text-black md:transition-all dark:text-white dark:bg-slate-800
+          class="btn_linkedin text-center px-4 py-[10px] bg-black text-white rounded w-40 md:border md:rounded md:hover:bg-white md:hover:text-black md:transition-all dark:text-black dark:bg-white hover:dark:text-white hover:dark:bg-slate-800 border border-white md:border-black md:dark:border-white
 					"
           href="#"
         >
@@ -28,7 +28,7 @@ export default component$(() => {
         </a>
         <a
           target="_blank"
-          class="btn_gh text-center px-4 py-2 text-black border rounded w-40 md:hover:bg-black md:transition-all md:hover:text-white dark:text-white dark:hover:bg-white dark:hover:text-black"
+          class="btn_gh text-center px-4 py-[10px] text-black border rounded w-40 md:hover:bg-black md:transition-all md:hover:text-white dark:text-white dark:hover:bg-white dark:hover:text-black"
           href="https://github.com/Jezda1337"
         >
           View GitHub

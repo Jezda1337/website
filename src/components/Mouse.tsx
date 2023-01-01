@@ -10,7 +10,7 @@ export default component$((props: Props) => (
   <button
     class={`${props.disabled ? "text-slate-400" : ""} ${
       !props.disabled ? props.classIcon : ""
-    }`}
+    } ${props.hash !== "contact" ? "px-3 py-[10px]" : ""}`}
     disabled={props.disabled}
     onClick$={() => {
       const el = document.querySelector(`#${props.hash}`);

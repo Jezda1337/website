@@ -1,4 +1,5 @@
 import { component$ } from "@builder.io/qwik";
+import { DocumentHead } from "@builder.io/qwik-city";
 import ProjectCard from "~/components/ProjectCard";
 
 interface Project {
@@ -41,3 +42,13 @@ export default component$(() => {
     </section>
   );
 });
+
+export const head: DocumentHead = {
+  title: "Developer",
+  meta: [
+    {
+      name: "description",
+      content: "Personal website for developer. Portfolio.",
+    },
+  ],
+};
