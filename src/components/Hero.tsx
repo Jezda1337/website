@@ -4,11 +4,11 @@ import Mouse from "./Mouse";
 export default component$(() => {
   return (
     <section class="mt-12 min-h-screen md:min-h-[calc(100vh-60px)] lg:min-h-[calc(100vh-260px)] xl:min-h-[calc(100vh-200px)] lg:mt-28">
-      <h1 class="text-4xl md:text-5xl font-medium mb-9 md:leading-[1.15]">
-        Hello! <span class="animate-waving-hand">👋🏻</span> I’m Radoje, a
-        developer based in Serbia.
+      <h1 class="animate-fade-in-down text-4xl md:text-5xl font-medium mb-9 md:leading-[1.15]">
+        Hello! <span class="inline-block animate-waving-hand">👋🏻</span> I’m
+        Radoje, a developer based in Serbia.
       </h1>
-      <p class="mt-4">
+      <p class="mt-4 animate-fade-in-up">
         As I've grown as a web developer, I've worked alongside senior designers
         and developers who have raised my standards for whats expected of any
         web application.
@@ -18,7 +18,7 @@ export default component$(() => {
           in code thats maintainable and ease to understand.
         </span>
       </p>
-      <div class="flex flex-col items-start gap-2 mt-6 md:flex-row md:gap-5 md:mt-12">
+      <div class="animate-fade-in-front flex flex-col items-start gap-2 mt-6 md:flex-row md:gap-5 md:mt-12">
         <a
           target="_blank"
           class="btn_linkedin text-center px-4 py-[10px] bg-black text-white rounded w-40 md:border md:rounded md:hover:bg-white md:hover:text-black md:transition-all dark:text-black dark:bg-white hover:dark:text-white hover:dark:bg-slate-800 border border-white md:border-black md:dark:border-white

@@ -9,3 +9,4 @@ scroll to contact section
 [ ] - mobile menu
 [ ] - images needs to be optimzed
 [ ] - dark:text-white need some changes
+[ ] - adding animation
