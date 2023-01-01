@@ -30,7 +30,7 @@ module.exports = {
         },
         "fade-in-front": {
           "0%": { opacity: "0" },
-          "100%": { oapcity: "1" },
+          "100%": { opacity: "1" },
         },
         "fade-in-left": {
           "0%": { opacity: "0", transform: "translateX(-10px)" },
