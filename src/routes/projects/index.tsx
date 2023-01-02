@@ -1,13 +1,13 @@
-import { component$ } from "@builder.io/qwik";
-import { DocumentHead } from "@builder.io/qwik-city";
-import ProjectCard from "~/components/ProjectCard";
+import { component$ } from "@builder.io/qwik"
+import { DocumentHead } from "@builder.io/qwik-city"
+import ProjectCard from "~/components/ProjectCard"
 
 interface Project {
-  id: number;
-  name: string;
-  description: string;
-  url: string;
-  picture: string;
+  id: number
+  name: string
+  description: string
+  url: string
+  picture: string
 }
 
 export default component$(() => {
@@ -28,7 +28,7 @@ export default component$(() => {
       picture:
         "https://images.unsplash.com/photo-1503252947848-7338d3f92f31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2662&q=80",
     },
-  ];
+  ]
 
   return (
     <section class="px-3 md:px-28 mt-12 lg:p-0 lg:max-w-3xl lg:mx-auto lg:mt-24">
@@ -40,8 +40,8 @@ export default component$(() => {
         ))}
       </div>
     </section>
-  );
-});
+  )
+})
 
 export const head: DocumentHead = {
   title: "Developer",
@@ -51,4 +51,4 @@ export const head: DocumentHead = {
       content: "Personal website for developer. Portfolio.",
     },
   ],
-};
+}

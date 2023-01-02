@@ -1,10 +1,12 @@
-import { component$, Slot } from "@builder.io/qwik";
-import Footer from "~/components/Footer";
-import Header from "../components/header/header";
+import { Slot, component$ } from "@builder.io/qwik"
+import Footer from "~/components/Footer"
+import InProgressBar from "~/components/InProgressBar"
+import Header from "../components/header/header"
 
 export default component$(() => {
   return (
     <>
+      <InProgressBar />
       <Header />
       <main>
         <section>
@@ -13,5 +15,5 @@ export default component$(() => {
       </main>
       <Footer />
     </>
-  );
-});
+  )
+})

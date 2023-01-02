@@ -1,13 +1,13 @@
-import { component$, useClientEffect$, useStyles$ } from "@builder.io/qwik";
+import { component$, useClientEffect$, useStyles$ } from "@builder.io/qwik"
 import {
   QwikCityProvider,
   RouterOutlet,
   ServiceWorkerRegister,
-} from "@builder.io/qwik-city";
-import { RouterHead } from "./components/router-head/router-head";
+} from "@builder.io/qwik-city"
+import { RouterHead } from "./components/router-head/router-head"
 
-import globalStyles from "./global.css?inline";
-import "tailwindcss/tailwind.css";
+import "tailwindcss/tailwind.css"
+import globalStyles from "./global.css?inline"
 
 export default component$(() => {
   /**
@@ -16,30 +16,30 @@ export default component$(() => {
    *
    * Dont remove the `<head>` and `<body>` elements.
    */
-  useStyles$(globalStyles);
+  useStyles$(globalStyles)
 
   useClientEffect$(() => {
     if (localStorage.theme) {
-      const theme = JSON.parse(localStorage.theme) || "light";
+      const theme = JSON.parse(localStorage.theme) || "light"
 
       if (theme === "dark") {
         document.documentElement.classList.add(
           "dark",
           "bg-slate-800",
           "text-white"
-        );
-        document.body.classList.add("darkDots");
+        )
+        document.body.classList.add("darkDots")
       } else if (typeof theme === "undefined") {
         if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
           document.documentElement.classList.add(
             "dark",
             "bg-slate-800",
             "text-white"
-          );
+          )
         }
       }
     }
-  });
+  })
 
   return (
     <QwikCityProvider>
@@ -56,5 +56,5 @@ export default component$(() => {
         <ServiceWorkerRegister />
       </body>
     </QwikCityProvider>
-  );
-});
+  )
+})

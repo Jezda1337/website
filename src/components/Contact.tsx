@@ -1,4 +1,4 @@
-import { component$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik"
 
 export default component$(() => {
   return (
@@ -12,7 +12,7 @@ export default component$(() => {
           href="mailto:webdevradoje@gmail.com"
           aria-label="Contact radoje via email"
         >
-          webdevradoje@radoje.dev
+          contact@radoje.dev
         </a>
         . You can also find me on{" "}
         <a
@@ -35,5 +35,5 @@ export default component$(() => {
         .
       </p>
     </section>
-  );
-});
+  )
+})

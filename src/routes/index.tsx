@@ -1,8 +1,8 @@
-import { component$ } from "@builder.io/qwik";
-import type { DocumentHead } from "@builder.io/qwik-city";
-import Hero from "~/components/Hero";
-import Projects from "~/components/Projects";
-import Contact from "~/components/Contact";
+import { component$ } from "@builder.io/qwik"
+import type { DocumentHead } from "@builder.io/qwik-city"
+import Contact from "~/components/Contact"
+import Hero from "~/components/Hero"
+import Projects from "~/components/Projects"
 
 export default component$(() => {
   return (
@@ -13,8 +13,8 @@ export default component$(() => {
         <Contact />
       </div>
     </>
-  );
-});
+  )
+})
 
 export const head: DocumentHead = {
   title: "Developer",
@@ -24,4 +24,4 @@ export const head: DocumentHead = {
       content: "Personal website for developer. Portfolio.",
     },
   ],
-};
+}

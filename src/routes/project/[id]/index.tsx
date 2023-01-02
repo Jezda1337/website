@@ -1,7 +1,7 @@
-import { component$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik"
 
 interface Props {
-  id: number;
+  id: number
 }
 
 export default component$((props: Props) => {
@@ -10,5 +10,5 @@ export default component$((props: Props) => {
       <h1>hello from project </h1>
       <p>{props.id}</p>
     </>
-  );
-});
+  )
+})
