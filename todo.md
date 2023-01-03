@@ -16,3 +16,4 @@ scroll to contact section
 [x] - add helo instead contact@radoje.dev
 [ ] - font need to be hosted localy
 [ ] - all pages need head element with differente meta attributes
+[ ] - favico should follow the theme

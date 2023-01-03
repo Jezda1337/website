@@ -1,9 +1,9 @@
-import { component$ } from "@builder.io/qwik"
-import Mouse from "./Mouse"
+import { component$ } from "@builder.io/qwik";
+import Mouse from "./Mouse";
 
 export default component$(() => {
   return (
-    <section class="mt-12 min-h-screen md:min-h-[calc(100vh-60px)] lg:min-h-[calc(100vh-260px)] xl:min-h-[calc(100vh-200px)] lg:mt-28">
+    <section class="relative mt-12 min-h-screen md:min-h-[calc(100vh-60px)] lg:min-h-[calc(100vh-260px)] xl:min-h-[calc(100vh-200px)] lg:mt-28">
       <h1 class="animate-fade-in-down text-4xl md:text-5xl font-medium mb-9 md:leading-[1.15]">
         Hello! <span class="inline-block animate-waving-hand">👋🏻</span> I’m
         Radoje, a developer based in Serbia.
@@ -41,5 +41,5 @@ export default component$(() => {
         </Mouse>
       </div>
     </section>
-  )
-})
+  );
+});
