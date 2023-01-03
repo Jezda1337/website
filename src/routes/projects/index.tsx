@@ -32,7 +32,9 @@ export default component$(() => {
 
   return (
     <section class="px-3 md:px-28 mt-12 lg:p-0 lg:max-w-3xl lg:mx-auto lg:mt-24">
-      <h2 class="text-2xl">Other projects that I'm working on</h2>
+      <h2 class="text-2xl animate-fade-in-left">
+        Other projects that I'm working on
+      </h2>
 
       <div class="flex w-full flex-wrap gap-5 justify-between mt-12 flex-col md:flex-row items-center">
         {projects.map((project: Project) => (

@@ -1,5 +1,5 @@
-import { component$ } from "@builder.io/qwik";
-import ProjectCard from "./ProjectCard";
+import { component$ } from "@builder.io/qwik"
+import ProjectCard from "./ProjectCard"
 
 export default component$(() => {
   const projects = [
@@ -7,7 +7,7 @@ export default component$(() => {
       id: 1,
       name: "project 1",
       description: "lorem ipsum bla-bla",
-      url: "",
+      url: "project-1",
       picture:
         "https://images.unsplash.com/photo-1503252947848-7338d3f92f31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2662&q=80",
     },
@@ -15,11 +15,11 @@ export default component$(() => {
       id: 2,
       name: "project 2",
       description: "lorem ipsum bla-bla",
-      url: "",
+      url: "project-2",
       picture:
         "https://images.unsplash.com/photo-1503252947848-7338d3f92f31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2662&q=80",
     },
-  ];
+  ]
 
   return (
     <section id="projects">
@@ -35,5 +35,5 @@ export default component$(() => {
         ))}
       </div>
     </section>
-  );
-});
+  )
+})

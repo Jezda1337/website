@@ -1,4 +1,4 @@
-[ ] - qwik logo text should follow theme
+[-] - qwik logo text should follow theme (changed)
 [x] - default theme flikering when the theme is oposite then default
 [ ] - highlight special words in about me and the hero secion
 [ ] - highlight contact links
@@ -10,3 +10,7 @@ scroll to contact section
 [ ] - images needs to be optimzed
 [ ] - dark:text-white need some changes
 [ ] - adding animation
+[ ] - convert images to webP
+[ ] - add width and height to images
+[ ] - adding testemonials
+[ ] - add helo instead contact@radoje.dev

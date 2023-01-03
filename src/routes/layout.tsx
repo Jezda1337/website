@@ -1,12 +1,11 @@
 import { Slot, component$ } from "@builder.io/qwik"
 import Footer from "~/components/Footer"
-import InProgressBar from "~/components/InProgressBar"
 import Header from "../components/header/header"
 
 export default component$(() => {
   return (
     <>
-      <InProgressBar />
+      {/* <InProgressBar /> */}
       <Header />
       <main>
         <section>

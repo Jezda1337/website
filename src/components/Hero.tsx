@@ -1,5 +1,5 @@
-import { component$ } from "@builder.io/qwik";
-import Mouse from "./Mouse";
+import { component$ } from "@builder.io/qwik"
+import Mouse from "./Mouse"
 
 export default component$(() => {
   return (
@@ -29,7 +29,7 @@ export default component$(() => {
         </a>
         <a
           target="_blank"
-          class="btn_gh text-center px-4 py-[10px] text-black border rounded w-40 md:hover:bg-black md:transition-all md:hover:text-white dark:text-white dark:hover:bg-white dark:hover:text-black"
+          class="btn_gh bg-white dark:bg-slate-800 text-center px-4 py-[10px] text-black border rounded w-40 md:hover:bg-black md:transition-all md:hover:text-white dark:text-white dark:hover:bg-white dark:hover:text-black"
           href="https://github.com/Jezda1337"
         >
           View GitHub
@@ -41,5 +41,5 @@ export default component$(() => {
         </Mouse>
       </div>
     </section>
-  );
-});
+  )
+})

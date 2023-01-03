@@ -1,21 +1,21 @@
-import { component$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik"
 
 interface Project {
-  id: number;
-  name: string;
-  description: string;
-  url?: string;
-  picture: string;
+  id: number
+  name: string
+  description: string
+  url?: string
+  picture: string
 }
 
 interface Props {
-  project: Project;
+  project: Project
 }
 
 export default component$((project: Props) => {
-  const { id, name, description, picture } = project.project;
+  const { name, description, picture, url } = project.project
   return (
-    <div class="flex-1">
+    <div class="flex-1 odd:animate-fade-in-left even:animate-fade-in-right">
       <div class="border rounded max-w-full min-w-[300px]">
         <div class="bg-slate-100 p-2 flex items-center gap-2 justify-between">
           <div class="flex gap-1">
@@ -36,13 +36,13 @@ export default component$((project: Props) => {
       <p class="my-4">{description}</p>
       <div class="mt-6">
         <a
-          href={`/project/${id}`}
-          class="px-4 py-1 border rounded md:hover:bg-black md:hover:text-white md:transition-all dark:hover:bg-white dark:hover:text-black
+          href={`/projects/${url}`}
+          class="px-4 py-1 border dark:bg-slate-800 rounded md:hover:bg-black md:hover:text-white md:transition-all dark:hover:bg-white dark:hover:text-black
 							"
         >
           View Project
         </a>
       </div>
     </div>
-  );
-});
+  )
+})

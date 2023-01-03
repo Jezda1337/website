@@ -3,35 +3,35 @@ import {
   useClientEffect$,
   useStore,
   useTask$,
-} from "@builder.io/qwik";
-import { Link, useLocation } from "@builder.io/qwik-city";
-import Mouse from "../Mouse";
-import ThemeSwitcher from "../ThemeSwitcher";
+} from "@builder.io/qwik"
+import { Link, useLocation } from "@builder.io/qwik-city"
+import Mouse from "../Mouse"
+import ThemeSwitcher from "../ThemeSwitcher"
 
 export default component$(() => {
   const state = useStore({
     isDisabled: false,
     theme: "light",
     isDark: false,
-  });
-  const currentPath = useLocation();
+  })
+  const currentPath = useLocation()
 
   useTask$(({ track }) => {
-    track(() => currentPath.pathname);
-    state.isDisabled = currentPath.pathname !== "/" ? true : false;
-  });
+    track(() => currentPath.pathname)
+    state.isDisabled = currentPath.pathname !== "/" ? true : false
+  })
 
   useClientEffect$(() => {
     if (localStorage.theme) {
-      const theme = JSON.parse(localStorage.theme) || "light";
-      theme ? (state.theme = theme) : null;
-      state.theme === "dark" ? (state.isDark = true) : (state.isDark = false);
+      const theme = JSON.parse(localStorage.theme) || "light"
+      theme ? (state.theme = theme) : null
+      state.theme === "dark" ? (state.isDark = true) : (state.isDark = false)
     }
-  });
+  })
 
   useClientEffect$(({ track }) => {
-    track(() => currentPath.pathname);
-  });
+    track(() => currentPath.pathname)
+  })
 
   return (
     <header class="px-3 md:px-28 lg:p-0 lg:max-w-3xl lg:mx-auto">
@@ -75,7 +75,7 @@ export default component$(() => {
             <Link
               class={`${
                 currentPath.pathname === "/about/" ? "text-blue-500" : ""
-              }`}
+              } md:hover:text-blue-500 `}
               href="/about"
             >
               about
@@ -85,7 +85,7 @@ export default component$(() => {
             <Link
               class={`${
                 currentPath.pathname === "/projects/" ? "text-blue-500" : ""
-              }`}
+              } md:hover:text-blue-500`}
               href="/projects"
             >
               projects
@@ -96,13 +96,13 @@ export default component$(() => {
               title="under construction"
               class={`${
                 currentPath.pathname === "/blog/" ? "text-blue-500" : ""
-              }`}
+              } md:hover:text-blue-500 `}
               href="/blog"
             >
               blog
             </Link>
           </li>
-          <li>
+          <li class="md:hover:text-blue-500">
             <Mouse
               disabled={state.isDisabled}
               hash="contact"
@@ -114,5 +114,5 @@ export default component$(() => {
         </ul>
       </nav>
     </header>
-  );
-});
+  )
+})
