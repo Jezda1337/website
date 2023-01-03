@@ -1,19 +1,19 @@
-import { component$ } from "@builder.io/qwik"
+import { component$ } from "@builder.io/qwik";
 
 interface Project {
-  id: number
-  name: string
-  description: string
-  url?: string
-  picture: string
+  id: number;
+  name: string;
+  description: string;
+  url?: string;
+  picture: string;
 }
 
 interface Props {
-  project: Project
+  project: Project;
 }
 
 export default component$((project: Props) => {
-  const { name, description, picture, url } = project.project
+  const { name, description, picture, url } = project.project;
   return (
     <div class="flex-1 odd:animate-fade-in-left even:animate-fade-in-right">
       <div class="border rounded max-w-full min-w-[300px]">
@@ -35,9 +35,8 @@ export default component$((project: Props) => {
         </div>
         <div class="">
           <img
+            class="max-w-full max-h-full"
             src={picture}
-            width={"100%"}
-            height={"100%"}
             alt="Project picture"
           />
         </div>
@@ -53,5 +52,5 @@ export default component$((project: Props) => {
         </a>
       </div>
     </div>
-  )
-})
+  );
+});

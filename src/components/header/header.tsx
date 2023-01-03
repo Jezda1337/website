@@ -1,37 +1,41 @@
 import {
   component$,
   useClientEffect$,
+  useContext,
   useStore,
   useTask$,
-} from "@builder.io/qwik"
-import { Link, useLocation } from "@builder.io/qwik-city"
-import Mouse from "../Mouse"
-import ThemeSwitcher from "../ThemeSwitcher"
+} from "@builder.io/qwik";
+import { Link, useLocation } from "@builder.io/qwik-city";
+import { MobileMenuContext } from "~/routes/layout";
+import Mouse from "../Mouse";
+import ThemeSwitcher from "../ThemeSwitcher";
 
 export default component$(() => {
   const state = useStore({
     isDisabled: false,
     theme: "light",
     isDark: false,
-  })
-  const currentPath = useLocation()
+  });
+  const currentPath = useLocation();
+
+  const menuState: any = useContext(MobileMenuContext);
 
   useTask$(({ track }) => {
-    track(() => currentPath.pathname)
-    state.isDisabled = currentPath.pathname !== "/" ? true : false
-  })
+    track(() => currentPath.pathname);
+    state.isDisabled = currentPath.pathname !== "/" ? true : false;
+  });
 
   useClientEffect$(() => {
     if (localStorage.theme) {
-      const theme = JSON.parse(localStorage.theme) || "light"
-      theme ? (state.theme = theme) : null
-      state.theme === "dark" ? (state.isDark = true) : (state.isDark = false)
+      const theme = JSON.parse(localStorage.theme) || "light";
+      theme ? (state.theme = theme) : null;
+      state.theme === "dark" ? (state.isDark = true) : (state.isDark = false);
     }
-  })
+  });
 
   useClientEffect$(({ track }) => {
-    track(() => currentPath.pathname)
-  })
+    track(() => currentPath.pathname);
+  });
 
   return (
     <header class="px-3 md:px-28 lg:p-0 lg:max-w-3xl lg:mx-auto">
@@ -42,16 +46,6 @@ export default component$(() => {
             class="flex items-center gap-2"
             href="/"
           >
-            {/* <div class="w-12"> */}
-            {/*   <img */}
-            {/*     src={`${ */}
-            {/*       state.isDark */}
-            {/*         ? "/icons/kitty-dark.png" */}
-            {/*         : "/icons/kitty-light.png" */}
-            {/*     }`} */}
-            {/*     alt="" */}
-            {/*   /> */}
-            {/* </div> */}
             <p class="font-medium">Developer</p>
           </Link>
         </div>
@@ -62,6 +56,7 @@ export default component$(() => {
           <button
             class="md:hidden px-4 py-1 border rounded"
             aria-label="Button for toggle mobile menu"
+            onClick$={() => (menuState.isOpen = !menuState.isOpen)}
           >
             menu
           </button>
@@ -114,5 +109,5 @@ export default component$(() => {
         </ul>
       </nav>
     </header>
-  )
-})
+  );
+});

@@ -3,14 +3,14 @@ import type { DocumentHead } from "@builder.io/qwik-city"
 import Contact from "~/components/Contact"
 import Hero from "~/components/Hero"
 import Projects from "~/components/Projects"
-import Testemonials from "~/components/Testemonials"
+import Recommendations from "~/components/Recommendations"
 
 export default component$(() => {
   return (
     <>
       <div class="px-3 md:px-28 lg:max-w-3xl lg:mx-auto lg:p-0">
         <Hero />
-        <Testemonials />
+        <Recommendations />
         <Projects />
         <Contact />
       </div>
