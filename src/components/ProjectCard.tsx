@@ -25,11 +25,21 @@ export default component$((project: Props) => {
           </div>
           <div class="h-4 bg-slate-300 rounded w-full max-w-sm"></div>
           <div>
-            <img src="/icons/arrow_right.svg" alt="" />
+            <img
+              src="/icons/arrow_right.svg"
+              width={22}
+              height={12}
+              alt="arrow icon"
+            />
           </div>
         </div>
         <div class="">
-          <img src={picture} alt="" />
+          <img
+            src={picture}
+            width={"100%"}
+            height={"100%"}
+            alt="Project picture"
+          />
         </div>
       </div>
       <h3 class="text-xl mt-4">{name}</h3>
@@ -37,8 +47,7 @@ export default component$((project: Props) => {
       <div class="mt-6">
         <a
           href={`/projects/${url}`}
-          class="px-4 py-1 border dark:bg-slate-800 rounded md:hover:bg-black md:hover:text-white md:transition-all dark:hover:bg-white dark:hover:text-black
-							"
+          class="px-4 py-1 border dark:bg-slate-800 rounded md:hover:bg-black md:hover:text-white md:transition-all dark:hover:bg-white dark:hover:text-black"
         >
           View Project
         </a>

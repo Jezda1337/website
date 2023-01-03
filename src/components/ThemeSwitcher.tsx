@@ -47,11 +47,11 @@ export default component$(({ state }: { state: Props["state"] }) => {
         }`}
       >
         <div class="text-white">
-          <img src="/icons/kitty-dark.png" alt="" width={80} height={80} />
+          <img src="/icons/kitty-dark.webp" alt="" width={80} height={80} />
         </div>
 
         <div>
-          <img src="/icons/kitty-light.png" alt="" width={80} height={80} />
+          <img src="/icons/kitty-light.webp" alt="" width={80} height={80} />
         </div>
       </button>
     </>

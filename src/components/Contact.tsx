@@ -8,7 +8,7 @@ export default component$(() => {
         Do you have a job opportunity or idea you’d like to discuse? Feel free
         to reach me at{" "}
         <a
-          class="text-blue-600 dark:text-white"
+          class="text-blue-600 dark:text-blue-500"
           href="mailto:hello@radoje.dev"
           aria-label="Contact radoje via email"
         >
@@ -25,7 +25,7 @@ export default component$(() => {
         </a>{" "}
         and{" "}
         <a
-          class="text-blue-600 dark:text-white"
+          class="text-blue-600 dark:text-blue-500"
           href="https://github.com/Jezda1337"
           target="_blank"
           aria-label="Go to radoje's github profile"
