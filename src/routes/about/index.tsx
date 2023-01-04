@@ -3,11 +3,16 @@ import { DocumentHead } from "@builder.io/qwik-city";
 
 export default component$(() => {
   return (
-    <section class="md:max-w-3xl md:mx-auto md:px-28 lg:px-0 md:my-32">
+    <section class="my-12 px-3 md:max-w-3xl md:mx-auto md:px-28 lg:px-0 md:my-32">
       <div class="gap-2">
         <div>
-          <div class="float-right ml-2 mb-2 rounded-md overflow-hidden max-w-xs animate-fade-in-right">
-            <img src="/me_myself_and_I.jpeg" alt="Radoje's picture" />
+          <div class="flex items-center justify-center mb-6 mx-auto md:float-right  md:ml-2 md:mb-2 rounded-md overflow-hidden animate-fade-in-right md:max-w-xs">
+            <img
+              width={320}
+              height="auto"
+              src="/me_myself_and_I.jpeg"
+              alt="Radoje's picture"
+            />
           </div>
           <div class="animate-fade-in-left">
             <div class="mb-12">
