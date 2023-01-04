@@ -1,9 +1,9 @@
-import { component$ } from "@builder.io/qwik"
+import { component$ } from "@builder.io/qwik";
 
 export default component$(() => {
   return (
     <figure class="max-w-2xl mx-auto">
-      <blockquote class="text-xl mb-3 text-slate-600">
+      <blockquote class="text-base mb-3 text-slate-600">
         <p class="relative after:absolute after:content-[close-quote]  after:ml-2 after:text-3xl before:content-[open-quote] before:mr-2 before:text-3xl before:absolute before:-left-6 dark:text-slate-300">
           <span class="block mb-3">
             Radoje is a radiant and wonderful professional.
@@ -35,5 +35,5 @@ export default component$(() => {
         </p>
       </figcaption>
     </figure>
-  )
-})
+  );
+});

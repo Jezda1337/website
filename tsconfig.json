@@ -19,7 +19,9 @@
     "types": ["node", "vite/client"],
     "paths": {
       "~/*": ["./src/*"]
-    }
+    },
+    "noImplicitAny": true,
+    "allowUnusedLabels": false
   },
   "files": ["./.eslintrc.cjs"],
   "include": ["src"]

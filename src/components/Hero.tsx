@@ -6,18 +6,20 @@ export default component$(() => {
     <section class="relative mt-12 min-h-screen md:min-h-[calc(100vh-60px)] lg:min-h-[calc(100vh-260px)] xl:min-h-[calc(100vh-200px)] lg:mt-28">
       <h1 class="animate-fade-in-down text-4xl md:text-5xl font-medium mb-9 md:leading-[1.15]">
         Hello! <span class="inline-block animate-waving-hand">👋🏻</span> I’m
-        Radoje, a developer based in Serbia.
+        Radoje, a web developer based in Serbia.
       </h1>
-      <p class="mt-4 animate-fade-in-up">
-        As I've grown as a web developer, I've worked alongside senior designers
-        and developers who have raised my standards for whats expected of any
-        web application.
-        <span class="mt-4 block">
+      <div>
+        <p class="mt-4 animate-fade-in-up">
+          As I've grown as a web developer, I've worked alongside senior
+          designers and developers who have raised my standards for whats
+          expected of any web application.
+        </p>
+        <p class="mt-4 block">
           Throught these experiences. I've had the opportunity to create
           memorable products that are not only enjoyable to use, but are writen
           in code thats maintainable and ease to understand.
-        </span>
-      </p>
+        </p>
+      </div>
       <div class="animate-fade-in-front flex flex-col items-start gap-2 mt-6 md:flex-row md:gap-5 md:mt-12">
         <a
           target="_blank"
