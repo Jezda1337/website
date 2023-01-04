@@ -1,6 +1,7 @@
 [-] - qwik logo text should follow theme (changed)
 [x] - default theme flikering when the theme is oposite then default
-[ ] - highlight special words in about me and the hero secion
+[x _ ] - highlight special words in about me and the hero secion
+(about section is added some marks, still need some changes)
 [x] - highlight contact links
 [ ] - blog is under construction
 [ ] - if path is not / then clicking on contact should drow you back to / and

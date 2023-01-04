@@ -1,18 +1,15 @@
-import { component$ } from "@builder.io/qwik"
-import { DocumentHead } from "@builder.io/qwik-city"
+import { component$ } from "@builder.io/qwik";
+import { DocumentHead } from "@builder.io/qwik-city";
 
 export default component$(() => {
   return (
-    <section class="md:max-w-3xl md:mx-auto md:px-28 lg:px-0 md:mt-32">
+    <section class="md:max-w-3xl md:mx-auto md:px-28 lg:px-0 md:my-32">
       <div class="gap-2">
-        <div class="">
-          <div class="float-right ml-2 mb-2 rounded-md overflow-hidden max-w-xs">
-            <img
-              src="https://images.unsplash.com/photo-1519058082700-08a0b56da9b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
-              alt=""
-            />
+        <div>
+          <div class="float-right ml-2 mb-2 rounded-md overflow-hidden max-w-xs animate-fade-in-right">
+            <img src="/me_myself_and_I.jpeg" alt="Radoje's picture" />
           </div>
-          <div>
+          <div class="animate-fade-in-left">
             <div class="mb-12">
               <h2 class="text-2xl">Radoje is a creative Developer.</h2>
               <h3 class="text-base">
@@ -20,20 +17,28 @@ export default component$(() => {
               </h3>
             </div>
             <p class="clear-left">
-              I am an extremely curious and self-motivated individual with a
-              huge passion for coding in general. As an autodidact, I take a
-              very positive and ego-free approach to all aspects of my life, and
-              I carry a strong work ethic with me wherever I go.
+              I am an extremely{" "}
+              <mark class="px-1 bg-blue-500 text-white">curious</mark> and{" "}
+              <mark class="px-1 bg-blue-500 text-white">self-motivated</mark>{" "}
+              individual with a huge{" "}
+              <mark class="px-1 bg-blue-500 text-white">passion</mark> for
+              coding in general. As an autodidact, I take a very positive and{" "}
+              <mark class="px-1 bg-blue-500 text-white">
+                {" "}
+                ego-free approach
+              </mark>{" "}
+              to all aspects of my life, and I carry a strong work ethic with me
+              wherever I go.
             </p>
             <span class="font-medium">Stay awesome.</span>
           </div>
-          <div class="my-4">
+          <div class="my-4 animate-fade-in-left">
             <h2 class="text-2xl">The tools I use to build stuff</h2>
             <h3 class="text-slate-500">
               All tools are used by thousands of industry professionals
             </h3>
-            <ul class="my-4 flex gap-2">
-              <li class="">
+            <ul class="my-6 flex gap-2">
+              <li class="md:hover:scale-75 md:transition-all">
                 <img
                   width={48}
                   height={48}
@@ -41,7 +46,7 @@ export default component$(() => {
                   alt="NextJS logo"
                 />
               </li>
-              <li class="">
+              <li class="md:hover:scale-75 md:transition-all">
                 <img
                   width={48}
                   height={48}
@@ -49,7 +54,7 @@ export default component$(() => {
                   alt="ReactJS logo"
                 />
               </li>
-              <li class="">
+              <li class="md:hover:scale-75 md:transition-all">
                 <img
                   width={48}
                   height={48}
@@ -57,7 +62,7 @@ export default component$(() => {
                   alt="ReactJS logo"
                 />
               </li>
-              <li class="">
+              <li class="md:hover:scale-75 md:transition-all">
                 <img
                   width={48}
                   height={48}
@@ -65,7 +70,7 @@ export default component$(() => {
                   alt="Typescript logo"
                 />
               </li>
-              <li class="">
+              <li class="md:hover:scale-75 md:transition-all">
                 <img
                   width={48}
                   height={48}
@@ -73,7 +78,7 @@ export default component$(() => {
                   alt="RxJS logo"
                 />
               </li>
-              <li class="">
+              <li class="md:hover:scale-75 md:transition-all">
                 <img
                   width={48}
                   height={48}
@@ -81,7 +86,7 @@ export default component$(() => {
                   alt="Tailwindcss logo"
                 />
               </li>
-              <li class="">
+              <li class="md:hover:scale-75 md:transition-all">
                 <img
                   width={48}
                   height={48}
@@ -91,9 +96,10 @@ export default component$(() => {
               </li>
             </ul>
 
-            <h2 class="text-xl py-4">Other tools that I using when coding</h2>
+            {/* <h2 class="text-xl py-4">Other tools that I using when coding</h2> */}
+            <h2 class="text-xl py-4">Other tools I enjoy using.</h2>
             <ul class="flex gap-2">
-              <li class="">
+              <li class="md:hover:scale-75 md:transition-all">
                 <img
                   width={48}
                   height={48}
@@ -101,7 +107,7 @@ export default component$(() => {
                   alt="Git logo"
                 />
               </li>
-              <li>
+              <li class="md:hover:scale-75 md:transition-all">
                 <img
                   width={48}
                   height={48}
@@ -109,7 +115,7 @@ export default component$(() => {
                   alt="Figma logo"
                 />
               </li>
-              <li>
+              <li class="md:hover:scale-75 md:transition-all">
                 <img
                   width={48}
                   height={48}
@@ -117,7 +123,7 @@ export default component$(() => {
                   alt="PostgreSQL logo"
                 />
               </li>
-              <li>
+              <li class="md:hover:scale-75 md:transition-all">
                 <img
                   width={48}
                   height={48}
@@ -125,7 +131,7 @@ export default component$(() => {
                   alt="NodeJS logo"
                 />
               </li>
-              <li>
+              <li class="md:hover:scale-75 md:transition-all">
                 <img
                   width={48}
                   height={48}
@@ -133,7 +139,7 @@ export default component$(() => {
                   alt="GoLang logo"
                 />
               </li>
-              <li>
+              <li class="md:hover:scale-75 md:transition-all">
                 <img
                   width={48}
                   height={48}
@@ -146,8 +152,8 @@ export default component$(() => {
         </div>
       </div>
     </section>
-  )
-})
+  );
+});
 
 export const head: DocumentHead = {
   title: "Developer",
@@ -157,4 +163,4 @@ export const head: DocumentHead = {
       content: "Personal website for developer. Portfolio.",
     },
   ],
-}
+};
