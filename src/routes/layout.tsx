@@ -8,6 +8,7 @@ import {
 } from "@builder.io/qwik";
 import Footer from "~/components/Footer";
 import MobileMenu from "~/components/MobileMenu";
+import StillInWorkFlag from "~/components/StillInWorkFlag";
 import Header from "../components/header/header";
 
 export const MobileMenuContext = createContext("mobile-context");
@@ -41,6 +42,7 @@ export default component$(() => {
           </main>
           <Footer />
         </div>
+        <StillInWorkFlag />
       </div>
     </>
   );

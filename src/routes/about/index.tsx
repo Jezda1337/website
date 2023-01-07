@@ -102,7 +102,7 @@ export default component$(() => {
             </ul>
 
             {/* <h2 class="text-xl py-4">Other tools that I using when coding</h2> */}
-            <h2 class="text-xl py-4">Other tools I enjoy using.</h2>
+            <h2 class="text-xl py-4">Other tools I enjoy using</h2>
             <ul class="flex gap-2">
               <li class="md:hover:scale-75 md:transition-all">
                 <img
@@ -142,6 +142,15 @@ export default component$(() => {
                   height={48}
                   src="/icons/go.svg"
                   alt="GoLang logo"
+                />
+              </li>
+
+              <li class="md:hover:scale-75 md:transition-all">
+                <img
+                  width={48}
+                  height={48}
+                  src="/icons/docker.svg"
+                  alt="Docker logo"
                 />
               </li>
               <li class="md:hover:scale-75 md:transition-all">
