@@ -10,7 +10,7 @@ export default component$(() => {
             <img
               width={320}
               height="auto"
-              src="/me_myself_and_I.jpeg"
+              src="/me_myself_and_I.webp"
               alt="Radoje's picture"
             />
           </div>
