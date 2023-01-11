@@ -39,6 +39,7 @@ export default component$(({ state }: { state: Props["state"] }) => {
           state.isDark = !state.isDark;
           state.isDark ? (state.theme = "dark") : (state.theme = "light");
           localStorage.theme = JSON.stringify(state.theme);
+          console.log("hello world");
         }}
         class={`w-16 bg-slate-300 flex justify-between rounded relative after:absolute after:w-1/2 after:h-full after:dark:bg-slate-800 after:bg-white after:rounded h-8 items-center px-1 gap-3 shadow-[inset_0_0px_4px_rgba(0,0,0,0.6)]  ${
           state.isDark

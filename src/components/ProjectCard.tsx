@@ -1,19 +1,8 @@
 import { component$ } from "@builder.io/qwik";
+import { Project } from "../../interfaces/Project.interface";
 
-interface Project {
-  id: number;
-  name: string;
-  description: string;
-  url?: string;
-  picture: string;
-}
-
-interface Props {
-  project: Project;
-}
-
-export default component$((project: Props) => {
-  const { name, description, picture, url } = project.project;
+export default component$(({ project }: { project: Project }) => {
+  const { title, shortDescription, projectHeroImage, slug } = project;
   return (
     <div class="flex-1 odd:animate-fade-in-left even:animate-fade-in-right">
       <div class="border rounded max-w-full min-w-[300px]">
@@ -30,7 +19,7 @@ export default component$((project: Props) => {
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={1.5}
-              stroke="currentColor"
+              stroke="black"
               class="w-6 h-6"
             >
               <path
@@ -44,16 +33,16 @@ export default component$((project: Props) => {
         <div class="">
           <img
             class="object-cover max-w-full max-h-full aspect-video w-full"
-            src={picture}
+            src={projectHeroImage}
             alt="Project picture"
           />
         </div>
       </div>
-      <h3 class="text-xl mt-4">{name}</h3>
-      <p class="my-4">{description}</p>
+      <h3 class="text-xl mt-4">{title}</h3>
+      <p class="my-4">{shortDescription}</p>
       <div class="mt-6">
         <a
-          href={`/projects/${url}`}
+          href={`/projects/${slug}`}
           class="px-4 py-1 border dark:bg-slate-800 rounded md:hover:bg-black md:hover:text-white md:transition-all dark:hover:bg-white dark:hover:text-black flex items-center max-w-fit"
         >
           <span>View Project</span>

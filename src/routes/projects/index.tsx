@@ -1,49 +1,11 @@
-import { component$ } from "@builder.io/qwik"
-import { DocumentHead } from "@builder.io/qwik-city"
-import ProjectCard from "~/components/ProjectCard"
-
-interface Project {
-  id: number
-  name: string
-  description: string
-  url: string
-  picture: string
-}
+import { component$ } from "@builder.io/qwik";
+import { DocumentHead } from "@builder.io/qwik-city";
+import ProjectCard from "~/components/ProjectCard";
+import { Project } from "../../../interfaces/Project.interface";
+import { Projects } from "../../../utils/projects_list";
 
 export default component$(() => {
-  const projects = [
-    {
-      id: 1,
-      name: "project 1",
-      description: "lorem ipsum bla-bla",
-      url: "",
-      picture: "/projects_ss/rutann.rs.webp",
-    },
-    {
-      id: 2,
-      name: "project 2",
-      description: "lorem ipsum bla-bla",
-      url: "",
-      picture:
-        "https://images.unsplash.com/photo-1503252947848-7338d3f92f31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2662&q=80",
-    },
-    {
-      id: 3,
-      name: "project 3",
-      description: "lorem ipsum bla-bla",
-      url: "",
-      picture: "/projects_ss/rutann.rs.webp",
-    },
-    {
-      id: 4,
-      name: "project 4",
-      description: "lorem ipsum bla-bla",
-      url: "",
-      picture:
-        "https://images.unsplash.com/photo-1503252947848-7338d3f92f31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2662&q=80",
-    },
-  ]
-
+  const projects = Projects.filter((project: Project) => project.id >= 3);
   return (
     <section class="px-3 md:px-28 my-12 lg:p-0 lg:max-w-3xl lg:mx-auto lg:my-24">
       <h2 class="text-2xl animate-fade-in-left">
@@ -56,8 +18,8 @@ export default component$(() => {
         ))}
       </div>
     </section>
-  )
-})
+  );
+});
 
 export const head: DocumentHead = {
   title: "Developer",
@@ -67,4 +29,4 @@ export const head: DocumentHead = {
       content: "Personal website for developer. Portfolio.",
     },
   ],
-}
+};

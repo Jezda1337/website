@@ -1,8 +1,8 @@
-import { component$ } from "@builder.io/qwik"
+import { component$ } from "@builder.io/qwik";
 
 export default component$(() => {
   return (
-    <footer class="px-3 mt-5 max-w-3xl mx-auto h-12 md:px-28 lg:px-0">
+    <footer class="px-3 mt-5 lg:max-w-3xl lg:mx-auto h-12 md:px-28 lg:px-0">
       <div class="border-t-2 flex justify-between flex-col md:flex-row items-center w-full pt-6 md:pt-12">
         <div class="flex items-center flex-col md:flex-row">
           <p class="mr-3">Build with</p>
@@ -39,5 +39,5 @@ export default component$(() => {
         <div class="mt-8 md:mt-0">© 2023</div>
       </div>
     </footer>
-  )
-})
+  );
+});
