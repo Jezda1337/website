@@ -13,7 +13,7 @@ export default component$(() => {
           Some of the side projects I’m currently working on.
         </p>
       </div>
-      <div class="flex w-full flex-wrap gap-5 justify-between mt-12 flex-col md:flex-row items-center">
+      <div class="flex w-full flex-wrap gap-5 justify-between mt-12 flex-col md:flex-row items-stretch h-full">
         {projects.map((project: Project) => (
           <ProjectCard key={project.id} project={project} />
         ))}

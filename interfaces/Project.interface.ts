@@ -7,5 +7,7 @@ export interface Project {
   projectHeroImage: string;
   techList: string[];
   type: string;
-  live: string;
+  live?: string;
+  code?: string;
+  notFinished?: boolean;
 }

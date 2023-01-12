@@ -35,7 +35,6 @@ export default component$(({ state }: { state: Props["state"] }) => {
     state.isDark = !state.isDark;
     state.isDark ? (state.theme = "dark") : (state.theme = "light");
     localStorage.theme = JSON.stringify(state.theme);
-    console.log("hello world");
   });
 
   return (

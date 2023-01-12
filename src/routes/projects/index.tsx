@@ -11,8 +11,7 @@ export default component$(() => {
       <h2 class="text-2xl animate-fade-in-left">
         Other projects that I'm working on
       </h2>
-      <div class="flex w-full flex-wrap gap-5 justify-between mt-12 flex-col md:flex-row items-center">
-        {" "}
+      <div class="flex w-full flex-wrap gap-5 justify-between mt-12 flex-col md:flex-row items-inherit">
         {projects.map((project: Project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
