@@ -1,4 +1,4 @@
-import { component$, $, useStore, useTask$ } from "@builder.io/qwik";
+import { component$, useStore, useTask$ } from "@builder.io/qwik";
 import { DocumentHead, useLocation } from "@builder.io/qwik-city";
 import { Projects } from "../../../../utils/projects_list";
 import { Project } from "../../../../interfaces/Project.interface";
