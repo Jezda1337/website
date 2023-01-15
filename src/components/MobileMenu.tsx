@@ -1,10 +1,10 @@
-import { component$, useContext } from "@builder.io/qwik"
-import { Link } from "@builder.io/qwik-city"
-import { MobileMenuContext } from "~/routes/layout"
-import Mouse from "./Mouse"
+import { component$, useContext } from "@builder.io/qwik";
+import { Link } from "@builder.io/qwik-city";
+import { MobileMenuContext } from "~/routes/layout";
+import Mouse from "./Mouse";
 
 export default component$(() => {
-  const state: any = useContext(MobileMenuContext)
+  const state: any = useContext(MobileMenuContext);
   return (
     <>
       <nav
@@ -30,5 +30,5 @@ export default component$(() => {
         </ul>
       </nav>
     </>
-  )
-})
+  );
+});

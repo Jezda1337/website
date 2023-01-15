@@ -1,4 +1,4 @@
-import { component$, $, useStore } from "@builder.io/qwik";
+import { component$, $, useStore, useTask$ } from "@builder.io/qwik";
 import { DocumentHead, useLocation } from "@builder.io/qwik-city";
 import { Projects } from "../../../../utils/projects_list";
 import { Project } from "../../../../interfaces/Project.interface";
@@ -15,23 +15,19 @@ export default component$(() => {
   });
   const loc = useLocation();
 
-  const selectedProject = $(() => {
-    return Projects.find(
+  useTask$(() => {
+    const d = Projects.find(
       ({ slug }: { slug: Project["slug"] }) => slug === loc.params.slug
     );
-  });
 
-  selectedProject().then(
-    (d) => (
-      (state.title = d?.title),
-      (state.code = d?.code),
-      (state.live = d?.live),
-      (state.type = d?.type),
-      (state.description = d?.description),
-      (state.projectHeroImage = d?.projectHeroImage),
-      (state.techList = d?.techList)
-    )
-  );
+    state.title = d?.title;
+    state.code = d?.code;
+    state.live = d?.live;
+    state.type = d?.type;
+    state.description = d?.description;
+    state.projectHeroImage = d?.projectHeroImage;
+    state.techList = d?.techList;
+  });
 
   return (
     <section class="px-3 md:mt-28 md:px-28 lg:p-0 lg:max-w-3xl lg:mx-auto animate-fade-in-left">
