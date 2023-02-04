@@ -1,17 +1,31 @@
 export const Projects = [
+  // {
+  //   id: 1,
+  //   title: "Ruta NN",
+  //   description:
+  //     "Rutann is an agency for employment of people, who are enthusiastic about bringing food and riding bicycles. I created this application from scratch using tools such as React, Node, SCSS. The application required a little more effort regarding the form itself, and sending emails to the application owner.",
+  //   shortDescription:
+  //     "Full-stack application built using tools such as React, Node, SCSS. RutaNN is an agency for employment of people.",
+  //   slug: "rutann",
+  //   live: "https://rutann.rs",
+  //   code: "https://gothub.com/Jezda1337/ruta-nn-react",
+  //   projectHeroImage: "/projects_ss/rutann.rs.webp",
+  //   techList: ["React", "Node", "Express", "SCSS", "Axios"],
+  //   type: "Part-time",
+  // },
   {
     id: 1,
-    title: "Ruta NN",
+    title: "Distro Hub",
     description:
-      "Rutann is an agency for employment of people, who are enthusiastic about bringing food and riding bicycles. I created this application from scratch using tools such as React, Node, SCSS. The application required a little more effort regarding the form itself, and sending emails to the application owner.",
+      "One if not the only website where you can search for linux distributions is DistroWatch, also my favorite. DistroHub is not a copy or a replacement for the already mentioned WatchDistro.com, but it is a modern version of the same, with very few services at the beginning. WatchDistro offers many more search options and much more information related to packages as well as linux distributions. DistroHub only offers something basic, such as a short description of the distribution itself, a link to the distribution site, as well as a couple of screenshots of the distribution itself.",
     shortDescription:
-      "Full-stack application built using tools such as React, Node, SCSS. RutaNN is an agency for employment of people.",
-    slug: "rutann",
-    live: "https://rutann.rs",
-    code: "https://gothub.com/Jezda1337/ruta-nn-react",
-    projectHeroImage: "/projects_ss/rutann.rs.webp",
-    techList: ["React", "Node", "Express", "SCSS", "Axios"],
-    type: "Part-time",
+      "This is the place where you will be able to find the desired linux distribution and learn a lot about it.",
+    slug: "distro-hub",
+    live: "https://distro-hub.radoje.dev",
+    code: "https://github.com/Jezda1337/distro-hub",
+    projectHeroImage: "/projects_ss/distro-hub.webp",
+    techList: ["NextJS", "Tailwindcss"],
+    type: "Exercise",
   },
   {
     id: 2,
@@ -32,9 +46,9 @@ export const Projects = [
     id: 3,
     title: "Ruta NN",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora deleniti inventore excepturi perferendis hic ab veritatis ipsa, in animi autem dignissimos, assumenda distinctio adipisci dolore sunt molestiae enim, eligendi quidem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora deleniti inventore excepturi perferendis hic ab veritatis ipsa, in animi autem dignissimos, assumenda distinctio adipisci dolore sunt molestiae enim, eligendi quidem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora deleniti inventore excepturi perferendis hic ab veritatis ipsa, in animi autem dignissimos, assumenda distinctio adipisci dolore sunt molestiae enim, eligendi quidem.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora deleniti inventore excepturi perferendis hic ab veritatis ipsa, in animi autem dignissimos, assumenda distinctio adipisci dolore sunt molestiae enim, eligendi quidem.",
     shortDescription:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora deleniti inventore excepturiLorem ipsum dolor sit amet consectetur adipisicing elit. Tempora deleniti inventore excepturi perferendis hic ab veritatis ipsa, in animi autem dignissimos, assumenda distinctio adipisci dolore sunt molestiae enim, eligendi quidem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora deleniti inventore excepturi perferendis hic ab veritatis ipsa, in animi autem dignissimos, assumenda distinctio adipisci dolore sunt molestiae enim, eligendi quidem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora deleniti inventore excepturi perferendis hic ab veritatis ipsa, in animi autem dignissimos, assumenda distinctio adipisci dolore sunt molestiae enim, eligendi quidem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora deleniti inventore excepturi perferendis hic ab veritatis ipsa, in animi autem dignissimos, assumenda distinctio adipisci dolore sunt molestiae enim, eligendi quidem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora deleniti inventore excepturi perferendis hic ab veritatis ipsa, in animi autem dignissimos, assumenda distinctio adipisci dolore sunt molestiae enim, eligendi quidem.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora deleniti inventore excepturi",
     slug: "rutann3",
     live: "https://rutann.rs",
     code: "",
