@@ -37,6 +37,12 @@ export default component$(() => {
     track(() => currentPath.pathname);
   });
 
+  function handleContact() {
+    if (currentPath.pathname !== "/contact") {
+      console.log("test");
+    }
+  }
+
   return (
     <header class="px-3 md:px-28 lg:p-0 lg:max-w-3xl lg:mx-auto">
       <nav class="flex justify-between w-full py-3">
@@ -86,24 +92,20 @@ export default component$(() => {
               projects
             </Link>
           </li>
-          <li class="mr-3">
-            <Link
-              title="under construction"
-              class={`${
-                currentPath.pathname === "/blog/" ? "text-blue-500" : ""
-              } md:hover:text-blue-500 `}
-              href="/blog"
-            >
-              blog
-            </Link>
-          </li>
+          {/* <li class="mr-3"> */}
+          {/*   <Link */}
+          {/*     title="under construction" */}
+          {/*     class={`${ */}
+          {/*       currentPath.pathname === "/blog/" ? "text-blue-500" : "" */}
+          {/*     } md:hover:text-blue-500 `} */}
+          {/*     href="/blog" */}
+          {/*   > */}
+          {/*     blog */}
+          {/*   </Link> */}
+          {/* </li> */}
           <li class="md:hover:text-blue-500">
-            <Mouse
-              disabled={state.isDisabled}
-              hash="contact"
-              classIcon="btn_hash"
-            >
-              contact
+            <Mouse hash="contact">
+              <Link href="/#contact">contact</Link>
             </Mouse>
           </li>
         </ul>

@@ -1,18 +1,4 @@
 export const Projects = [
-  // {
-  //   id: 1,
-  //   title: "Ruta NN",
-  //   description:
-  //     "Rutann is an agency for employment of people, who are enthusiastic about bringing food and riding bicycles. I created this application from scratch using tools such as React, Node, SCSS. The application required a little more effort regarding the form itself, and sending emails to the application owner.",
-  //   shortDescription:
-  //     "Full-stack application built using tools such as React, Node, SCSS. RutaNN is an agency for employment of people.",
-  //   slug: "rutann",
-  //   live: "https://rutann.rs",
-  //   code: "https://gothub.com/Jezda1337/ruta-nn-react",
-  //   projectHeroImage: "/projects_ss/rutann.rs.webp",
-  //   techList: ["React", "Node", "Express", "SCSS", "Axios"],
-  //   type: "Part-time",
-  // },
   {
     id: 1,
     title: "Distro Hub",
@@ -46,56 +32,14 @@ export const Projects = [
     id: 3,
     title: "Ruta NN",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora deleniti inventore excepturi perferendis hic ab veritatis ipsa, in animi autem dignissimos, assumenda distinctio adipisci dolore sunt molestiae enim, eligendi quidem.",
+      "Rutann is an agency for employment of people, who are enthusiastic about bringing food and riding bicycles. I created this application from scratch using tools such as React, Node, SCSS. The application required a little more effort regarding the form itself, and sending emails to the application owner.",
     shortDescription:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora deleniti inventore excepturi",
-    slug: "rutann3",
+      "Full-stack application built using tools such as React, Node, SCSS. RutaNN is an agency for employment of people.",
+    slug: "rutann",
     live: "https://rutann.rs",
-    code: "",
-    techList: ["React", "Tailwindcss", "Express"],
+    code: "https://gothub.com/Jezda1337/ruta-nn-react",
     projectHeroImage: "/projects_ss/rutann.rs.webp",
-    type: "Part-time",
-  },
-  {
-    id: 4,
-    title: "Ruta NN",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora deleniti inventore excepturi perferendis hic ab veritatis ipsa, in animi autem dignissimos, assumenda distinctio adipisci dolore sunt molestiae enim, eligendi quidem.",
-    shortDescription:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora deleniti inventore excepturi",
-    slug: "rutann4",
-    code: "",
-    techList: ["React", "Tailwindcss", "Express"],
-    live: "https://rutann.rs",
-    projectHeroImage: "/projects_ss/rutann.rs.webp",
-    type: "Part-time",
-  },
-  {
-    id: 5,
-    title: "Ruta NN",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora deleniti inventore excepturi perferendis hic ab veritatis ipsa, in animi autem dignissimos, assumenda distinctio adipisci dolore sunt molestiae enim, eligendi quidem.",
-    shortDescription:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora deleniti inventore excepturi",
-    slug: "rutann5",
-    techList: ["React", "Tailwindcss", "Express"],
-    live: "https://rutann.rs",
-    code: "",
-    projectHeroImage: "/projects_ss/rutann.rs.webp",
-    type: "Part-time",
-  },
-  {
-    id: 6,
-    title: "Ruta NN",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora deleniti inventore excepturi perferendis hic ab veritatis ipsa, in animi autem dignissimos, assumenda distinctio adipisci dolore sunt molestiae enim, eligendi quidem.",
-    shortDescription:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora deleniti inventore excepturi",
-    slug: "rutann6",
-    techList: ["React", "Tailwindcss", "Express"],
-    live: "https://rutann.rs",
-    code: "",
-    projectHeroImage: "/projects_ss/rutann.rs.webp",
+    techList: ["React", "Node", "Express", "SCSS", "Axios"],
     type: "Part-time",
   },
 ];
