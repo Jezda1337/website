@@ -3,7 +3,8 @@ import { Link } from "@builder.io/qwik-city";
 import { Project } from "../../interfaces/Project.interface";
 
 export default component$(({ project }: { project: Project }) => {
-  const { title, shortDescription, projectHeroImage, slug, type } = project;
+  const { title, shortDescription, projectHeroImage, slug, type, unfinished } =
+    project;
   return (
     <div class="flex-1 odd:animate-fade-in-left even:animate-fade-in-right flex flex-col">
       <div class="border rounded max-w-full min-w-[300px]">
@@ -31,7 +32,13 @@ export default component$(({ project }: { project: Project }) => {
             </svg>
           </div>
         </div>
-        <div class="">
+        <div
+          class={`border ${
+            unfinished
+              ? "overflow-hidden relative after:absolute after:w-36 after:h-12 after:bg-red-500 after:top-0 after:-right-14 after:rotate-45"
+              : ""
+          }`}
+        >
           <img
             class="object-cover max-w-full max-h-full aspect-video w-full"
             src={projectHeroImage}

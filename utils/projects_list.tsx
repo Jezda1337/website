@@ -7,6 +7,7 @@ export const Projects = [
     shortDescription:
       "This is the place where you will be able to find the desired linux distribution and learn a lot about it.",
     slug: "distro-hub",
+    unfinished: false,
     live: "https://distro-hub.radoje.dev",
     code: "https://github.com/Jezda1337/distro-hub",
     projectHeroImage: "/projects_ss/distro-hub.webp",
@@ -22,7 +23,7 @@ export const Projects = [
       "Taskify is and application that was built with the purpose of helping others to plan and organize tasks for their future projects. The app was used as an exercise.",
     slug: "taskify",
     live: "",
-    notFinished: true,
+    unfinished: true,
     code: "https://github.com/Jezda1337/taskify.git",
     techList: ["NextJS", "Typescript", "Tailwindcss", "MongoDB"],
     projectHeroImage: "/projects_ss/taskify.png",
@@ -36,6 +37,7 @@ export const Projects = [
     shortDescription:
       "Full-stack application built using tools such as React, Node, SCSS. RutaNN is an agency for employment of people.",
     slug: "rutann",
+    unfinished: false,
     live: "https://rutann.rs",
     code: "https://gothub.com/Jezda1337/ruta-nn-react",
     projectHeroImage: "/projects_ss/rutann.rs.webp",

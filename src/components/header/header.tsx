@@ -37,12 +37,6 @@ export default component$(() => {
     track(() => currentPath.pathname);
   });
 
-  function handleContact() {
-    if (currentPath.pathname !== "/contact") {
-      console.log("test");
-    }
-  }
-
   return (
     <header class="px-3 md:px-28 lg:p-0 lg:max-w-3xl lg:mx-auto">
       <nav class="flex justify-between w-full py-3">
