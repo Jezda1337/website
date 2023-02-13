@@ -38,8 +38,8 @@ export default component$(() => {
   });
 
   return (
-    <header class="px-3 md:px-28 lg:p-0 lg:max-w-3xl lg:mx-auto">
-      <nav class="flex justify-between w-full py-3">
+    <header class="px-3 md:px-28 lg:mx-auto lg:max-w-3xl lg:p-0">
+      <nav class="flex w-full justify-between py-3">
         <div class="animate-fade-in-left">
           <Link
             aria-label="Link that will go on home page"
@@ -50,11 +50,11 @@ export default component$(() => {
           </Link>
         </div>
 
-        <div class="md:hidden flex gap-2 animate-fade-in-right">
+        <div class="flex animate-fade-in-right gap-2 md:hidden">
           <ThemeSwitcher state={state} />
 
           <button
-            class="md:hidden px-4 py-1 border rounded"
+            class="rounded border px-4 py-1 md:hidden"
             aria-label="Button for toggle mobile menu"
             onClick$={() => (menuState.isOpen = !menuState.isOpen)}
           >
@@ -62,7 +62,7 @@ export default component$(() => {
           </button>
         </div>
 
-        <ul class="hidden md:flex md:items-center animate-fade-in-right">
+        <ul class="hidden animate-fade-in-right md:flex md:items-center">
           <li class="mr-5">
             <ThemeSwitcher state={state} />
           </li>
