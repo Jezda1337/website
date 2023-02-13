@@ -9,5 +9,5 @@ export interface Project {
   type: string;
   live?: string;
   code?: string;
-  notFinished?: boolean;
+  unfinished?: boolean;
 }

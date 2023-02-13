@@ -3,10 +3,10 @@ import { DocumentHead } from "@builder.io/qwik-city";
 
 export default component$(() => {
   return (
-    <section class="my-12 px-3 md:max-w-3xl md:mx-auto md:px-28 lg:px-0 md:my-32">
+    <section class="my-12 px-3 md:mx-auto md:my-32 md:max-w-3xl md:px-28 lg:px-0">
       <div class="gap-2">
         <div>
-          <div class="flex items-center justify-center mb-6 mx-auto md:float-right  md:ml-2 md:mb-2 rounded-md overflow-hidden animate-fade-in-right md:max-w-xs">
+          <div class="mx-auto mb-6 flex animate-fade-in-right items-center justify-center  overflow-hidden rounded-md md:float-right md:ml-2 md:mb-2 md:max-w-xs">
             <img
               width={320}
               height="auto"
@@ -23,12 +23,12 @@ export default component$(() => {
             </div>
             <p class="clear-left">
               I am an extremely{" "}
-              <mark class="px-1 bg-blue-500 text-white">curious</mark> and{" "}
-              <mark class="px-1 bg-blue-500 text-white">self-motivated</mark>{" "}
+              <mark class="bg-blue-500 px-1 text-white">curious</mark> and{" "}
+              <mark class="bg-blue-500 px-1 text-white">self-motivated</mark>{" "}
               individual with a huge{" "}
-              <mark class="px-1 bg-blue-500 text-white">passion</mark> for
+              <mark class="bg-blue-500 px-1 text-white">passion</mark> for
               coding in general. As an autodidact, I take a very positive and{" "}
-              <mark class="px-1 bg-blue-500 text-white">
+              <mark class="bg-blue-500 px-1 text-white">
                 {" "}
                 ego-free approach
               </mark>{" "}
@@ -43,7 +43,7 @@ export default component$(() => {
               All tools are used by thousands of industry professionals
             </h3>
             <ul class="my-6 flex gap-2">
-              <li class="md:hover:scale-75 md:transition-all">
+              <li class="md:transition-all md:hover:scale-75">
                 <img
                   width={48}
                   height={48}
@@ -51,7 +51,7 @@ export default component$(() => {
                   alt="NextJS logo"
                 />
               </li>
-              <li class="md:hover:scale-75 md:transition-all">
+              <li class="md:transition-all md:hover:scale-75">
                 <img
                   width={48}
                   height={48}
@@ -59,7 +59,7 @@ export default component$(() => {
                   alt="ReactJS logo"
                 />
               </li>
-              <li class="md:hover:scale-75 md:transition-all">
+              <li class="md:transition-all md:hover:scale-75">
                 <img
                   width={48}
                   height={48}
@@ -67,7 +67,7 @@ export default component$(() => {
                   alt="ReactJS logo"
                 />
               </li>
-              <li class="md:hover:scale-75 md:transition-all">
+              <li class="md:transition-all md:hover:scale-75">
                 <img
                   width={48}
                   height={48}
@@ -75,7 +75,7 @@ export default component$(() => {
                   alt="Typescript logo"
                 />
               </li>
-              <li class="md:hover:scale-75 md:transition-all">
+              <li class="md:transition-all md:hover:scale-75">
                 <img
                   width={48}
                   height={48}
@@ -83,7 +83,7 @@ export default component$(() => {
                   alt="RxJS logo"
                 />
               </li>
-              <li class="md:hover:scale-75 md:transition-all">
+              <li class="md:transition-all md:hover:scale-75">
                 <img
                   width={48}
                   height={48}
@@ -91,7 +91,7 @@ export default component$(() => {
                   alt="Tailwindcss logo"
                 />
               </li>
-              <li class="md:hover:scale-75 md:transition-all">
+              <li class="md:transition-all md:hover:scale-75">
                 <img
                   width={48}
                   height={48}
@@ -102,9 +102,9 @@ export default component$(() => {
             </ul>
 
             {/* <h2 class="text-xl py-4">Other tools that I using when coding</h2> */}
-            <h2 class="text-xl py-4">Other tools I enjoy using</h2>
+            <h2 class="py-4 text-xl">Other tools I enjoy using</h2>
             <ul class="flex gap-2">
-              <li class="md:hover:scale-75 md:transition-all">
+              <li class="md:transition-all md:hover:scale-75">
                 <img
                   width={48}
                   height={48}
@@ -112,7 +112,7 @@ export default component$(() => {
                   alt="Git logo"
                 />
               </li>
-              <li class="md:hover:scale-75 md:transition-all">
+              <li class="md:transition-all md:hover:scale-75">
                 <img
                   width={48}
                   height={48}
@@ -120,7 +120,7 @@ export default component$(() => {
                   alt="Figma logo"
                 />
               </li>
-              <li class="md:hover:scale-75 md:transition-all">
+              <li class="md:transition-all md:hover:scale-75">
                 <img
                   width={48}
                   height={48}
@@ -128,7 +128,7 @@ export default component$(() => {
                   alt="PostgreSQL logo"
                 />
               </li>
-              <li class="md:hover:scale-75 md:transition-all">
+              <li class="md:transition-all md:hover:scale-75">
                 <img
                   width={48}
                   height={48}
@@ -136,7 +136,7 @@ export default component$(() => {
                   alt="NodeJS logo"
                 />
               </li>
-              <li class="md:hover:scale-75 md:transition-all">
+              <li class="md:transition-all md:hover:scale-75">
                 <img
                   width={48}
                   height={48}
@@ -145,7 +145,7 @@ export default component$(() => {
                 />
               </li>
 
-              <li class="md:hover:scale-75 md:transition-all">
+              <li class="md:transition-all md:hover:scale-75">
                 <img
                   width={48}
                   height={48}
@@ -153,7 +153,7 @@ export default component$(() => {
                   alt="Docker logo"
                 />
               </li>
-              <li class="md:hover:scale-75 md:transition-all">
+              <li class="md:transition-all md:hover:scale-75">
                 <img
                   width={48}
                   height={48}
