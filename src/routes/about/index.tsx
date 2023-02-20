@@ -1,9 +1,18 @@
 import { component$ } from "@builder.io/qwik";
 import { DocumentHead } from "@builder.io/qwik-city";
+import Resume from "/Radoje_Jezdic_Resume.pdf";
 
 export default component$(() => {
   return (
     <section class="my-12 px-3 md:mx-auto md:my-32 md:max-w-3xl md:px-28 lg:px-0">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        class="mb-4 inline-block cursor-pointer rounded bg-black px-6 py-2 text-white transition-all hover:bg-gray-900 hover:text-blue-500"
+        href={Resume}
+      >
+        Resume
+      </a>
       <div class="gap-2">
         <div>
           <div class="mx-auto mb-6 flex animate-fade-in-right items-center justify-center  overflow-hidden rounded-md md:float-right md:ml-2 md:mb-2 md:max-w-xs">
