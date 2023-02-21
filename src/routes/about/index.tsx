@@ -1,6 +1,5 @@
 import { component$ } from "@builder.io/qwik";
 import { DocumentHead } from "@builder.io/qwik-city";
-import Resume from "/Radoje_Jezdic_Resume.pdf";
 
 export default component$(() => {
   return (
@@ -9,7 +8,7 @@ export default component$(() => {
         target="_blank"
         rel="noreferrer"
         class="mb-4 inline-block cursor-pointer rounded bg-black px-6 py-2 text-white transition-all hover:bg-gray-900 hover:text-blue-500"
-        href={Resume}
+        href="/Radoje_Jezdic_Resume.pdf"
       >
         Resume
       </a>
