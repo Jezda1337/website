@@ -11,7 +11,7 @@ export const Projects = [
     live: "https://distro-hub.radoje.dev",
     code: "https://github.com/Jezda1337/distro-hub",
     projectHeroImage: "/projects_ss/distro-hub.webp",
-    techList: ["NextJS", "Tailwindcss"],
+    techList: ["NextJS", "Tailwindcss", "ReactQuery", "Auth w/ JWT"],
     type: "Exercise",
   },
   {

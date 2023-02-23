@@ -4,17 +4,9 @@ import { DocumentHead } from "@builder.io/qwik-city";
 export default component$(() => {
   return (
     <section class="my-12 px-3 md:mx-auto md:my-32 md:max-w-3xl md:px-28 lg:px-0">
-      <a
-        target="_blank"
-        rel="noreferrer"
-        class="mb-4 inline-block cursor-pointer rounded bg-black px-6 py-2 text-white transition-all hover:bg-gray-900 hover:text-blue-500"
-        href="/Radoje_Jezdic_Resume.pdf"
-      >
-        Resume
-      </a>
       <div class="gap-2">
         <div>
-          <div class="mx-auto mb-6 flex animate-fade-in-right items-center justify-center  overflow-hidden rounded-md md:float-right md:ml-2 md:mb-2 md:max-w-xs">
+          <div class="mx-auto mb-6 flex animate-fade-in-right items-center justify-center  overflow-hidden rounded-md grayscale transition-all md:float-right md:ml-2 md:mb-2 md:max-w-xs md:hover:grayscale-0">
             <img
               width={320}
               height="auto"
@@ -26,16 +18,16 @@ export default component$(() => {
             <div class="mb-12">
               <h2 class="text-2xl">Radoje is a creative Developer.</h2>
               <h3 class="text-base">
-                Hi 👋 I make awesome thinks fror awesome people.
+                Hi 👋 I make awesome things for awesome people.
               </h3>
             </div>
             <p class="clear-left">
-              I am an extremely{" "}
-              <mark class="bg-blue-500 px-1 text-white">curious</mark> and{" "}
+              I am a <mark class="bg-blue-500 px-1 text-white">curious</mark>{" "}
+              and{" "}
               <mark class="bg-blue-500 px-1 text-white">self-motivated</mark>{" "}
-              individual with a huge{" "}
+              individual with a{" "}
               <mark class="bg-blue-500 px-1 text-white">passion</mark> for
-              coding in general. As an autodidact, I take a very positive and{" "}
+              coding. As an autodidact, I take a positive and{" "}
               <mark class="bg-blue-500 px-1 text-white">
                 {" "}
                 ego-free approach

@@ -97,10 +97,19 @@ export default component$(() => {
           {/*     blog */}
           {/*   </Link> */}
           {/* </li> */}
-          <li class="md:hover:text-blue-500">
+          <li class="mr-5 md:hover:text-blue-500">
             <Mouse hash="contact">
               <Link href="/#contact">contact</Link>
             </Mouse>
+          </li>
+          <li class="grid place-items-center rounded border bg-black md:dark:bg-white md:dark:hover:bg-transparent">
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              class="px-3 py-1 text-white hover:text-blue-500 md:dark:text-black md:dark:hover:text-white"
+            >
+              resume
+            </a>
           </li>
         </ul>
       </nav>
