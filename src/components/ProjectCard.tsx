@@ -1,6 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 import { Project } from "../../interfaces/Project.interface";
+import InProgressIndicator from "./InProgressIndicator";
 
 export default component$(({ project }: { project: Project }) => {
   const { title, shortDescription, projectHeroImage, slug, type, unfinished } =
@@ -32,13 +33,7 @@ export default component$(({ project }: { project: Project }) => {
             </svg>
           </div>
         </div>
-        <div
-          class={`border ${
-            unfinished
-              ? "relative overflow-hidden after:absolute after:top-0 after:-right-14 after:h-12 after:w-36 after:rotate-45 after:bg-red-500"
-              : ""
-          }`}
-        >
+        <div>
           <img
             class="aspect-video max-h-full w-full max-w-full object-cover"
             src={projectHeroImage}
@@ -47,9 +42,14 @@ export default component$(({ project }: { project: Project }) => {
         </div>
       </div>
       <div class="flex h-full flex-col">
-        <h3 class="mt-4 text-xl">
-          {title} - <span class="text-sm italic text-gray-500">{type}</span>
-        </h3>
+        <div class="mt-4 flex items-center">
+          <h3 class="text-xl">
+            {title} - <span class="text-sm italic text-gray-500">{type}</span>
+          </h3>
+          <div class="ml-auto">
+            {unfinished ? <InProgressIndicator /> : null}
+          </div>
+        </div>
         <p class="my-4 h-full">{shortDescription}</p>
         <div class="mt-6">
           <Link

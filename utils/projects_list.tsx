@@ -7,7 +7,7 @@ export const Projects = [
     shortDescription:
       "This is the place where you will be able to find the desired linux distribution and learn a lot about it.",
     slug: "distro-hub",
-    unfinished: false,
+    unfinished: true,
     live: "https://distro-hub.radoje.dev",
     code: "https://github.com/Jezda1337/distro-hub",
     projectHeroImage: "/projects_ss/distro-hub.webp",
@@ -39,7 +39,7 @@ export const Projects = [
     slug: "rutann",
     unfinished: false,
     live: "https://rutann.rs",
-    code: "https://gothub.com/Jezda1337/ruta-nn-react",
+    code: "https://github.com/Jezda1337/ruta-nn-react",
     projectHeroImage: "/projects_ss/rutann.rs.webp",
     techList: ["React", "Node", "Express", "SCSS", "Axios"],
     type: "Part-time",
