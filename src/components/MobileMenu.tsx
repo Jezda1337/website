@@ -20,9 +20,9 @@ export default component$(() => {
           <li class="text-xl" onClick$={() => (state.isOpen = !state.isOpen)}>
             <Link href="/projects">projects</Link>
           </li>
-          <li class="text-xl" onClick$={() => (state.isOpen = !state.isOpen)}>
-            <Link href="/blog">blog</Link>
-          </li>
+          {/* <li class="text-xl" onClick$={() => (state.isOpen = !state.isOpen)}> */}
+          {/*   <Link href="/blog">blog</Link> */}
+          {/* </li> */}
           <li class="text-xl" onClick$={() => (state.isOpen = !state.isOpen)}>
             <Mouse hash="contact">
               <Link href="/#contact">contact</Link>
