@@ -8,7 +8,7 @@ import Recommendations from "~/components/Recommendations";
 export default component$(() => {
   return (
     <>
-      <div class="px-3 md:px-28 lg:max-w-3xl lg:mx-auto lg:p-0">
+      <div class="px-3 md:px-28 lg:mx-auto lg:max-w-3xl lg:p-0">
         <Hero />
         <Recommendations />
         <Projects />

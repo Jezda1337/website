@@ -3,14 +3,14 @@ import {
   component$,
   useContextProvider,
   useStore,
-  createContext,
+  createContextId,
   useClientEffect$,
 } from "@builder.io/qwik";
 import Footer from "~/components/Footer";
 import MobileMenu from "~/components/MobileMenu";
 import Header from "../components/header/header";
 
-export const MobileMenuContext = createContext("mobile-context");
+export const MobileMenuContext = createContextId("mobile-context");
 
 export default component$(() => {
   const state = useStore({

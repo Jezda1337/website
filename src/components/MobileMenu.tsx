@@ -5,7 +5,6 @@ import Mouse from "./Mouse";
 
 export default component$(() => {
   const state: any = useContext(MobileMenuContext);
-  console.log(state.isOpen);
   return (
     <>
       <nav
@@ -13,17 +12,17 @@ export default component$(() => {
           state.isOpen ? "translate-x-0" : "max-w-full translate-x-full"
         }`}
       >
-        <ul class="flex flex-col items-center gap-6 pt-14">
-          <li class="text-xl" onClick$={() => (state.isOpen = !state.isOpen)}>
+        <ul class="flex flex-col items-center gap-8 pt-14 text-4xl">
+          <li onClick$={() => (state.isOpen = !state.isOpen)}>
             <Link href="/about">about</Link>
           </li>
-          <li class="text-xl" onClick$={() => (state.isOpen = !state.isOpen)}>
+          <li onClick$={() => (state.isOpen = !state.isOpen)}>
             <Link href="/projects">projects</Link>
           </li>
           {/* <li class="text-xl" onClick$={() => (state.isOpen = !state.isOpen)}> */}
           {/*   <Link href="/blog">blog</Link> */}
           {/* </li> */}
-          <li class="text-xl" onClick$={() => (state.isOpen = !state.isOpen)}>
+          <li onClick$={() => (state.isOpen = !state.isOpen)}>
             <Mouse hash="contact">
               <Link href="/#contact">contact</Link>
             </Mouse>
