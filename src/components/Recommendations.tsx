@@ -1,5 +1,5 @@
-import { component$ } from "@builder.io/qwik"
-import TestemonialCard from "~/components/RecommendationCard"
+import { component$ } from "@builder.io/qwik";
+import TestemonialCard from "~/components/RecommendationCard";
 
 export default component$(() => {
   return (
@@ -9,5 +9,5 @@ export default component$(() => {
         <TestemonialCard />
       </div>
     </section>
-  )
-})
+  );
+});
