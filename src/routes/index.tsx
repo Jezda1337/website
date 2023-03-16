@@ -6,24 +6,24 @@ import Projects from "~/components/Projects";
 import Recommendations from "~/components/Recommendations";
 
 export default component$(() => {
-  return (
-    <>
-      <div class="px-3 md:px-28 lg:mx-auto lg:max-w-3xl lg:p-0">
-        <Hero />
-        <Recommendations />
-        <Projects />
-        <Contact />
-      </div>
-    </>
-  );
+	return (
+		<>
+			<div class="px-3 md:px-28 lg:mx-auto lg:max-w-3xl lg:p-0">
+				<Hero />
+				<Recommendations />
+				<Projects />
+				<Contact />
+			</div>
+		</>
+	);
 });
 
 export const head: DocumentHead = {
-  title: "Developer",
-  meta: [
-    {
-      name: "description",
-      content: "Personal website for developer. Portfolio.",
-    },
-  ],
+	title: "Developer",
+	meta: [
+		{
+			name: "description",
+			content: "Personal website for developer. Portfolio.",
+		},
+	],
 };
