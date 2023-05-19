@@ -1,4 +1,4 @@
-import { component$, useClientEffect$, $ } from "@builder.io/qwik";
+import { $, component$, useVisibleTask$ } from "@builder.io/qwik";
 
 interface Props {
   state: {
@@ -10,7 +10,7 @@ interface Props {
 
 export default component$(({ state }: { state: Props["state"] }) => {
   // this hook need to to be changed
-  useClientEffect$(({ track }) => {
+  useVisibleTask$(({ track }) => {
     track(() => state.isDark);
 
     state.isDark
@@ -45,7 +45,7 @@ export default component$(({ state }: { state: Props["state"] }) => {
         onClick$={handleTheme}
         class={`w-16 flex justify-between rounded relative after:absolute after:w-1/2 after:h-full after:dark:bg-slate-800 after:bg-white after:rounded h-8 items-center px-1 gap-3 shadow-[inset_0_0px_4px_rgba(0,0,0,0.6)]  ${
           state.isDark
-            ? "after:left-1/2 bg-slate-600 after:transition-all"
+            ? "bg-slate-600 after:left-1/2 after:transition-all"
             : "bg-orange-400 after:left-0 after:transition-all"
         }`}
       >

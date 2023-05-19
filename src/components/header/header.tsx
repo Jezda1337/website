@@ -1,9 +1,9 @@
 import {
   component$,
-  useClientEffect$,
   useContext,
   useStore,
   useTask$,
+  useVisibleTask$,
 } from "@builder.io/qwik";
 import { Link, useLocation } from "@builder.io/qwik-city";
 import { MobileMenuContext } from "~/routes/layout";
@@ -18,14 +18,14 @@ export default component$(() => {
   });
   const currentPath = useLocation();
 
-  const menuState: any = useContext(MobileMenuContext);
+  const menuState: any = useContext(MobileMenuContext as any);
 
   useTask$(({ track }) => {
-    track(() => currentPath.pathname);
-    state.isDisabled = currentPath.pathname !== "/" ? true : false;
+    track(() => currentPath.url.pathname);
+    state.isDisabled = currentPath.url.pathname !== "/" ? true : false;
   });
 
-  useClientEffect$(() => {
+  useVisibleTask$(() => {
     if (localStorage.theme) {
       const theme = JSON.parse(localStorage.theme) || "light";
       theme ? (state.theme = theme) : null;
@@ -33,8 +33,8 @@ export default component$(() => {
     }
   });
 
-  useClientEffect$(({ track }) => {
-    track(() => currentPath.pathname);
+  useVisibleTask$(({ track }) => {
+    track(() => currentPath.url.pathname);
   });
 
   return (
@@ -69,7 +69,7 @@ export default component$(() => {
           <li class="mr-3">
             <Link
               class={`${
-                currentPath.pathname === "/about/" ? "text-blue-500" : ""
+                currentPath.url.pathname === "/about/" ? "text-blue-500" : ""
               } md:hover:text-blue-500 `}
               href="/about"
             >
@@ -79,7 +79,7 @@ export default component$(() => {
           <li class="mr-3">
             <Link
               class={`${
-                currentPath.pathname === "/projects/" ? "text-blue-500" : ""
+                currentPath.url.pathname === "/projects/" ? "text-blue-500" : ""
               } md:hover:text-blue-500`}
               href="/projects"
             >

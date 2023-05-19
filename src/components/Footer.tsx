@@ -2,9 +2,9 @@ import { component$ } from "@builder.io/qwik";
 
 export default component$(() => {
   return (
-    <footer class="px-3 mt-5 lg:max-w-3xl lg:mx-auto h-12 md:px-28 lg:px-0">
-      <div class="border-t-2 flex justify-between flex-col md:flex-row items-center w-full pt-6 md:pt-12">
-        <div class="flex items-center flex-col md:flex-row">
+    <footer class="mt-5 h-12 px-3 md:px-28 lg:mx-auto lg:max-w-3xl lg:px-0">
+      <div class="flex w-full flex-col items-center justify-between border-t-2 pt-6 md:flex-row md:pt-12">
+        <div class="flex flex-col items-center md:flex-row">
           <p class="mr-3">Build with</p>
           <div class="flex">
             <a
