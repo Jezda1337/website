@@ -1,7 +1,7 @@
 ---
 import PostCard from "../components/PostCard.astro"
 import SocialLinks from "../components/SocialLinks.astro"
-import MainLayout from "../layouts/MainLayout.astro"
+import Layout from "../layouts/Layout.astro"
 
 // Data Fetching: fetch recent posts
 let allPosts = await Astro.glob("../data/*.md")
@@ -13,7 +13,7 @@ allPosts = allPosts.sort(
 const recentPosts = allPosts.slice(0, 2)
 ---
 
-<MainLayout>
+<Layout>
 	<main class="pt-10">
 		<section class="">
 			<h1>
@@ -45,4 +45,4 @@ const recentPosts = allPosts.slice(0, 2)
 			</div>
 		</section>
 	</main>
-</MainLayout>
+</Layout>

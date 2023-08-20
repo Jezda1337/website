@@ -13,14 +13,18 @@ const currentPath = pathname.slice(1)
 		<ul class="flex gap-4">
 			<li>
 				<a
-					class={currentPath === "posts" ? "underline decoration-wavy underline-offset-8" : "decoration-wavy underline-offset-8 hover:underline"}
+					class={currentPath === "posts"
+						? "underline decoration-wavy underline-offset-8"
+						: "decoration-wavy underline-offset-8 hover:underline"}
 					href="/posts"
 					>posts</a
 				>
 			</li>
 			<li>
 				<a
-					class={currentPath === "work" ? "underline decoration-wavy underline-offset-8" : "decoration-wavy underline-offset-8 hover:underline"}
+					class={currentPath === "work"
+						? "underline decoration-wavy underline-offset-8"
+						: "decoration-wavy underline-offset-8 hover:underline"}
 					href="/work"
 					>work</a
 				>
