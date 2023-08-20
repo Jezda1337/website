@@ -1,15 +1,48 @@
 ---
+import PostCard from "../components/PostCard.astro"
+import SocialLinks from "../components/SocialLinks.astro"
+import MainLayout from "../layouts/MainLayout.astro"
+
+// Data Fetching: fetch recent posts
+let allPosts = await Astro.glob("../data/*.md")
+allPosts = allPosts.sort(
+	(a, b) =>
+		new Date(b.frontmatter.date).valueOf() -
+		new Date(a.frontmatter.date).valueOf(),
+)
+const recentPosts = allPosts.slice(0, 2)
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout>
+	<main class="pt-10">
+		<section class="">
+			<h1>
+				Hello there! My name is Radoje and I am a web developer with a focus on
+				frontend development using modern technologies. I have a passion for
+				creating scalable, efficient, and reliable software solutions and I am
+				always looking for ways to improve my skills and knowladge in this
+				field.
+			</h1>
+			<div class="mb-6">
+				<p class="mb-2 mt-4">Social links:</p>
+				<SocialLinks />
+			</div>
+		</section>
+
+		<section class="border-t py-12">
+			<h2 class="mb-6 text-2xl font-medium">Recent Posts</h2>
+
+			<section class="[&>:where(article:not(:first-child))]:my-6">
+				{recentPosts.map((post) => <PostCard post={post} />)}
+			</section>
+
+			<div class="my-8 flex">
+				<a
+					href="/posts"
+					class="mx-auto decoration-wavy underline-offset-8 hover:underline"
+					>All Posts</a
+				>
+			</div>
+		</section>
+	</main>
+</MainLayout>

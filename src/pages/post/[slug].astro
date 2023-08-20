@@ -1,0 +1,65 @@
+---
+import GoBackBtn from "../../components/GoBackBtn.astro"
+import MainLayout from "../../layouts/MainLayout.astro"
+export async function getStaticPaths() {
+	let allPosts = await Astro.glob("../../data/*.md")
+	let allSortedPosts = allPosts.sort(
+		(a, b) =>
+			new Date(b.frontmatter.date).valueOf() -
+			new Date(a.frontmatter.date).valueOf(),
+	)
+
+	return allSortedPosts.map((post) => {
+		return {
+			params: { slug: post.frontmatter.slug },
+			props: { ...post },
+		}
+	})
+}
+
+function formatDate(date: Date) {
+	return new Intl.DateTimeFormat("en-GB", {
+		dateStyle: "long",
+		timeZone: "Europe/Belgrade",
+	}).format(new Date(date))
+}
+
+// const content = Astro.props;
+const { Content, frontmatter } = Astro.props
+const title = frontmatter.title
+const description = "Astromnl blog post about " + frontmatter.title
+---
+
+<MainLayout>
+	<main class="pt-10">
+		<button
+			onclick="
+			history.back()
+			"
+			class="mb-2 flex items-center gap-4">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="16"
+				height="16"
+				fill="#000000"
+				viewBox="0 0 256 256"
+				><path
+					d="M168.49,199.51a12,12,0,0,1-17,17l-80-80a12,12,0,0,1,0-17l80-80a12,12,0,0,1,17,17L97,128Z"
+				></path></svg
+			>
+			<span>Go Back</span>
+		</button>
+
+		<h1 class="text-2xl font-medium leading-8">{title}</h1>
+		<p>
+			<time
+				class="text-sm text-gray-400"
+				datetime={frontmatter.date}>
+				{formatDate(frontmatter.date)}
+			</time>
+		</p>
+		<article class="mt-8">
+			<Content />
+		</article>
+	</main>
+</MainLayout>

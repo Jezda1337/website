@@ -1,0 +1,40 @@
+---
+import { ViewTransitions } from "astro:transitions"
+import Header from "../components/Header.astro"
+import '@fontsource/dm-mono';
+import '@fontsource/dm-mono/500.css';
+import Footer from "../components/Footer.astro";
+---
+
+<html lang="en">
+	<head>
+		<ViewTransitions />
+
+		<meta charset="utf-8" />
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="/favicon.svg"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width"
+		/>
+		<meta
+			name="generator"
+			content={Astro.generator}
+		/>
+		<meta
+			name="description"
+			content="Put your description here."
+		/>
+		<title>Developer</title>
+	</head>
+	<body class="font-dm-mono">
+		<div class="mx-auto flex min-h-[100dvh] max-w-3xl flex-col px-4">
+			<Header />
+			<slot />
+			<Footer />
+		</div>
+	</body>
+</html>
