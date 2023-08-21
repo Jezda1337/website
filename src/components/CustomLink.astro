@@ -1,0 +1,11 @@
+---
+const { href, link, currentPath, path } = Astro.props
+---
+
+<a
+	href={href}
+	class="[&>:where(span)]:hover:visible">
+	<span class={currentPath === path ? "inline" : "invisible"}>[</span>
+	<span>{link}</span>
+	<span class={currentPath === path ? "inline" : "invisible"}>]</span>
+</a>

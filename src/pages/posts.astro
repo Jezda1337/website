@@ -1,6 +1,6 @@
 ---
-import PostCard from "../components/PostCard.astro";
-import Layout from "../layouts/Layout.astro";
+import PostCard from "../components/PostCard.astro"
+import Layout from "../layouts/Layout.astro"
 const allPosts = await Astro.glob("../data/*.md")
 const allSortedPosts = allPosts.sort(
 	(a, b) =>
@@ -9,12 +9,12 @@ const allSortedPosts = allPosts.sort(
 )
 ---
 
-<Layout>
+<Layout title={"Developer | Posts"}>
 	<main class="py-10">
 		<h1 class="text-2xl font-medium leading-8">Posts</h1>
-		<h3 class="mb-6 italic">All the articles I've posted.</h3>
+		<h2 class="mb-6 italic">All the articles I've posted.</h2>
 		<section class="[&>:where(article:not(:first-child))]:my-6">
-			{allSortedPosts.map(post => <PostCard post={post} />)}
+			{allSortedPosts.map((post) => <PostCard post={post} />)}
 		</section>
 	</main>
 </Layout>

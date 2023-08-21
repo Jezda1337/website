@@ -1,3 +1,4 @@
+/** @type {import("prettier").Config} */
 module.exports = {
 	singleQuote: false,
 	semi: false,
@@ -8,4 +9,13 @@ module.exports = {
 	bracketSameLine: true,
 	insertPragma: false,
 	singleAttributePerLine: true,
+	plugins: ["prettier-plugin-astro"],
+	overrides: [
+		{
+			files: "*.astro",
+			options: {
+				parser: "astro",
+			},
+		},
+	],
 }

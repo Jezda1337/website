@@ -11,12 +11,13 @@ function formatDate(date: Date) {
 ---
 
 <article>
-	<h3 class="text-lg font-medium leading-7 text-blue-600 decoration-wavy underline-offset-8 md:hover:underline">
+	<h3
+		class="text-lg font-medium leading-7 text-blue-600 decoration-wavy underline-offset-4 md:hover:underline">
 		<a href={`/post/${post.frontmatter.slug}`}>{post.frontmatter.title}</a>
 	</h3>
 	<p>
 		<time
-			class="text-sm text-gray-400"
+			class="text-sm text-gray-500"
 			datetime={post.frontmatter.date}>
 			{formatDate(post.frontmatter.date)}
 		</time>
