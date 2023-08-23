@@ -1,9 +1,14 @@
 ---
 const { href, link, currentPath, path } = Astro.props
+function removeTrailingSlash(str: string) {
+  return str.replace(/\/+$/, '');
+}
+
+const canonicalUrl = removeTrailingSlash(new URL(href, Astro.site).toString());
 ---
 
 <a
-	href={href}
+	href={canonicalUrl}
 	class="[&>:where(span)]:hover:visible">
 	<span class={currentPath === path ? "inline" : "invisible"}>[</span>
 	<span>{link}</span>
