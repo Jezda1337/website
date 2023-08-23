@@ -3,11 +3,11 @@ const { name, desc, url, homepageUrl } = Astro.props
 ---
 
 <div>
-	<div class="flex">
+	<div class="flex items-center">
 		<a
 			href={url}
 			target="_blank"
-			class="text-lg text-blue-600 hover:underline decoration-wavy"
+			class="text-lg text-blue-600 decoration-wavy hover:underline"
 			>{name}</a
 		>
 		{
@@ -15,7 +15,7 @@ const { name, desc, url, homepageUrl } = Astro.props
 				<a
 					href={homepageUrl ?? ""}
 					target="_blank"
-					class="ml-auto flex text-xl text-blue-600 hover:underline">
+					class="ml-auto flex items-center text-xl text-blue-600 hover:underline">
 					{/* Live */}
 
 					<svg

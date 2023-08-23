@@ -40,14 +40,16 @@ const { data } = await response.json()
 
 <Layout title={"Developer | Work"}>
 	<main class="pt-10">
-		<div class="mb-6 flex">
+		<div class="mb-6 flex items-center">
 			<h1 class="text-2xl font-medium">Some of my recent work</h1>
 			<a
 				target="_blank"
-				class="ml-auto flex gap-2"
+				class="ml-auto"
 				href="https://github.com/jezda1337/?tab=repositories"
 				class="ml-auto hover:text-blue-500">
-				<span>GitHub</span>
+				<span class="decoration-wavy underline-offset-4 hover:underline"
+					>GitHub</span
+				>
 			</a>
 		</div>
 		<ul class="[&>:where(li:not(:first-child))]:my-6">
@@ -64,13 +66,24 @@ const { data } = await response.json()
 				))
 			}
 		</ul>
-		<div class="my-8 flex">
+		<div class="my-8 flex items-center">
 			<a
 				href="https://github.com/Jezda1337?tab=repositories"
 				target="_blank"
-				class="mx-auto decoration-wavy underline-offset-4 hover:underline"
-				>All Projects</a
-			>
+				class="group mx-auto flex items-center gap-2 decoration-wavy underline-offset-4 hover:underline">
+				<p class="bg-white">All Projects</p>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="16"
+					height="16"
+					class="relative -left-6 -z-10 hidden transition-all group-hover:-left-0 md:block"
+					fill="#000000"
+					viewBox="0 0 256 256"
+					><path
+						d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z"
+					></path></svg
+				>
+			</a>
 		</div>
 	</main>
 </Layout>

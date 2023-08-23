@@ -8,6 +8,7 @@ draft: false
 description: Hello there! My name is Radoje and I am a web developer with a focus on frontend development using modern technologies.
 tags:
   - intro
+pinned: true
 ---
 
 Building amazing digital products is my passion. I love everything about app-building and exploring new technologies. Creating apps that not only work great but also dazzle users with seamless experiences is what I live for. My toolkit includes Angular and React for front-end magic, Node.js and Go for server-side wizardry, and MongoDB and PostgreSQL for data sorcery. And let's not forget Tailwind CSS for that extra flair in design!
