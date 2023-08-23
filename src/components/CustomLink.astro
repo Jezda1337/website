@@ -9,7 +9,3 @@ const { href, link, currentPath, path } = Astro.props
 	<span>{link}</span>
 	<span class={currentPath === path ? "inline" : "invisible"}>]</span>
 </a>
-
-<script define:vars={{currentPath}}>
-	console.log(currentPath)
-</script>
