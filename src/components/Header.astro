@@ -4,6 +4,7 @@ const pathname = new URL(Astro.request.url).pathname
 const currentPath = pathname.slice(1)
 
 const testPath = Astro.url.pathname
+const newTest = testPath.slice(1,testPath.length - 1)
 ---
 
 <header class="border-b py-8">
@@ -24,7 +25,10 @@ const testPath = Astro.url.pathname
 	</nav>
 </header>
 
-<script define:vars={{testPath}}>
+<script define:vars={{testPath, newTest}}>
 	console.log(testPath)
+	console.log("---------")
+	console.log(newTest)
+	console.log("---------")
 </script>
 
