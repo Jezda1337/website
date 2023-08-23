@@ -2,6 +2,8 @@
 import CustomLink from "./CustomLink.astro";
 const pathname = new URL(Astro.request.url).pathname
 const currentPath = pathname.slice(1)
+
+const testPath = Astro.url.pathname
 ---
 
 <header class="border-b py-8">
@@ -21,3 +23,8 @@ const currentPath = pathname.slice(1)
 		</ul>
 	</nav>
 </header>
+
+<script define:vars={{testPath}}>
+	console.log(testPath)
+</script>
+
