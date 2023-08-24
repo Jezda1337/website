@@ -2,7 +2,7 @@
 import CustomLink from "./CustomLink.astro"
 const pathname = new URL(Astro.request.url).pathname
 // pathname.length - 1 coz prod makes slash at the end for no reason
-const currentPath = pathname.slice(1, pathname.length - 1)
+const currentPath = pathname.slice(1)
 ---
 
 <header class="border-b py-8">
