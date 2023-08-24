@@ -16,6 +16,6 @@ export default defineConfig({
     // Example: Switch to use prism for syntax highlighting in Markdown
     syntaxHighlight: "prism"
   },
-  // output: "server",
+  output: "server",
   adapter: cloudflare()
 });
