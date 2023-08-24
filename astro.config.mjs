@@ -17,5 +17,5 @@ export default defineConfig({
     syntaxHighlight: "prism"
   },
   output: "server",
-  adapter: cloudflare()
+  adapter: cloudflare({mode:"directory"})
 });
