@@ -3,7 +3,6 @@ import PostCard from "../components/PostCard.astro"
 import SocialLinks from "../components/SocialLinks.astro"
 import Layout from "../layouts/Layout.astro"
 
-// Data Fetching: fetch recent posts
 let allPosts = await Astro.glob("../data/*.md")
 allPosts = allPosts.sort(
 	(a, b) =>

@@ -1,4 +1,6 @@
 ---
+export const prerender = true // static render
+
 import PostCard from "../components/PostCard.astro"
 import Layout from "../layouts/Layout.astro"
 const allPosts = await Astro.glob("../data/*.md")
