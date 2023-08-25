@@ -1,8 +1,8 @@
-import { defineConfig } from "astro/config";
-import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
+import { defineConfig } from "astro/config"
+import sitemap from "@astrojs/sitemap"
+import tailwind from "@astrojs/tailwind"
 
-// import cloudflare from "@astrojs/cloudflare";
+import cloudflare from "@astrojs/cloudflare"
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,8 +13,8 @@ export default defineConfig({
     viewTransitions: true
   },
   markdown: {
-    // Example: Switch to use prism for syntax highlighting in Markdown
     syntaxHighlight: "prism"
   },
-  // adapter: cloudflare()
-});
+  output: "server",
+  adapter: cloudflare()
+})
