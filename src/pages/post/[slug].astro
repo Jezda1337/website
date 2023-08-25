@@ -33,7 +33,9 @@ const description = "Astromnl blog post about " + frontmatter.title // this is f
 
 <!-- class="relative left-0 -z-10 hidden opacity-100 transition-all group-hover:-left-8 group-hover:opacity-0 md:block" -->
 <Layout title={"Developer | " + title}>
-	<main class="pt-10">
+	<main
+		class="pt-10"
+		transition:name="post">
 		<button
 			onclick="
 			history.back()

@@ -13,7 +13,11 @@ function formatDate(date: Date) {
 	<div class="flex items-center justify-between">
 		<h3
 			class="text-lg font-medium leading-7 text-blue-600 decoration-wavy underline-offset-4 md:hover:underline">
-			<a href={`/post/${post.frontmatter.slug}`}>{post.frontmatter.title}</a>
+			<a
+				transition:name="post"
+				href={`/post/${post.frontmatter.slug}`}
+				>{post.frontmatter.title}</a
+			>
 		</h3>
 		{
 			post.frontmatter.pinned ? (
