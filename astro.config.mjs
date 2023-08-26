@@ -6,7 +6,7 @@ import tailwind from "@astrojs/tailwind"
 
 // https://astro.build/config
 export default defineConfig({
-	trailingSlash: "never",
+	// trailingSlash: "never",
 	site: "https://radoje.dev/",
 	integrations: [tailwind(), sitemap()],
 	experimental: {
