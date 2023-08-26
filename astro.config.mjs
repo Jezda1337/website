@@ -6,8 +6,8 @@ import cloudflare from "@astrojs/cloudflare"
 
 // https://astro.build/config
 export default defineConfig({
-	trailingSlash: "ignore",
-	site: "https://radoje.dev",
+	trailingSlash: "never",
+	site: "https://radoje.dev/",
 	integrations: [tailwind(), sitemap()],
 	experimental: {
 		viewTransitions: true,
