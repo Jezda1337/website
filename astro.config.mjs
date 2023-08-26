@@ -2,7 +2,7 @@ import { defineConfig } from "astro/config"
 import sitemap from "@astrojs/sitemap"
 import tailwind from "@astrojs/tailwind"
 
-// import cloudflare from "@astrojs/cloudflare"
+import cloudflare from "@astrojs/cloudflare"
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,9 +15,9 @@ export default defineConfig({
 	markdown: {
 		syntaxHighlight: "prism",
 	},
-	// output: "static",
-	// adapter: cloudflare(),
-	// build: {
-	// 	format: "file",
-	// },
+	output: "server",
+	adapter: cloudflare(),
+	build: {
+		format: "file",
+	},
 })
