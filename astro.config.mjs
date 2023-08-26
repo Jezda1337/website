@@ -6,7 +6,7 @@ import cloudflare from "@astrojs/cloudflare"
 
 // https://astro.build/config
 export default defineConfig({
-	trailingSlash: "never",
+	trailingSlash: "ignore",
 	site: "https://radoje.dev/",
 	integrations: [tailwind(), sitemap()],
 	experimental: {
@@ -17,4 +17,7 @@ export default defineConfig({
 	},
 	output: "server",
 	adapter: cloudflare(),
+	build: {
+		format: "file",
+	},
 })
