@@ -15,7 +15,7 @@ export default defineConfig({
 	markdown: {
 		syntaxHighlight: "prism",
 	},
-	output: "static",
+	// output: "static",
 	// adapter: cloudflare(),
 	// build: {
 	// 	format: "file",
