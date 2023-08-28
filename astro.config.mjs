@@ -18,11 +18,11 @@ export default defineConfig({
 	output: "server",
 	adapter: cloudflare(),
 	build: {
-		format: "file",
+		format: "directory",
 	},
 	server: {
 		headers: {
-			"Cache-Control": "public, max-age=60*60, immutable",
+			"Cache-Control": "public, max-age=86400, immutable",
 		},
 	},
 })
