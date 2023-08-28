@@ -20,4 +20,9 @@ export default defineConfig({
 	build: {
 		format: "file",
 	},
+	server: {
+		headers: {
+			"Cache-Control": "public, max-age=60*60, immutable",
+		},
+	},
 })
