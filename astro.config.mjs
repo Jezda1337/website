@@ -18,7 +18,7 @@ export default defineConfig({
 	output: "server",
 	adapter: cloudflare(),
 	build: {
-		format: "directory",
+		format: "file",
 	},
 	server: {
 		headers: {
