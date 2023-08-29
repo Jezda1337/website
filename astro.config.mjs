@@ -2,7 +2,7 @@ import { defineConfig } from "astro/config"
 import sitemap from "@astrojs/sitemap"
 import tailwind from "@astrojs/tailwind"
 
-import cloudflare from "@astrojs/cloudflare"
+// import cloudflare from "@astrojs/cloudflare"
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,14 +15,14 @@ export default defineConfig({
 	markdown: {
 		syntaxHighlight: "prism",
 	},
-	output: "server",
-	adapter: cloudflare(),
-	build: {
-		format: "file",
-	},
-	server: {
-		headers: {
-			"Cache-Control": "public, max-age=86400, immutable",
-		},
-	},
+	// output: "server",
+	// adapter: cloudflare(),
+	// build: {
+	// 	format: "file",
+	// },
+	// server: {
+	// 	headers: {
+	// 		"Cache-Control": "public, max-age=86400, immutable",
+	// 	},
+	// },
 })
