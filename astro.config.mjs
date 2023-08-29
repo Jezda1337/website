@@ -6,8 +6,8 @@ import tailwind from "@astrojs/tailwind"
 
 // https://astro.build/config
 export default defineConfig({
-	trailingSlash: "never",
-	site: "https://radoje.dev/",
+	// trailingSlash: "never",
+	site: "https://radoje.dev",
 	integrations: [tailwind(), sitemap()],
 	experimental: {
 		viewTransitions: true,
