@@ -15,11 +15,11 @@ export default defineConfig({
 	markdown: {
 		syntaxHighlight: "prism",
 	},
+	build: {
+		format: "file",
+	},
 	// output: "server",
 	// adapter: cloudflare(),
-	// build: {
-	// 	format: "file",
-	// },
 	// server: {
 	// 	headers: {
 	// 		"Cache-Control": "public, max-age=86400, immutable",
