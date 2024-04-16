@@ -4,12 +4,12 @@ import tailwind from "@astrojs/tailwind"
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://radoje.dev",
-  integrations: [tailwind(), sitemap()],
-  markdown: {
-    syntaxHighlight: "prism",
-  },
-  build: {
-    format: "file",
-  },
+	site: "https://radoje.dev",
+	integrations: [tailwind(), sitemap()],
+	markdown: {
+		syntaxHighlight: "prism",
+	},
+	build: {
+		format: "file",
+	},
 })
