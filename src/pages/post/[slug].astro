@@ -26,13 +26,14 @@ function formatDate(date: Date) {
 // const content = Astro.props;
 const { Content, frontmatter } = Astro.props
 const title = frontmatter.title
+const postSlug = frontmatter.slug
 const description = "Astromnl blog post about " + frontmatter.title // this is for meta description
 ---
 
 <Layout title={"Developer | " + title}>
 	<main
 		class="pt-10"
-		transition:name="post">
+		transition:name={postSlug}>
 		<button
 			onclick="
 			history.back()
@@ -71,8 +72,41 @@ const description = "Astromnl blog post about " + frontmatter.title // this is f
 				{formatDate(frontmatter.date)}
 			</time>
 		</p>
-		<article class="mt-8 [&>:where(p:not(:first-child))]:py-5">
+		<article class="content mt-8">
 			<Content />
 		</article>
 	</main>
 </Layout>
+
+<style>
+	.content {
+		ul,
+		ol {
+			list-style: initial;
+			padding-left: 1.5rem;
+		}
+
+		& a {
+			@apply text-blue-600 underline decoration-wavy underline-offset-4 md:hover:underline;
+		}
+
+		& p:not(:first-child) {
+			/*@apply py-5;*/
+			@apply pt-3 pb-2;
+		}
+
+		& h1 {
+			@apply text-2xl font-medium;
+		}
+
+		& pre {
+			@apply text-sm;
+		}
+
+		.note {
+			background: #e1f6ff;
+			padding: 8px;
+			border-radius: 4px;
+		}
+	}
+</style>

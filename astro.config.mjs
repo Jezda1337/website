@@ -7,7 +7,13 @@ export default defineConfig({
 	site: "https://radoje.dev",
 	integrations: [tailwind(), sitemap()],
 	markdown: {
-		syntaxHighlight: "prism",
+		syntaxHighlight: "shiki",
+		shikiConfig: {
+			themes: {
+				light: "min-light",
+				dark: "kanagawa-wave",
+			},
+		},
 	},
 	build: {
 		format: "file",
