@@ -14,6 +14,9 @@ importers:
       '@astrojs/tailwind':
         specifier: 5.1.0
         version: 5.1.0(astro@4.16.16(rollup@4.27.4)(typescript@5.7.2))(tailwindcss@3.4.15)
+      '@fontsource-variable/martian-mono':
+        specifier: ^5.1.0
+        version: 5.1.0
       '@fontsource/dm-mono':
         specifier: ^5.1.0
         version: 5.1.0
@@ -299,6 +302,9 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [win32]
+
+  '@fontsource-variable/martian-mono@5.1.0':
+    resolution: {integrity: sha512-x/Zte0MVd5c0BsNWIKRaI9vKYHTZR7t5iTZ41I8il4nZKL2chc7DeFESIl1IKfD8b8A3Y9lwNvyjOrs8GiHSnw==}
 
   '@fontsource/dm-mono@5.1.0':
     resolution: {integrity: sha512-cfowZUJJDHjgVFOEQmIn2KHtQ8LDXnTGgTTunUImzzg3Xf6V92MlYR/pmkqIt7lXq7lfP/pQZ9ph/9JeLDRsCQ==}
@@ -2150,6 +2156,8 @@ snapshots:
 
   '@esbuild/win32-x64@0.21.5':
     optional: true
+
+  '@fontsource-variable/martian-mono@5.1.0': {}
 
   '@fontsource/dm-mono@5.1.0': {}
 

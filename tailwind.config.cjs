@@ -8,23 +8,55 @@ module.exports = {
 			fontFamily: {
 				"dm-mono": ["DM Mono", "Inter", ...defaultTheme.fontFamily.sans],
 			},
-			keyframes: {
-				"slide-right": {
-					"0%": { transform: "translateX(0px)", opacity: 1 },
-					"50%": { transform: "translateX(-20px)", opacity: 0 },
-					"60%": { transform: "translateX(10px)", opacity: 0 },
-					"100%": { transform: "translateX(0px)", opacity: 1 },
-				},
-				"slide-left": {
-					"0%": { transform: "translateX(0px)", opacity: 1 },
-					"50%": { transform: "translateX(20px)", opacity: 0 },
-					"60%": { transform: "translateX(-10px)", opacity: 0 },
-					"100%": { transform: "translateX(0px)", opacity: 1 },
-				},
+		},
+		colors: {
+			base: {
+				black: "#100F0F",
+				950: "#1C1B1A",
+				900: "#282726",
+				850: "#343331",
+				800: "#403E3C",
+				700: "#575653",
+				600: "#6F6E69",
+				500: "#878580",
+				300: "#B7B5AC",
+				200: "#CECDC3",
+				150: "#DAD8CE",
+				100: "#E6E4D9",
+				50: "#F2F0E5",
+				paper: "#FFFCF0",
 			},
-			animation: {
-				"slide-right": "slide-right .5s ease-in-out",
-				"slide-left": "slide-left .5s ease-in-out",
+			red: {
+				DEFAULT: "#AF3029",
+				light: "#D14D41",
+			},
+			orange: {
+				DEFAULT: "#BC5215",
+				light: "#DA702C",
+			},
+			yellow: {
+				DEFAULT: "#AD8301",
+				light: "#D0A215",
+			},
+			green: {
+				DEFAULT: "#66800B",
+				light: "#879A39",
+			},
+			cyan: {
+				DEFAULT: "#24837B",
+				light: "#3AA99F",
+			},
+			blue: {
+				DEFAULT: "#205EA6",
+				light: "#4385BE",
+			},
+			purple: {
+				DEFAULT: "#5E409D",
+				light: "#8B7EC8",
+			},
+			magenta: {
+				DEFAULT: "#A02F6F",
+				light: "#CE5D97",
 			},
 		},
 	},
