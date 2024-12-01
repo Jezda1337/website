@@ -1,17 +1,12 @@
 ---
 import { ViewTransitions } from "astro:transitions"
-import MetaData from "../components/MetaData.astro"
-import Header from "../components/Header.astro"
-import "@fontsource/dm-mono"
-import "@fontsource/dm-mono/500.css"
-import Footer from "../components/Footer.astro"
+import MetaTags from "../components/MetaTags.astro"
+import "@fontsource-variable/martian-mono"
 const { title } = Astro.props
 ---
 
 <html lang="en">
 	<head>
-		<ViewTransitions />
-		<MetaData />
 		<meta charset="utf-8" />
 		<link
 			rel="icon"
@@ -26,17 +21,74 @@ const { title } = Astro.props
 			name="generator"
 			content={Astro.generator}
 		/>
-		<meta
-			name="description"
-			content="Put your description here."
-		/>
+		<ViewTransitions />
+		<MetaTags />
 		<title>{title}</title>
+		<style>
+			body {
+				font-family: "Martian Mono Variable", monospace;
+			}
+		</style>
 	</head>
-	<body class="bg-white font-dm-mono dark:bg-black dark:text-white">
+	<body class="bg-base-paper text-base-black">
 		<div class="mx-auto flex min-h-[100dvh] max-w-3xl flex-col px-4">
-			<Header />
 			<slot />
-			<Footer />
 		</div>
+		<script>
+			document.addEventListener("astro:page-load", () => {
+				const initTabs = () => {
+					const tabs: HTMLInputElement[] = Array.from(
+						document.querySelectorAll("input[type='radio']"),
+					)
+
+					// Set initial state based on URL
+					const urlParams = new URLSearchParams(window.location.search)
+					const activeTab = urlParams.get("tab")
+					if (activeTab) {
+						tabs.forEach((input) => {
+							input.checked = input.id === activeTab
+						})
+					}
+
+					// Handle tab clicks
+					tabs.forEach((input) => {
+						input.addEventListener("click", () => {
+							const url = new URL(String(window.location))
+							url.searchParams.set("tab", input.id)
+							history.pushState({ tab: input.id }, "", url)
+						})
+					})
+				}
+
+				// Initialize on first load
+				initTabs()
+
+				// Handle browser back/forward
+				window.addEventListener("popstate", (e) => {
+					if (e.state && e.state.tab) {
+						const tabs: HTMLInputElement[] = Array.from(
+							document.querySelectorAll("input[type='radio']"),
+						)
+						tabs.forEach((input) => {
+							input.checked = e.state.tab === input.id
+						})
+					}
+				})
+			})
+
+			// Reinitialize on view transitions (optional but recommended)
+			document.addEventListener("astro:after-swap", () => {
+				const urlParams = new URLSearchParams(window.location.search)
+				const activeTab = urlParams.get("tab")
+				if (activeTab) {
+					const tabs: HTMLInputElement[] = Array.from(
+						document.querySelectorAll("input[type='radio']"),
+					)
+					tabs.forEach((input) => {
+						input.checked = input.id === activeTab
+					})
+				}
+			})
+		</script>
 	</body>
 </html>

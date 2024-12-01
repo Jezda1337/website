@@ -1,0 +1,54 @@
+---
+import work_data from "../data/work.json"
+import WorkCard from "../components/WorkCard.astro"
+import PostCard from "../components/PostCard.astro"
+
+const posts = await Astro.glob("../data/*.md")
+const sortedPosts = posts.sort(
+	(a, b) =>
+		new Date(b.frontmatter.date).valueOf() -
+		new Date(a.frontmatter.date).valueOf(),
+)
+---
+
+<article class="mt-6">
+	<section class="text-base-black relative">
+		<input
+			hidden
+			type="radio"
+			id="work"
+			name="tabs"
+			class="peer/work"
+			checked
+		/>
+		<label
+			class="transition duration-300 peer-checked/work:text-base-paper hover:bg-gradient-to-r from-green-light/40 text-sm leading-[1.8] rounded float-left block h-10 w-1/2 cursor-pointer py-2 text-center"
+			for="work"
+			>Work</label
+		>
+		<input
+			hidden
+			type="radio"
+			id="posts"
+			name="tabs"
+			class="peer/posts"
+		/>
+		<label
+			class="transition duration-300 peer-checked/posts:text-base-paper hover:bg-gradient-to-l from-green-light/40 text-sm leading-[1.8] rounded float-left block h-10 w-1/2 cursor-pointer py-2 text-center"
+			for="posts"
+			>Posts</label
+		>
+		<div
+			class="bg-green-light peer border-2 border-green absolute top-0 -z-10 h-10 w-[calc(100%/2)] rounded transition duration-150 peer-checked/posts:translate-x-full peer-checked/work:translate-x-0">
+		</div>
+
+		<section
+			class="after:bg-green-light relative hidden w-full flex-col space-y-9 after:absolute after:left-[23px] after:top-8 after:-z-[1] after:h-3/4 after:w-[2px] peer-checked/work:flex pt-6 mb-16">
+			{work_data.map((work) => <WorkCard {work} />)}
+		</section>
+		<section
+			class="hidden peer-checked/posts:flex flex-col w-full space-y-16 pt-6 mb-16">
+			{sortedPosts.map((post) => <PostCard {post} />)}
+		</section>
+	</section>
+</article>

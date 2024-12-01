@@ -1,0 +1,25 @@
+---
+const props = Astro.props
+---
+
+{
+	props.type === "a" ? (
+		<a
+			class:list={[
+				"flex px-4 py-1 text-center mr-4 bg-green-light text-base-paper rounded gap-2 border border-green text-sm items-center hover:bg-green transition",
+				props.class,
+			]}
+			{...props}>
+			<slot />
+		</a>
+	) : (
+		<button
+			class:list={[
+				"flex px-4 py-1 text-center mr-4 bg-green-light text-base-paper rounded gap-2 border border-green text-sm items-center hover:bg-green transition",
+				props.class,
+			]}
+			{...props}>
+			<slot />
+		</button>
+	)
+}

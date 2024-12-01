@@ -1,6 +1,5 @@
 ---
 const { post } = Astro.props
-
 function formatDate(date: Date) {
 	return new Intl.DateTimeFormat("en-GB", {
 		dateStyle: "long",
@@ -10,40 +9,7 @@ function formatDate(date: Date) {
 ---
 
 <article>
-	<div class="flex items-center justify-between">
-		<h3
-			class="text-lg font-medium leading-7 text-blue-600 decoration-wavy underline-offset-4 md:hover:underline">
-			<a
-				transition:name={post.frontmatter.slug}
-				href={`/post/${post.frontmatter.slug}`}
-				>{post.frontmatter.title}</a
-			>
-		</h3>
-		{
-			post.frontmatter.pinned ? (
-				<>
-					<hr class="mx-4 flex-1" />
-					<div
-						title="Pinned Post"
-						class="group relative">
-						<span class="pointer-events-none absolute -left-full -top-4 w-max -translate-x-1/2 rounded px-4 opacity-0 transition-all group-hover:-top-6 group-hover:opacity-100 md:left-1/2">
-							Pinned Post
-						</span>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="20"
-							height="20"
-							fill="#000000"
-							class="dark:fill-white"
-							viewBox="0 0 256 256">
-							<path d="M255,195.13l-64-144A12,12,0,0,0,180,44H76a12,12,0,0,0-10.85,6.9,2.42,2.42,0,0,0-.12.23L65,51.3a.08.08,0,0,0,0,0L1,195.13A12,12,0,0,0,12,212H244a12,12,0,0,0,11-16.87ZM64,112.55V188H30.46ZM88,188V112.55L121.54,188Zm59.8,0L94.47,68H172.2l53.34,120Z" />
-						</svg>{" "}
-					</div>
-				</>
-			) : null
-		}
-	</div>
-	<p class="flex items-center gap-2">
+	<span class="flex items-center gap-2">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			width="14"
@@ -56,12 +22,22 @@ function formatDate(date: Date) {
 			></path></svg
 		>
 		<time
-			class="text-sm text-gray-400"
+			class="text-[12px]"
 			datetime={post.frontmatter.date}>
 			{formatDate(post.frontmatter.date)}
 		</time>
-	</p>
-	<div class="meta-information">
+	</span>
+	<div class="flex w-full items-center justify-between">
+		<h3
+			class="text-lg font-medium leading-7 decoration-wavy underline-offset-4 md:hover:underline">
+			<a
+				transition:name={post.frontmatter.slug}
+				href={`/post/${post.frontmatter.slug}`}
+				>{post.frontmatter.title}</a
+			>
+		</h3>
+	</div>
+	<div class="meta-information mt-1 text-[12px]">
 		<p>
 			{post.frontmatter.description}
 		</p>

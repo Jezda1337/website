@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets"
+const props = Astro.props
+---
+
+<article class="flex gap-4">
+	<a
+		class="min-w-12 h-12 w-12 p-1 bg-base-paper border-2 border-green rounded-full"
+		target="_blank"
+		href={props.work.url}>
+		<Image
+			width="48"
+			height="48"
+			src={props.work.logo}
+			alt="A logo of a compty"
+			class="w-full h-full"
+		/>
+	</a>
+	<div class="flex flex-col">
+		<span class="text-base-500 text-[12px]"
+			>{props.work.start_date} - {props.work.end_date}</span
+		>
+		<h3 class="font-medium text-lg mb-2">{props.work.job_title}</h3>
+		<ul class="list-disc pl-6 text-[12px]">
+			{props.work.details.map((point: string) => <li>{point}</li>)}
+		</ul>
+	</div>
+</article>

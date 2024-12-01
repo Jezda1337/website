@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro"
-export async function getStaticPaths() {
+export async function getStaticPaths(): Promise<Record<string, any>[]> {
 	let allPosts = await Astro.glob("../../data/*.md")
 	let allSortedPosts = allPosts.sort(
 		(a, b) =>
@@ -23,7 +23,6 @@ function formatDate(date: Date) {
 	}).format(new Date(date))
 }
 
-// const content = Astro.props;
 const { Content, frontmatter } = Astro.props
 const title = frontmatter.title
 const postSlug = frontmatter.slug
@@ -54,25 +53,28 @@ const description = "Astromnl blog post about " + frontmatter.title // this is f
 		</button>
 
 		<h1 class="text-2xl font-medium leading-8">{title}</h1>
-		<p class="flex items-center gap-2">
+		<p class="flex items-center gap-2 text-base-500 text-[12px]">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="14"
 				height="14"
-				class="fill-gray-400"
-				viewBox="0 0 256 256"
+				class="fill-base-500"
+				viewBox="
+				0
+				0
+				256
+				256"
 				><path
 					d="M208,28H188V24a12,12,0,0,0-24,0v4H92V24a12,12,0,0,0-24,0v4H48A20,20,0,0,0,28,48V208a20,20,0,0,0,20,20H208a20,20,0,0,0,20-20V48A20,20,0,0,0,208,28ZM68,52a12,12,0,0,0,24,0h72a12,12,0,0,0,24,0h16V76H52V52ZM52,204V100H204V204Zm60-80v56a12,12,0,0,1-24,0V143.32a12,12,0,0,1-9.37-22l16-8A12,12,0,0,1,112,124Zm61.49,33.88L163.9,168H168a12,12,0,0,1,0,24H136a12,12,0,0,1-8.71-20.25L155.45,142a4,4,0,0,0,.55-2,4,4,0,0,0-7.47-2,12,12,0,0,1-20.78-12A28,28,0,0,1,180,140a27.77,27.77,0,0,1-5.64,16.86A10.63,10.63,0,0,1,173.49,157.88Z"
 				></path></svg
 			>
 
-			<time
-				class="text-sm text-gray-400"
-				datetime={frontmatter.date}>
+			<time datetime={frontmatter.date}>
 				{formatDate(frontmatter.date)}
 			</time>
 		</p>
-		<article class="content mt-8">
+		<article class="content
+				mt-8">
 			<Content />
 		</article>
 	</main>
@@ -80,23 +82,26 @@ const description = "Astromnl blog post about " + frontmatter.title // this is f
 
 <style>
 	.content {
+		* {
+			font-size: 14px;
+		}
 		ul,
 		ol {
 			list-style: initial;
 			padding-left: 1.5rem;
+			font-weight: 300;
 		}
 
 		& a {
-			@apply text-blue-600 underline decoration-wavy underline-offset-4 md:hover:underline;
+			@apply underline decoration-wavy underline-offset-4 md:hover:underline;
 		}
 
 		& p:not(:first-child) {
-			/*@apply py-5;*/
-			@apply pt-3 pb-2;
+			@apply pt-3 pb-2 font-light;
 		}
 
 		& h1 {
-			@apply text-2xl font-medium;
+			@apply text-xl font-medium mt-8;
 		}
 
 		& pre {
@@ -104,9 +109,14 @@ const description = "Astromnl blog post about " + frontmatter.title // this is f
 		}
 
 		.note {
-			background: #e1f6ff;
+			background: #879a39a8;
 			padding: 8px;
 			border-radius: 4px;
+			border: #66800b 4px solid;
+
+			h1 {
+				margin-top: 0;
+			}
 		}
 	}
 </style>

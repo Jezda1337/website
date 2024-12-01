@@ -1,0 +1,48 @@
+[
+	{
+		"id": 3,
+		"job_title": "Frontend Developer",
+		"logo": "/src/assets/logos/sylva_ac.svg",
+		"url": "https://stylva.ac",
+		"start_date": "Oct 2023",
+		"type": "fulltime",
+		"end_date": "Present",
+		"details": [
+			"Resolved issues to improve system stability and performance.",
+			"Contributed to maintaining and improving key projects, ensuring reliability and efciency.",
+			"Identied and addressed bottlenecks to optimize application functionality."
+		]
+	},
+	{
+		"id": 2,
+		"job_title": "Frontend Developer",
+		"logo": "/src/assets/logos/single_earth.svg",
+		"url": "https://single.earth",
+		"type": "fulltime",
+		"start_date": "Dec 2021",
+		"end_date": "Dec 2022",
+		"details": [
+			"Developed and maintained client-side code to ensure functionality and improve user experience.",
+			"Converted Figma designs into Angular interfaces with attention to detail.",
+			"Optimized front-end performance and accessibility, following industry standards.",
+			"Managed form creation for KYC projects, improving data collection and processing.",
+			"Wrote 300+ unit tests with Jest to improve code reliability.",
+			"Participated in Agile CI/CD processes to support sprints and deployments."
+		]
+	},
+	{
+		"id": 1,
+		"job_title": "Fullstack Developer",
+		"logo": "/src/assets/logos/ruta_nn.svg",
+		"url": "https://rutann.rs",
+		"start_date": "Jun 2021",
+		"type": "parttime",
+		"end_date": "Present (part-time)",
+		"details": [
+			"Maintained and updated website content to ensure accuracy and relevance for a local delivery",
+			"service.",
+			"Managed packages and dependencies on Linux for optimized system operation.",
+			"Conducted regular maintenance and performance tuning for server environments."
+		]
+	}
+]

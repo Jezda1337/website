@@ -1,65 +1,48 @@
 ---
-import PostCard from "../components/PostCard.astro"
-import SocialLinks from "../components/SocialLinks.astro"
+import { Image } from "astro:assets"
 import Layout from "../layouts/Layout.astro"
-
-let allPosts = await Astro.glob("../data/*.md")
-allPosts = allPosts.sort(
-	(a, b) =>
-		new Date(b.frontmatter.date).valueOf() -
-		new Date(a.frontmatter.date).valueOf(),
-)
+import Button from "../components/Button.astro"
+import file_down_icon from "../assets/icons/file-down.svg"
+import Tabs from "../components/Tabs.astro"
+import SocialsLinks from "../components/SocialsLinks.astro"
+import Resume from "../assets/Resume.pdf"
 ---
 
-<Layout title="Developer">
-	<main class="pt-10">
-		<section>
-			<h1>
-				Hello there! My name is Radoje and I am a web developer with a focus on
-				frontend development using modern technologies. I have a passion for
-				creating scalable, efficient, and reliable software solutions and I am
-				always looking for ways to improve my skills and knowledge in this
-				field.
+<Layout title="Hello World.">
+	<section>
+		<header class="flex flex-col justify-between mt-14 sm:flex-row">
+			<h1 class="text-2xl font-medium">
+				Hello World<span class="text-blue">.</span>
 			</h1>
-			<div class="mb-6">
-				<p class="mb-2 mt-4">Social links:</p>
-				<SocialLinks />
+			<div class="flex items-center gap-3">
+				<Button
+					target="_blank"
+					type="a"
+					href={Resume}
+					download="resume">
+					<span>Resume</span>
+					<Image
+						src={file_down_icon}
+						alt="Download resume icon"
+					/>
+				</Button>
+				<SocialsLinks />
 			</div>
-		</section>
-
-		<section class="border-t py-12">
-			<h2 class="mb-6 text-2xl font-medium">Recent Posts</h2>
-
-			<section class="[&>:where(article:not(:first-child))]:my-6">
-				{
-					allPosts
-						.sort((a, b) => {
-							const aPinned = a.frontmatter.pinned ? 1 : 0
-							const bPinned = b.frontmatter.pinned ? 1 : 0
-							return bPinned - aPinned
-						})
-						.map((post) => <PostCard post={post} />)
-				}
-			</section>
-
-			<div class="my-8 flex items-center">
-				<a
-					href="/posts"
-					class="group mx-auto flex items-center gap-2 decoration-wavy underline-offset-4 hover:underline">
-					<p class="bg-white dark:bg-black">All Posts</p>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="16"
-						height="16"
-						class="relative -left-6 -z-10 hidden transition-all group-hover:-left-0 group-hover:animate-slide-left dark:fill-white md:block"
-						fill="#000000"
-						viewBox="0 0 256 256"
-						><path
-							d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z"
-						></path></svg
-					>
-				</a>
-			</div>
-		</section>
-	</main>
+		</header>
+		<h2 class="font-normal my-6 text-sm">
+			27-year-old JavaScript developer from Serbia 🇷🇸. I like developing
+			full-stack and drinking instant coffee. <a
+				target="_blank"
+				href="ceda"
+				aria-label="My sassy feline overlord."
+				class="text-red-light underline decoration-4 hover:text-red peer/ceda"
+				>Чеда</a
+			>, my sassy feline overlord, reviews all my code and says <span
+				class="text-purple font-medium"
+				>“seriously, how hard is it to style a button?”</span
+			> Oh, and I contribute to open-source projects from time to time, and I really
+			enjoy doing that.
+		</h2>
+	</section>
+	<Tabs />
 </Layout>
