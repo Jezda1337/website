@@ -29,10 +29,6 @@ const { title } = Astro.props
 			rel="manifest"
 			href="/site.webmanifest"
 		/>
-		<script
-			defer
-			src="/chat-bot.js"
-		></script>
 		<meta
 			name="viewport"
 			content="width=device-width"
@@ -41,7 +37,7 @@ const { title } = Astro.props
 			name="generator"
 			content={Astro.generator}
 		/>
-		<!-- <ViewTransitions /> -->
+		<ViewTransitions />
 		<MetaTags />
 		<title>{title}</title>
 		<style>
