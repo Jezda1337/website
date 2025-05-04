@@ -2,11 +2,28 @@
 	{
 		"id": 3,
 		"job_title": "Frontend Developer",
+		"logo": "/src/assets/logos/luccid_ai.png",
+		"url": "https://luccid.ai",
+		"start_date": "Feb 2025",
+		"type": "fulltime",
+		"end_date": "Present",
+    "details": [
+      "Developed and maintained the frontend for multiple projects as a solo JavaScript developer, ensuring high-quality user experiences and responsive designs.",
+      "Designed and implemented two interactive dashboards: one for client use, providing insights and analytics, and another for internal operations, enhancing team productivity and collaboration.",
+      "Created a customizable chatbot SDK that can be seamlessly embedded into client applications and websites, improving user engagement and support capabilities.",
+      "Collaborated with cross-functional teams to gather requirements and deliver solutions that meet client needs and align with business objectives.",
+      "Utilized modern JavaScript frameworks and libraries to enhance application performance and maintainability.",
+      "Conducted user testing and gathered feedback to iterate on designs and improve functionality, resulting in increased user satisfaction."
+    ]
+	},
+	{
+		"id": 3,
+		"job_title": "Frontend Developer",
 		"logo": "/src/assets/logos/sylva_ac.svg",
 		"url": "https://sylva.ac",
 		"start_date": "Oct 2023",
 		"type": "fulltime",
-		"end_date": "Present",
+		"end_date": "Jan 2025",
 		"details": [
 			"Resolved issues to improve system stability and performance.",
 			"Contributed to maintaining and improving key projects, ensuring reliability and efciency.",

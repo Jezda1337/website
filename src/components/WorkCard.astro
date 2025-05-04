@@ -16,7 +16,7 @@ interface Props {
 const { work } = Astro.props
 // dynamic import images
 const images = import.meta.glob<{ default: ImageMetadata }>(
-	"/src/assets/logos/*.svg",
+  "/src/assets/logos/*[.svg,.png]",
 )
 ---
 
