@@ -5,18 +5,31 @@ import TechStack from "../data/tech_stack.json"
 ---
 
 <Layout title="index">
-  <h1 class="text-3xl mb-8">hi, i'm radoje 👋</h1>
-  <article class="flex flex-col gap-4">
-    <p>Hi, I’m Radoje Jezdic — a Full Stack Developer based in Serbia 🇷🇸.</p>
-    <p>I build fast, reliable, and scalable web applications with a focus on clean code, solid architecture, and user-centered performance.</p>
-    <p>Whether it’s building from scratch or improving an existing product, I focus on clean code, solid architecture, and user-centered performance.</p>
-    <p>You can explore some of my recent work on the <a class="underline text-blue-500" href="/work">Works</a> page.</p>
-    <p>I’m always open to new opportunities, collaborations, and solving meaningful problems — feel free to get in touch!</p>
-  </article>
+	<h1 class="text-3xl mb-8">hi, i'm radoje 👋</h1>
+	<article class="flex flex-col gap-4">
+		<p>Hi, I’m Radoje Jezdic — a Full Stack Developer based in Serbia 🇷🇸.</p>
+		<p>
+			I build fast, reliable, and scalable web applications with a focus on
+			clean code, solid architecture, and user-centered performance.
+		</p>
+		<p>
+			Whether it’s building from scratch or improving an existing product, I
+			focus on clean code, solid architecture, and user-centered performance.
+		</p>
+		<p>
+			You can explore some of my recent work on the <a
+				class="underline text-blue-500"
+				href="/work"
+				>Works</a
+			> page.
+		</p>
+		<p>
+			I’m always open to new opportunities, collaborations, and solving
+			meaningful problems — feel free to get in touch!
+		</p>
+	</article>
 
-  <article class="flex items-center gap-3 mt-8">
-    {TechStack.map(ts => (
-      <Tag {...ts} />
-      ))}
-  </article>
+	<article class="flex items-center gap-3 mt-8">
+		{TechStack.map((ts) => <Tag {...ts} />)}
+	</article>
 </Layout>
