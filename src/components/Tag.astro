@@ -7,7 +7,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>("/src/assets/*.svg")
 ---
 
 <div
-	class="flex items-center gap-[4px] p-[4px] border rounded max-w-max bg-[#282828]">
+	class="flex items-center gap-[4px] p-[6px] border rounded max-w-max bg-[#282828]">
 	<Image
 		src={images[props.image.src]()}
 		alt={props.image.alt}
