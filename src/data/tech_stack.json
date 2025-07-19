@@ -1,0 +1,22 @@
+[
+	{
+		"id": 1,
+		"name": "React",
+		"image": {
+			"src": "/src/assets/react.svg",
+			"alt": "react logo",
+			"width": 18,
+			"height": 18
+		}
+	},
+	{
+		"id": 2,
+		"name": "Vue",
+		"image": {
+			"src": "/src/assets/vue.svg",
+			"alt": "vue logo",
+			"width": 18,
+			"height": 18
+		}
+	}
+]
