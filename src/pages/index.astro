@@ -2,10 +2,7 @@
 import Layout from "../layouts/Layout.astro"
 import Tag from "../components/Tag.astro"
 import TechStack from "../data/tech_stack.json"
-import { Image } from "astro:assets"
-
-import gh from "/src/assets/github.svg"
-import lin from "/src/assets/linkedin.svg"
+import Footer from "../components/Footer.astro"
 ---
 
 <Layout title="index">
@@ -47,35 +44,5 @@ import lin from "/src/assets/linkedin.svg"
 		{TechStack.map((ts) => <Tag {...ts} />)}
 	</article>
 
-	<footer class="flex items-center justify-between mt-12 flex-wrap gap-4">
-		<p>© 2025 Radoje Jezdic. All rights reserved.</p>
-		<ul class="flex items-center gap-4 flex-wrap text-neutral-300">
-			<li>
-				<a
-					href="https://github.com/Jezda1337"
-					rel="noopener noreferrer"
-					target="_blank"
-					class="flex items-center gap-2 hover:text-neutral-100 transition-all">
-					<Image
-						src={gh}
-						alt="GitHub logo"
-					/>
-					<span>github</span>
-				</a>
-			</li>
-			<li>
-				<a
-					href="https://linkedin.com/in/radoje-jezdic"
-					rel="noopener noreferrer"
-					target="_blank"
-					class="flex items-center gap-2 hover:text-neutral-100 transition-all">
-					<Image
-						src={lin}
-						alt="Linkedin logo"
-					/>
-					<span>linkedin</span>
-				</a>
-			</li>
-		</ul>
-	</footer>
+	<Footer />
 </Layout>
