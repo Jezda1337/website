@@ -1,5 +1,5 @@
 ---
-const { post } = Astro.props
+const { blog } = Astro.props
 function formatDate(date: Date) {
 	return new Intl.DateTimeFormat("en-GB", {
 		dateStyle: "long",
@@ -23,23 +23,23 @@ function formatDate(date: Date) {
 		>
 		<time
 			class="text-[12px]"
-			datetime={post.frontmatter.date}>
-			{formatDate(post.frontmatter.date)}
+			datetime={blog.frontmatter.date}>
+			{formatDate(blog.frontmatter.date)}
 		</time>
 	</span>
 	<div class="flex w-full items-center justify-between">
 		<h3
 			class="text-lg font-medium leading-7 decoration-wavy underline-offset-4 md:hover:underline">
 			<a
-				transition:name={post.frontmatter.slug}
-				href={`/post/${post.frontmatter.slug}`}
-				>{post.frontmatter.title}</a
+				transition:name={blog.frontmatter.slug}
+				href={`/blog/${blog.frontmatter.slug}`}
+				>{blog.frontmatter.title}</a
 			>
 		</h3>
 	</div>
 	<div class="meta-information mt-1 text-[12px]">
 		<p>
-			{post.frontmatter.description}
+			{blog.frontmatter.description}
 		</p>
 	</div>
 </article>

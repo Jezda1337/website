@@ -30,9 +30,7 @@ const description = "Astromnl blog post about " + frontmatter.title // this is f
 ---
 
 <Layout title={"Developer | " + title}>
-	<main
-		class="pt-10"
-		transition:name={postSlug}>
+	<section transition:name={postSlug}>
 		<button
 			onclick="
 			history.back()
@@ -77,7 +75,7 @@ const description = "Astromnl blog post about " + frontmatter.title // this is f
 				mt-8">
 			<Content />
 		</article>
-	</main>
+	</section>
 </Layout>
 
 <style>

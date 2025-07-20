@@ -1,0 +1,17 @@
+---
+import Layout from "../layouts/Layout.astro"
+import PostCard from "../components/PostCard.astro"
+
+const posts = await Astro.glob("../data/*.md")
+const sortedPosts = posts.sort(
+	(a, b) =>
+		new Date(b.frontmatter.date).valueOf() -
+		new Date(a.frontmatter.date).valueOf(),
+)
+---
+
+<Layout title="blog">
+	<section class="flex flex-col gap-8">
+		{sortedPosts.map((blog) => <PostCard {blog} />)}
+	</section>
+</Layout>
