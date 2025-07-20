@@ -6,25 +6,16 @@ const navigationList = [
 	{ to: "/contact", name: "contact" },
 	{ to: "/ceda", name: "ceda" },
 ]
-const isHome = Astro.url.pathname === "/"
 ---
 
 <header class="flex gap-4 mb-20">
 	{
-		navigationList.map((nl) =>
-			nl.name === "home" ? (
-				<a
-					href={nl.to}
-					class={`${isHome ? "hidden" : ""} after:transition-all after:w-0 after:h-[1px] after:block after:bg-white hover:after:w-full`}>
-					{nl.name}
-				</a>
-			) : (
-				<a
-					href={nl.to}
-					class="after:transition-all after:w-0 after:h-[1px] after:block after:bg-white hover:after:w-full">
-					{nl.name}
-				</a>
-			),
-		)
+		navigationList.map((nl) => (
+			<a
+				href={nl.to}
+				class="after:transition-all after:w-0 after:h-[1px] after:block after:bg-white hover:after:w-full">
+				{nl.name}
+			</a>
+		))
 	}
 </header>
