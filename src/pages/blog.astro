@@ -11,6 +11,7 @@ const sortedPosts = posts.sort(
 ---
 
 <Layout title="blog">
+	<h1 class="text-3xl font-bold mb-8">my blog</h1>
 	<section class="flex flex-col gap-8">
 		{sortedPosts.map((blog) => <PostCard {blog} />)}
 	</section>
