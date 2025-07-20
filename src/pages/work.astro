@@ -1,7 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro"
+import WorkCard from "../components/WorkCard.astro"
+import work_data from "../data/work.json"
+console.log(work_data)
 ---
 
 <Layout title="work">
-	<div>123</div>
+	{work_data.map((work) => <WorkCard {work} />)}
 </Layout>

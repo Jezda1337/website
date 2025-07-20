@@ -8,15 +8,15 @@ interface Work {
 	start_date: string
 	type: string
 	end_date: string
-	details: [string]
+	details: string[]
 }
 interface Props {
 	work: Work
 }
 const { work } = Astro.props
-// dynamic import images
+
 const images = import.meta.glob<{ default: ImageMetadata }>(
-  "/src/assets/logos/*[.svg,.png]",
+	"/src/assets/logos/*[.svg,.png]",
 )
 ---
 
