@@ -2,7 +2,6 @@
 import Layout from "../layouts/Layout.astro"
 import Tag from "../components/Tag.astro"
 import TechStack from "../data/tech_stack.json"
-import Footer from "../components/Footer.astro"
 ---
 
 <Layout title="home">
@@ -47,6 +46,4 @@ import Footer from "../components/Footer.astro"
 	<article class="flex items-center gap-3 mt-8 flex-wrap">
 		{TechStack.map((ts) => <Tag {...ts} />)}
 	</article>
-
-	<Footer />
 </Layout>
