@@ -1,7 +1,6 @@
 import { defineConfig } from "astro/config"
 import sitemap from "@astrojs/sitemap"
 import tailwind from "@astrojs/tailwind"
-import flexoki from "./flexoki.json"
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,7 +9,7 @@ export default defineConfig({
 	markdown: {
 		syntaxHighlight: "shiki",
 		shikiConfig: {
-			theme: flexoki,
+			theme: "gruvbox-dark-hard",
 		},
 	},
 	build: {

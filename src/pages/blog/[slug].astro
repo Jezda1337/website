@@ -103,14 +103,15 @@ const description = "Astromnl blog post about " + frontmatter.title // this is f
 		}
 
 		& pre {
+			background-color: transparent !important;
 			@apply text-sm;
 		}
 
 		.note {
-			background: #879a39a8;
+			background-color: oklch(14.1% 0.005 285.823);
 			padding: 8px;
 			border-radius: 4px;
-			border: #66800b 4px solid;
+			border: oklch(55.2% 0.016 285.938) 2px solid;
 
 			h1 {
 				margin-top: 0;
