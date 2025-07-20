@@ -1,7 +1,42 @@
 ---
+import { Image } from "astro:assets"
 import Layout from "../layouts/Layout.astro"
+
+const mediaModules = import.meta.glob<{ default: ImageMetadata }>(
+	"/src/assets/ceda/*.{JPEG,jpg}",
+)
+
+const mediaEntries = await Promise.all(
+	Object.entries(mediaModules).map(async ([path]) => {
+		return {
+			path,
+		}
+	}),
+)
 ---
 
 <Layout title="Чеда">
-	<section>Чеда</section>
+	<h1 class="text-3xl mb-2 font-bold">Чеда</h1>
+	<p class="mb-8">
+		my sassy feline overlord, reviews all my code and says
+		<span class="text-purple-500 font-medium"
+			>“seriously, how hard is it to style a button?”</span
+		>
+	</p>
+
+	<section
+		class="grid gap-1 grid-cols-[repeat(auto-fill,_80px)] auto-rows-[80px] [grid-auto-flow:dense] has-hover:hidden">
+		{
+			mediaEntries.map(({ path }, i) => (
+				<div
+					class={`overflow-hidden opacity-85 hover:opacity-100 rounded border border-transparent hover:border-zinc-100 hover:scale-150 hover:z-10 transition-all ${[0, 4, 22, 26].includes(i) ? "col-span-2 row-span-2" : ""}`}>
+					<Image
+						src={mediaModules[path]()}
+						alt="Чеда overlord"
+						class="w-full h-full object-cover rounded block"
+					/>
+				</div>
+			))
+		}
+	</section>
 </Layout>
