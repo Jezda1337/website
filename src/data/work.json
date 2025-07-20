@@ -99,9 +99,9 @@
 			}
 		],
 		"details": [
-			"Resolved issues to improve system stability and performance.",
-			"Contributed to maintaining and improving key projects, ensuring reliability and efciency.",
-			"Identied and addressed bottlenecks to optimize application functionality."
+			"Resolved bugs and technical issues to enhance system reliability.",
+			"Maintained and improved core projects, ensuring consistent performance.",
+			"Optimized application flow by identifying and eliminating bottlenecks."
 		]
 	},
 	{
@@ -165,12 +165,12 @@
 			}
 		],
 		"details": [
-			"Developed and maintained client-side code to ensure functionality and improve user experience.",
-			"Converted Figma designs into Angular interfaces with attention to detail.",
-			"Optimized front-end performance and accessibility, following industry standards.",
-			"Managed form creation for KYC projects, improving data collection and processing.",
-			"Wrote 300+ unit tests with Jest to improve code reliability.",
-			"Participated in Agile CI/CD processes to support sprints and deployments."
+			"Built and maintained client-side code to ensure functionality and smooth user experience.",
+			"Translated Figma designs into precise Angular components.",
+			"Improved front-end performance and accessibility by adhering to best practices.",
+			"Implemented dynamic forms for KYC workflows, streamlining data collection.",
+			"Wrote over 300 unit tests using Jest to ensure code reliability.",
+			"Contributed to Agile CI/CD workflows to support ongoing development and deployments."
 		]
 	},
 	{
@@ -214,10 +214,9 @@
 			}
 		],
 		"details": [
-			"Maintained and updated website content to ensure accuracy and relevance for a local delivery",
-			"service.",
-			"Managed packages and dependencies on Linux for optimized system operation.",
-			"Conducted regular maintenance and performance tuning for server environments."
+			"Maintained and updated website content to ensure accuracy and relevance for a local delivery service.",
+			"Managed Linux packages and dependencies to optimize system performance.",
+			"Performed routine server maintenance and tuning to ensure stable operation."
 		]
 	}
 ]
