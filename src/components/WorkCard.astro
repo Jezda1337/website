@@ -1,5 +1,7 @@
 ---
 import { Image } from "astro:assets"
+import Tag from "./Tag.astro"
+
 interface Work {
 	id: number
 	job_title: string
@@ -9,6 +11,7 @@ interface Work {
 	type: string
 	end_date: string
 	details: string[]
+	tech_stack?: any[]
 }
 interface Props {
 	work: Work
@@ -21,24 +24,38 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 ---
 
 <article class="flex gap-4">
-	<a
-		class="min-w-12 h-12 w-12 p-1 bg-base-paper border-2 border-green rounded-full"
-		target="_blank"
-		href={work.url}>
-		<Image
-			width="48"
-			height="48"
-			src={images[work.logo]()}
-			alt="A logo of a compty"
-			class="w-full h-full"
-		/>
-	</a>
-	<div class="flex flex-col">
-		<span class="text-base-500 text-[12px]"
-			>{work.start_date} - {work.end_date}</span
-		>
-		<h3 class="font-medium text-lg mb-2">{work.job_title}</h3>
-		<ul class="list-disc pl-6 text-[12px]">
+	<div class="flex flex-col gap-4">
+		<div class="flex gap-4">
+			<a
+				class="min-w-12 h-12 w-12 p-1 bg-base-paper border-2 border-green rounded-full"
+				target="_blank"
+				href={work.url}>
+				<Image
+					width="48"
+					height="48"
+					src={images[work.logo]()}
+					alt="A logo of a compty"
+					class="w-full h-full"
+				/>
+			</a>
+			<div class="leading-none">
+				<span class="text-xs"
+					>{work.start_date} - {work.end_date} | {work.type}</span
+				>
+				<h3 class="font-bold text-2xl mb-2">{work.job_title}</h3>
+
+				<ul class="flex items-center gap-2">
+					{
+						work.tech_stack?.map((ts: any) => (
+							<li>
+								<Tag {...ts} />
+							</li>
+						))
+					}
+				</ul>
+			</div>
+		</div>
+		<ul class="list-disc pl-6 text-xs leading-6">
 			{work.details.map((point: string) => <li>{point}</li>)}
 		</ul>
 	</div>
