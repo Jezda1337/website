@@ -21,14 +21,14 @@ function formatDate(date: Date) {
 			></path></svg
 		>
 		<time
-			class="text-[12px]"
+			class="text-xs"
 			datetime={blog.frontmatter.date}>
 			{formatDate(blog.frontmatter.date)}
 		</time>
 	</span>
 	<div class="flex w-full items-center justify-between">
 		<h3
-			class="text-lg font-medium leading-7 decoration-wavy underline-offset-4 md:hover:underline">
+			class="text-lg font-medium decoration-wavy underline-offset-4 md:hover:underline">
 			<a
 				transition:name={blog.frontmatter.slug}
 				href={`/blog/${blog.frontmatter.slug}`}
