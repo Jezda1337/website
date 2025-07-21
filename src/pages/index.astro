@@ -44,8 +44,15 @@ import TechStack from "../data/tech_stack.json"
 		</p>
 	</article>
 
-	<article
-		class="flex items-center gap-3 mt-8 flex-wrap animate-blur-reveal opacity-0 [animation-delay:_300ms]">
-		{TechStack.map((ts) => <Tag {...ts} />)}
+	<article class="flex items-center gap-3 mt-8 flex-wrap">
+		{
+			TechStack.map((ts, i) => (
+				<div
+					class={`animate-blur-reveal opacity-0`}
+					style={`animation-delay: ${250 + i * 50}ms`}>
+					<Tag {...ts} />
+				</div>
+			))
+		}
 	</article>
 </Layout>
