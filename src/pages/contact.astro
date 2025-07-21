@@ -39,7 +39,8 @@ const contactData = [
 				{
 					contactData.map((c, i) => (
 						<li
-							class={`animate-blur-reveal opacity-0 [animation-delay:_${250 + i * 50}ms]`}>
+							class="animate-blur-reveal opacity-0"
+							style={`animation-delay: ${250 + i * 50}ms`}>
 							<strong>{c.key}:</strong>
 							<a
 								href={c.href}
