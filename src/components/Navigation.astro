@@ -9,7 +9,8 @@ const navigationList = [
 ---
 
 <header
-	class="flex gap-4 mb-20 animate-blur-reveal opacity-0 [animation-delay:_400ms]">
+	id="nav-header"
+	class="flex gap-4 mb-20 opacity-0">
 	{
 		navigationList.map((nl) => (
 			<a
@@ -20,3 +21,14 @@ const navigationList = [
 		))
 	}
 </header>
+
+<script is:inline>
+	const header = document.getElementById("nav-header")
+	const hasAnimated = sessionStorage.getItem("headerAnimated")
+	if (!hasAnimated) {
+		header.classList.add("animate-blur-reveal")
+		sessionStorage.setItem("headerAnimated", "true")
+	} else {
+		header.classList.remove("opacity-0")
+	}
+</script>
