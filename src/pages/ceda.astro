@@ -29,7 +29,7 @@ const mediaEntries = await Promise.all(
 		{
 			mediaEntries.map(({ path }, i) => (
 				<div
-					class={`overflow-hidden opacity-85 hover:opacity-100 rounded border border-transparent hover:border-zinc-100 hover:scale-150 hover:z-10 transition-all ${[0, 4, 22, 26].includes(i) ? "col-span-2 row-span-2" : ""}`}>
+					class={`overflow-hidden rounded border border-transparent hover:border-zinc-100 hover:scale-150 hover:z-10 transition-all ease-linear ${[0, 4, 22, 26].includes(i) ? "col-span-2 row-span-2" : ""}`}>
 					<Image
 						src={mediaModules[path]()}
 						alt="Чеда overlord"
