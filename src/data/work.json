@@ -1,20 +1,62 @@
 [
 	{
-		"id": 3,
+		"id": 4,
 		"job_title": "Frontend Developer",
 		"logo": "/src/assets/logos/luccid_ai.png",
 		"url": "https://luccid.ai",
 		"start_date": "Feb 2025",
 		"type": "fulltime",
 		"end_date": "Present",
-    "details": [
-      "Developed and maintained the frontend for multiple projects as a solo JavaScript developer, ensuring high-quality user experiences and responsive designs.",
-      "Designed and implemented two interactive dashboards: one for client use, providing insights and analytics, and another for internal operations, enhancing team productivity and collaboration.",
-      "Created a customizable chatbot SDK that can be seamlessly embedded into client applications and websites, improving user engagement and support capabilities.",
-      "Collaborated with cross-functional teams to gather requirements and deliver solutions that meet client needs and align with business objectives.",
-      "Utilized modern JavaScript frameworks and libraries to enhance application performance and maintainability.",
-      "Conducted user testing and gathered feedback to iterate on designs and improve functionality, resulting in increased user satisfaction."
-    ]
+		"tech_stack": [
+			{
+				"id": 1,
+				"name": "NextJs",
+				"image": {
+					"src": "/src/assets/nextjs.svg",
+					"alt": "nextjs logo",
+					"width": 14,
+					"height": 14
+				}
+			},
+			{
+				"id": 2,
+				"name": "React",
+				"image": {
+					"src": "/src/assets/react.svg",
+					"alt": "react logo",
+					"width": 14,
+					"height": 14
+				}
+			},
+			{
+				"id": 3,
+				"name": "Web Components",
+				"image": {
+					"src": "/src/assets/web_components.svg",
+					"alt": "web components logo",
+					"width": 14,
+					"height": 14
+				}
+			},
+			{
+				"id": 4,
+				"name": "Tailwind",
+				"image": {
+					"src": "/src/assets/tailwind.svg",
+					"alt": "tailwind logo",
+					"width": 14,
+					"height": 14
+				}
+			}
+		],
+		"details": [
+			"Built and maintained frontends for several projects as a solo JavaScript developer, focusing on clean UX and responsive design.",
+			"Developed two dashboards: one client-facing (insights, analytics) and one for internal operations (coordination, management).",
+			"Created a flexible chatbot SDK for easy integration into websites and apps, enhancing user interaction and support.",
+			"Worked closely with stakeholders to understand needs and deliver practical, reliable solutions.",
+			"Used modern JavaScript frameworks and tools to keep codebases fast, modular, and maintainable.",
+			"Improved features based on real user feedback and testing to refine usability and functionality."
+		]
 	},
 	{
 		"id": 3,
@@ -24,10 +66,42 @@
 		"start_date": "Oct 2023",
 		"type": "fulltime",
 		"end_date": "Jan 2025",
+		"tech_stack": [
+			{
+				"id": 1,
+				"name": "Vue",
+				"image": {
+					"src": "/src/assets/vue.svg",
+					"alt": "vue.js logo",
+					"width": 14,
+					"height": 14
+				}
+			},
+			{
+				"id": 2,
+				"name": "Quasar",
+				"image": {
+					"src": "/src/assets/quasar.svg",
+					"alt": "quasar logo",
+					"width": 14,
+					"height": 14
+				}
+			},
+			{
+				"id": 3,
+				"name": "SCSS",
+				"image": {
+					"src": "/src/assets/sass.svg",
+					"alt": "scss logo",
+					"width": 14,
+					"height": 14
+				}
+			}
+		],
 		"details": [
-			"Resolved issues to improve system stability and performance.",
-			"Contributed to maintaining and improving key projects, ensuring reliability and efciency.",
-			"Identied and addressed bottlenecks to optimize application functionality."
+			"Resolved bugs and technical issues to enhance system reliability.",
+			"Maintained and improved core projects, ensuring consistent performance.",
+			"Optimized application flow by identifying and eliminating bottlenecks."
 		]
 	},
 	{
@@ -38,13 +112,65 @@
 		"type": "fulltime",
 		"start_date": "Dec 2021",
 		"end_date": "Dec 2022",
+		"tech_stack": [
+			{
+				"id": 1,
+				"name": "React",
+				"image": {
+					"src": "/src/assets/react.svg",
+					"alt": "react logo",
+					"width": 14,
+					"height": 14
+				}
+			},
+			{
+				"id": 2,
+				"name": "Angular",
+				"image": {
+					"src": "/src/assets/angular.svg",
+					"alt": "angular logo",
+					"width": 14,
+					"height": 14
+				}
+			},
+			{
+				"id": 3,
+				"name": "Bootstrap",
+				"image": {
+					"src": "/src/assets/bootstrap.svg",
+					"alt": "bootstrap logo",
+					"width": 14,
+					"height": 14
+				}
+			},
+			{
+				"id": 4,
+				"name": "Go",
+				"image": {
+					"src": "/src/assets/go.svg",
+					"alt": "go logo",
+					"width": 14,
+					"height": 14
+				}
+			},
+			{
+				"id": 5,
+				"name": "PostgreSQL",
+				"image": {
+					"src": "/src/assets/postgres.svg",
+					"alt": "postgresql logo",
+					"width": 14,
+					"height": 14
+				}
+			}
+		],
 		"details": [
-			"Developed and maintained client-side code to ensure functionality and improve user experience.",
-			"Converted Figma designs into Angular interfaces with attention to detail.",
-			"Optimized front-end performance and accessibility, following industry standards.",
-			"Managed form creation for KYC projects, improving data collection and processing.",
-			"Wrote 300+ unit tests with Jest to improve code reliability.",
-			"Participated in Agile CI/CD processes to support sprints and deployments."
+			"Built and maintained client-side code to ensure functionality and smooth user experience.",
+			"Translated Figma designs into precise Angular components.",
+			"Improved front-end performance and accessibility by adhering to best practices.",
+			"Implemented dynamic forms for KYC workflows, streamlining data collection.",
+			"Wrote over 300 unit tests using Jest to ensure code reliability.",
+			"Contributed to Agile CI/CD workflows to support ongoing development and deployments."
 		]
 	},
 	{
@@ -55,11 +181,42 @@
 		"start_date": "Jun 2021",
 		"type": "parttime",
 		"end_date": "Present (part-time)",
+		"tech_stack": [
+			{
+				"id": 1,
+				"name": "Linux",
+				"image": {
+					"src": "/src/assets/linux.svg",
+					"alt": "linux logo",
+					"width": 14,
+					"height": 14
+				}
+			},
+			{
+				"id": 2,
+				"name": "React",
+				"image": {
+					"src": "/src/assets/react.svg",
+					"alt": "react logo",
+					"width": 14,
+					"height": 14
+				}
+			},
+			{
+				"id": 3,
+				"name": "Tailwind",
+				"image": {
+					"src": "/src/assets/tailwind.svg",
+					"alt": "tailwind css logo",
+					"width": 14,
+					"height": 14
+				}
+			}
+		],
 		"details": [
-			"Maintained and updated website content to ensure accuracy and relevance for a local delivery",
-			"service.",
-			"Managed packages and dependencies on Linux for optimized system operation.",
-			"Conducted regular maintenance and performance tuning for server environments."
+			"Maintained and updated website content to ensure accuracy and relevance for a local delivery service.",
+			"Managed Linux packages and dependencies to optimize system performance.",
+			"Performed routine server maintenance and tuning to ensure stable operation."
 		]
 	}
 ]

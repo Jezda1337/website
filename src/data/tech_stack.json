@@ -1,0 +1,132 @@
+[
+	{
+		"id": 1,
+		"name": "Linux",
+		"image": {
+			"src": "/src/assets/linux.svg",
+			"alt": "linux logo",
+			"width": 14,
+			"height": 14
+		}
+	},
+	{
+		"id": 2,
+		"name": "Vue",
+		"image": {
+			"src": "/src/assets/vue.svg",
+			"alt": "vue logo",
+			"width": 14,
+			"height": 14
+		}
+	},
+	{
+		"id": 3,
+		"name": "Go",
+		"image": {
+			"src": "/src/assets/go.svg",
+			"alt": "go logo",
+			"width": 14,
+			"height": 14
+		}
+	},
+	{
+		"id": 4,
+		"name": "TypeScript",
+		"image": {
+			"src": "/src/assets/typescript.svg",
+			"alt": "typescript logo",
+			"width": 14,
+			"height": 14
+		}
+	},
+	{
+		"id": 5,
+		"name": "Angular",
+		"image": {
+			"src": "/src/assets/angular.svg",
+			"alt": "angular logo",
+			"width": 14,
+			"height": 14
+		}
+	},
+	{
+		"id": 6,
+		"name": "Tailwind CSS",
+		"image": {
+			"src": "/src/assets/tailwind.svg",
+			"alt": "tailwind css logo",
+			"width": 14,
+			"height": 14
+		}
+	},
+	{
+		"id": 7,
+		"name": "React",
+		"image": {
+			"src": "/src/assets/react.svg",
+			"alt": "react logo",
+			"width": 14,
+			"height": 14
+		}
+	},
+	{
+		"id": 8,
+		"name": "Node.js",
+		"image": {
+			"src": "/src/assets/node.svg",
+			"alt": "node.js logo",
+			"width": 14,
+			"height": 14
+		}
+	},
+	{
+		"id": 9,
+		"name": "Vim",
+		"image": {
+			"src": "/src/assets/vim.svg",
+			"alt": "vim logo",
+			"width": 14,
+			"height": 14
+		}
+	},
+	{
+		"id": 10,
+		"name": "PostgreSQL",
+		"image": {
+			"src": "/src/assets/postgres.svg",
+			"alt": "postgresql logo",
+			"width": 14,
+			"height": 14
+		}
+	},
+	{
+		"id": 11,
+		"name": "Astro",
+		"image": {
+			"src": "/src/assets/astro.svg",
+			"alt": "astro logo",
+			"width": 14,
+			"height": 14
+		}
+	},
+	{
+		"id": 12,
+		"name": "Next.js",
+		"image": {
+			"src": "/src/assets/nextjs.svg",
+			"alt": "next.js logo",
+			"width": 14,
+			"height": 14
+		}
+	},
+	{
+		"id": 13,
+		"name": "Lua",
+		"image": {
+			"src": "/src/assets/lua.svg",
+			"alt": "lua logo",
+			"width": 14,
+			"height": 14
+		}
+	}
+]

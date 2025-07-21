@@ -1,0 +1,18 @@
+---
+import type { ImageMetadata } from "astro"
+import { Image } from "astro:assets"
+const props = Astro.props
+
+const images = import.meta.glob<{ default: ImageMetadata }>("/src/assets/*.svg")
+---
+
+<div
+	class="flex items-center gap-[4px] p-[4px] border border-zinc-700 bg-zinc-800 hover:bg-zinc-900 hover:border-zinc-500 transition-all rounded max-w-max text-sm">
+	<Image
+		src={images[props.image.src]()}
+		alt={props.image.alt}
+		width={props.image.width}
+		height={props.image.height}
+	/>
+	<span>{props.name}</span>
+</div>

@@ -14,12 +14,9 @@ importers:
       '@astrojs/tailwind':
         specifier: 6.0.2
         version: 6.0.2(astro@5.7.10(jiti@1.21.6)(rollup@4.40.1)(typescript@5.7.2)(yaml@2.6.1))(tailwindcss@3.4.15)
-      '@fontsource-variable/martian-mono':
-        specifier: ^5.1.0
-        version: 5.1.0
-      '@fontsource/dm-mono':
-        specifier: ^5.1.0
-        version: 5.1.0
+      '@fontsource/poppins':
+        specifier: ^5.2.6
+        version: 5.2.6
       astro:
         specifier: ^5.7.10
         version: 5.7.10(jiti@1.21.6)(rollup@4.40.1)(typescript@5.7.2)(yaml@2.6.1)
@@ -251,11 +248,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@fontsource-variable/martian-mono@5.1.0':
-    resolution: {integrity: sha512-x/Zte0MVd5c0BsNWIKRaI9vKYHTZR7t5iTZ41I8il4nZKL2chc7DeFESIl1IKfD8b8A3Y9lwNvyjOrs8GiHSnw==}
-
-  '@fontsource/dm-mono@5.1.0':
-    resolution: {integrity: sha512-cfowZUJJDHjgVFOEQmIn2KHtQ8LDXnTGgTTunUImzzg3Xf6V92MlYR/pmkqIt7lXq7lfP/pQZ9ph/9JeLDRsCQ==}
+  '@fontsource/poppins@5.2.6':
+    resolution: {integrity: sha512-NFr0121+vWCfzLDVvSZOzwAjRUaNj6QHA9gtUh/KHHoWf1Qn23EkwVFs63XZ6UtF5K1b3UNmCx77YEMGgV7BOQ==}
 
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
@@ -2104,9 +2098,7 @@ snapshots:
   '@esbuild/win32-x64@0.25.3':
     optional: true
 
-  '@fontsource-variable/martian-mono@5.1.0': {}
-
-  '@fontsource/dm-mono@5.1.0': {}
+  '@fontsource/poppins@5.2.6': {}
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:

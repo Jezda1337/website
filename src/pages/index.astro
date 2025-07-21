@@ -1,58 +1,49 @@
 ---
 import Layout from "../layouts/Layout.astro"
-import Button from "../components/Button.astro"
-import Tabs from "../components/Tabs.astro"
-import SocialsLinks from "../components/SocialsLinks.astro"
-import Resume from "../assets/Resume.pdf"
+import Tag from "../components/Tag.astro"
+import TechStack from "../data/tech_stack.json"
 ---
 
-<Layout title="Hello World.">
-	<section>
-		<header class="flex flex-col justify-between mt-14 sm:flex-row">
-			<h1 class="text-2xl font-medium">
-				Hello World<span class="text-blue">.</span>
-			</h1>
-			<div class="flex items-center gap-3">
-				<Button
-					target="_blank"
-					type="a"
-					href={Resume}
-					download="resume">
-					<span>Resume</span>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="18"
-						height="18"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="#FFFCF0"
-						stroke-width="2"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						class="lucide lucide-file-down"
-						><path
-							d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"
-						></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M12 18v-6"
-						></path><path d="m9 15 3 3 3-3"></path></svg
-					>
-				</Button>
-				<SocialsLinks />
-			</div>
-		</header>
-		<h2 class="font-normal my-6 text-sm">
-			27-year-old JavaScript developer from Serbia 🇷🇸. I like developing
-			full-stack and drinking instant coffee. <a
-				target="_blank"
-				aria-label="My sassy feline overlord."
-				class="text-red-light underline decoration-4 hover:text-red peer/ceda"
-				title="taking picture of my sassy feline overlord..."
-				>Чеда</a
-			>, my sassy feline overlord, reviews all my code and says <span
-				class="text-purple font-medium"
-				>“seriously, how hard is it to style a button?”</span
-			> Oh, and I contribute to open-source projects from time to time, and I really
-			enjoy doing that.
-		</h2>
-	</section>
-	<Tabs />
+<Layout title="home">
+	<article class="flex items-center justify-between mb-8 flex-wrap">
+		<h1 class="text-3xl">hi, i'm radoje 👋</h1>
+		<a
+			href="/src/assets/Resume.pdf"
+			target="_blank"
+			rel="noopener noreferrer"
+			class="px-6 py-2 border rounded border-zinc-700 text-sm hover:bg-white hover:border-zinc-300 transition-all hover:text-black hover:cursor-pointer"
+			>Resume</a
+		>
+	</article>
+	<article class="flex flex-col gap-4">
+		<p>
+			Hi, I’m Radoje Jezdic — a
+			<mark class="bg-neutral-100 text-black rounded-sm px-1"
+				>Full Stack Developer</mark
+			>
+			based in Serbia 🇷🇸.
+		</p>
+		<p>
+			I build fast, reliable, and scalable web applications with a focus on
+			<mark class="bg-neutral-100 text-black rounded-sm px-1">clean code</mark> and
+			<mark class="bg-neutral-100 text-black rounded-sm px-1"
+				>user-centered performance</mark
+			>.
+		</p>
+		<p>
+			You can explore some of my recent work on the <a
+				class="inline-block after:transition-all after:w-full after:h-[1px] after:block after:bg-white"
+				href="/work"
+				>works</a
+			> page.
+		</p>
+		<p>
+			I’m always open to new opportunities, collaborations, and solving
+			meaningful problems — feel free to get in touch!
+		</p>
+	</article>
+
+	<article class="flex items-center gap-3 mt-8 flex-wrap">
+		{TechStack.map((ts) => <Tag {...ts} />)}
+	</article>
 </Layout>

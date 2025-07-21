@@ -1,0 +1,54 @@
+---
+import Layout from "../layouts/Layout.astro"
+const contactData = [
+	{
+		key: "Email",
+		value: "hello@radoje.dev",
+		href: "mailto:hello@radoje.dev",
+	},
+	{
+		key: "Telegram",
+		value: "@jezda1337",
+		href: "https://t.me/jezda1337",
+	},
+	{
+		key: "Discord",
+		value: "@for_loop",
+		href: "https://discordapp.com/users/249301905719689217",
+	},
+]
+---
+
+<Layout title="contact">
+	<h1 class="text-3xl font-bold mb-8">contact me</h1>
+	<article class="space-y-6">
+		<p>
+			I'm always open to exciting opportunities and collaborations. If you have
+			a project in mind or just want to explore ways we can work together, don’t
+			hesitate to get in touch.
+		</p>
+		<div class="space-y-2">
+			<p>
+				Feel free to message me or reach out through any of the channels below —
+				let’s make something great happen.
+			</p>
+			<ul class="list-disc list-inside pl-5 marker:text-zinc-700 space-y-2">
+				{
+					contactData.map((c) => (
+						<li>
+							<strong>{c.key}:</strong>
+							<a
+								href={c.href}
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="Send me an email."
+								class="underline decoration-[0.1em] decoration-zinc-700 underline-offset-2">
+								{c.value}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+	</article>
+</Layout>
