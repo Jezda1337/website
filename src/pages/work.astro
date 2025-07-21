@@ -6,7 +6,17 @@ import work_data from "../data/work.json"
 
 <Layout title="work">
 	<section class="space-y-8 mb-32">
-		<h1 class="text-3xl font-bold">my work</h1>
-		{work_data.map((work) => <WorkCard {work} />)}
+		<h1
+			class="text-3xl font-bold animate-blur-reveal opacity-0 [animation-delay:_100ms]">
+			my work
+		</h1>
+		{
+			work_data.map((work, i) => (
+				<div
+					class={`animate-blur-reveal opacity-0 [animation-delay:_${150 + i * 50}ms]`}>
+					<WorkCard {work} />
+				</div>
+			))
+		}
 	</section>
 </Layout>

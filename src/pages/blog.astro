@@ -11,8 +11,18 @@ const sortedPosts = posts.sort(
 ---
 
 <Layout title="blog">
-	<h1 class="text-3xl font-bold mb-8">my blog</h1>
+	<h1
+		class="text-3xl font-bold mb-8 animate-blur-reveal opacity-0 [animation-delay:_100ms]">
+		my blog
+	</h1>
 	<section class="flex flex-col gap-8">
-		{sortedPosts.map((blog) => <PostCard {blog} />)}
+		{
+			sortedPosts.map((blog, i) => (
+				<div
+					class={`animate-blur-reveal opacity-0 [animation-delay:_${150 + i * 50}ms]`}>
+					<PostCard {blog} />
+				</div>
+			))
+		}
 	</section>
 </Layout>

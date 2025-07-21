@@ -26,11 +26,13 @@ function formatDate(date: Date) {
 const { Content, frontmatter } = Astro.props
 const title = frontmatter.title
 const postSlug = frontmatter.slug
-const description = "Astromnl blog post about " + frontmatter.title // this is for meta description
+const description = "Astromnl blog post about " + frontmatter.title
 ---
 
 <Layout title={"Developer | " + title}>
-	<section transition:name={postSlug}>
+	<section
+		transition:name={postSlug}
+		class="animate-blur-reveal opacity-0 [animation-delay:_0ms]">
 		<button
 			onclick="
 			history.back()

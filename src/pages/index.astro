@@ -5,7 +5,8 @@ import TechStack from "../data/tech_stack.json"
 ---
 
 <Layout title="home">
-	<article class="flex items-center justify-between mb-8 flex-wrap">
+	<article
+		class="flex items-center justify-between mb-8 flex-wrap animate-blur-reveal opacity-0 [animation-delay:_50ms]">
 		<h1 class="text-3xl">hi, i'm radoje 👋</h1>
 		<a
 			href="/src/assets/Resume.pdf"
@@ -16,34 +17,35 @@ import TechStack from "../data/tech_stack.json"
 		>
 	</article>
 	<article class="flex flex-col gap-4">
-		<p>
+		<p class="animate-blur-reveal opacity-0 [animation-delay:_100ms]">
 			Hi, I’m Radoje Jezdic — a
 			<mark class="bg-neutral-100 text-black rounded-sm px-1"
 				>Full Stack Developer</mark
 			>
 			based in Serbia 🇷🇸.
 		</p>
-		<p>
+		<p class="animate-blur-reveal opacity-0 [animation-delay:_150ms]">
 			I build fast, reliable, and scalable web applications with a focus on
 			<mark class="bg-neutral-100 text-black rounded-sm px-1">clean code</mark> and
 			<mark class="bg-neutral-100 text-black rounded-sm px-1"
 				>user-centered performance</mark
 			>.
 		</p>
-		<p>
+		<p class="animate-blur-reveal opacity-0 [animation-delay:_200ms]">
 			You can explore some of my recent work on the <a
 				class="inline-block after:transition-all after:w-full after:h-[1px] after:block after:bg-white"
 				href="/work"
 				>works</a
 			> page.
 		</p>
-		<p>
+		<p class="animate-blur-reveal opacity-0 [animation-delay:_250ms]">
 			I’m always open to new opportunities, collaborations, and solving
 			meaningful problems — feel free to get in touch!
 		</p>
 	</article>
 
-	<article class="flex items-center gap-3 mt-8 flex-wrap">
+	<article
+		class="flex items-center gap-3 mt-8 flex-wrap animate-blur-reveal opacity-0 [animation-delay:_300ms]">
 		{TechStack.map((ts) => <Tag {...ts} />)}
 	</article>
 </Layout>

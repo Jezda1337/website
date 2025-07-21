@@ -16,8 +16,11 @@ const mediaEntries = await Promise.all(
 ---
 
 <Layout title="Чеда">
-	<h1 class="text-3xl mb-2 font-bold">Чеда</h1>
-	<p class="mb-8">
+	<h1
+		class="text-3xl mb-2 font-bold animate-blur-reveal opacity-0 [animation-delay:_100ms]">
+		Чеда
+	</h1>
+	<p class="mb-8 animate-blur-reveal opacity-0 [animation-delay:_150ms]">
 		my sassy feline overlord, reviews all my code and says
 		<span class="text-purple-500 font-medium"
 			>“seriously, how hard is it to style a button?”</span
@@ -29,7 +32,7 @@ const mediaEntries = await Promise.all(
 		{
 			mediaEntries.map(({ path }, i) => (
 				<div
-					class={`overflow-hidden rounded border border-transparent hover:border-zinc-100 hover:scale-150 hover:z-10 transition-all ease-linear ${[0, 4, 22, 26].includes(i) ? "col-span-2 row-span-2" : ""}`}>
+					class={`animate-blur-reveal opacity-0 [animation-delay:_${200 + i * 50}ms] overflow-hidden rounded border border-transparent hover:border-zinc-100 hover:scale-150 hover:z-10 transition-all ease-linear ${[0, 4, 22, 26].includes(i) ? "col-span-2 row-span-2" : ""}`}>
 					<Image
 						src={mediaModules[path]()}
 						alt="Чеда overlord"
