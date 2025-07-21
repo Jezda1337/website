@@ -118,5 +118,15 @@
 			"width": 14,
 			"height": 14
 		}
+	},
+	{
+		"id": 13,
+		"name": "Lua",
+		"image": {
+			"src": "/src/assets/lua.svg",
+			"alt": "lua logo",
+			"width": 14,
+			"height": 14
+		}
 	}
 ]
