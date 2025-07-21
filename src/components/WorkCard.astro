@@ -42,9 +42,9 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 				<span class="text-xs"
 					>{work.start_date} - {work.end_date} | {work.type}</span
 				>
-				<h3 class="font-bold text-2xl mb-2">{work.job_title}</h3>
+				<h3 class="font-bold text-xl md:text-2xl mb-2">{work.job_title}</h3>
 
-				<ul class="flex items-center gap-2">
+				<ul class="flex items-center gap-2 flex-wrap">
 					{
 						work.tech_stack?.map((ts: any) => (
 							<li>
