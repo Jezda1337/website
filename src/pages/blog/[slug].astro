@@ -29,7 +29,7 @@ const postSlug = frontmatter.slug
 const description = "Astromnl blog post about " + frontmatter.title
 ---
 
-<Layout title={"Developer | " + title}>
+<Layout title={"blog | " + title}>
 	<section
 		transition:name={postSlug}
 		class="animate-blur-reveal opacity-0 [animation-delay:_0ms]">
@@ -43,7 +43,6 @@ const description = "Astromnl blog post about " + frontmatter.title
 				width="16"
 				height="16"
 				fill="white"
-				class="group-hover:animate-slide-right dark:fill-white"
 				viewBox="0 0 256 256"
 				><path
 					d="M168.49,199.51a12,12,0,0,1-17,17l-80-80a12,12,0,0,1,0-17l80-80a12,12,0,0,1,17,17L97,128Z"
@@ -58,7 +57,7 @@ const description = "Astromnl blog post about " + frontmatter.title
 				xmlns="http://www.w3.org/2000/svg"
 				width="14"
 				height="14"
-				class="fill-base-500"
+				fill="white"
 				viewBox="
 				0
 				0
