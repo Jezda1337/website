@@ -7,9 +7,11 @@ const mediaModules = import.meta.glob<{ default: ImageMetadata }>(
 )
 
 const mediaEntries = await Promise.all(
-	Object.entries(mediaModules).map(async ([path]) => {
+	Object.entries(mediaModules).map(async ([path, resolver]) => {
+		const mod = await resolver()
 		return {
 			path,
+			image: mod.default,
 		}
 	}),
 )
@@ -20,26 +22,91 @@ const mediaEntries = await Promise.all(
 		class="text-3xl mb-2 font-bold animate-blur-reveal opacity-0 [animation-delay:_100ms]">
 		Чеда
 	</h1>
+
 	<p class="mb-8 animate-blur-reveal opacity-0 [animation-delay:_150ms]">
 		my sassy feline overlord, reviews all my code and says
-		<span class="text-purple-500 font-medium"
-			>“seriously, how hard is it to style a button?”</span
-		>
+		<span class="text-purple-500 font-medium">
+			“seriously, how hard is it to style a button?”
+		</span>
 	</p>
 
 	<section
-		class="grid gap-1 grid-cols-[repeat(auto-fill,_80px)] auto-rows-[80px] [grid-auto-flow:dense] has-hover:hidden">
+		class="grid gap-1 justify-center grid-cols-[repeat(auto-fill,_80px)] auto-rows-[80px] [grid-auto-flow:dense] has-hover:hidden">
 		{
-			mediaEntries.map(({ path }, i) => (
+			mediaEntries.map(({ path, image }, i) => (
 				<div
-					class={`animate-blur-reveal opacity-0 [animation-delay:_${200 + i * 50}ms] overflow-hidden rounded border border-transparent hover:border-zinc-100 hover:scale-150 hover:z-10 transition-all ease-linear ${[0, 4, 22, 26].includes(i) ? "col-span-2 row-span-2" : ""}`}>
+					class={`overflow-hidden rounded border border-transparent hover:border-zinc-100 hover:z-10 transition-all ease-linear ${[0, 4, 22, 26].includes(i) ? "col-span-2 row-span-2" : ""}`}
+					data-img-src={image.src}
+					data-img-key={path}>
 					<Image
-						src={mediaModules[path]()}
+						src={image}
 						alt="Чеда overlord"
 						class="w-full h-full object-cover rounded block"
+						transition:name={path}
 					/>
 				</div>
 			))
 		}
 	</section>
+	<div id="zoom-container"></div>
+
+	<script>
+		const zoomContainer = document.getElementById("zoom-container")
+
+		function closeZoom() {
+			const overlay = document.getElementById("zoom-overlay")
+			if (!overlay) return
+			const zoomedImg = overlay.querySelector("img")
+			zoomedImg.animate(
+				{
+					scale: [1, 0],
+				},
+				{ duration: 250, fill: "forwards", easing: "linear" },
+			)
+			setTimeout(() => {
+				overlay.remove()
+			}, 255)
+		}
+
+		document.addEventListener("click", (e) => {
+			const zoomed = document.getElementById("zoom-overlay")
+			if (zoomed && e.target === zoomed) {
+				closeZoom()
+				return
+			}
+
+			const wrapper = e.target.closest("[data-img-src]")
+			if (!wrapper) return
+
+			const imgSrc = wrapper.dataset.imgSrc
+			const key = wrapper.dataset.imgKey
+
+			closeZoom()
+
+			const overlay = document.createElement("div")
+			overlay.id = "zoom-overlay"
+			overlay.className =
+				"fixed inset-0 z-50 flex justify-center items-center bg-black/30 backdrop-blur-sm"
+			overlay.innerHTML = `<img src="${imgSrc}" alt="Zoomed image" class="max-h-[90%] max-w-[95%] object-contain rounded shadow-xl relative" />`
+			const zoomedImg = overlay.children[0]
+			zoomedImg.animate(
+				{
+					scale: [0, 1],
+				},
+				{
+					duration: 250,
+					fill: "forwards",
+					easing: "linear",
+				},
+			)
+
+			zoomContainer.appendChild(overlay)
+		})
+
+		document.addEventListener("keydown", (e) => {
+			if (e.key === "Escape") {
+				closeZoom()
+			}
+		})
+	</script>
 </Layout>
