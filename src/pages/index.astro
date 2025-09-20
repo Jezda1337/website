@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro"
 import Tag from "../components/Tag.astro"
 import TechStack from "../data/tech_stack.json"
+import resume from "../assets/resume.pdf"
 ---
 
 <Layout title="home">
@@ -9,7 +10,7 @@ import TechStack from "../data/tech_stack.json"
 		class="flex items-center justify-between mb-8 flex-wrap animate-blur-reveal opacity-0 [animation-delay:_50ms]">
 		<h1 class="text-3xl">hi, i'm radoje 👋</h1>
 		<a
-			href="/src/assets/resume.pdf"
+			href=`${resume}`
 			target="_blank"
 			rel="noopener noreferrer"
 			class="px-6 py-2 border rounded border-zinc-700 text-sm hover:bg-white hover:border-zinc-300 transition-all hover:text-black hover:cursor-pointer"
