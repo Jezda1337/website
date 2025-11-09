@@ -36,6 +36,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 					src={images[work.logo]()}
 					alt="A logo of a compty"
 					class="w-full h-full"
+					loading="eager"
 				/>
 			</a>
 			<div class="leading-none">

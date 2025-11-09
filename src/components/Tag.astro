@@ -13,6 +13,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>("/src/assets/*.svg")
 		alt={props.image.alt}
 		width={props.image.width}
 		height={props.image.height}
+		loading="eager"
 	/>
 	<span>{props.name}</span>
 </div>
