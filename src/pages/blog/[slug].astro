@@ -1,4 +1,6 @@
 ---
+import "../../styles/global.css"
+
 import Layout from "../../layouts/Layout.astro"
 export async function getStaticPaths(): Promise<Record<string, any>[]> {
 	let allPosts = await Astro.glob("../../data/*.md")
@@ -78,6 +80,8 @@ const description = "Astromnl blog post about " + frontmatter.title
 </Layout>
 
 <style>
+	@reference "../../styles/global.css";
+
 	.content {
 		* {
 			font-size: 14px;

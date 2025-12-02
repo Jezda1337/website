@@ -1,11 +1,12 @@
 import { defineConfig } from "astro/config"
 import sitemap from "@astrojs/sitemap"
-import tailwind from "@astrojs/tailwind"
+import tailwindcss from "@tailwindcss/vite"
 
 // https://astro.build/config
 export default defineConfig({
 	site: "https://radoje.dev",
-	integrations: [tailwind(), sitemap()],
+	integrations: [sitemap()],
+	vite: { plugins: [tailwindcss()] },
 	markdown: {
 		syntaxHighlight: "shiki",
 		shikiConfig: {
