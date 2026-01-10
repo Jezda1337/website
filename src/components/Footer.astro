@@ -3,6 +3,8 @@ import { Image } from "astro:assets"
 
 import gh from "/src/assets/github.svg"
 import lin from "/src/assets/linkedin.svg"
+
+const currentYear = new Date().getFullYear()
 ---
 
 <footer
@@ -39,5 +41,5 @@ import lin from "/src/assets/linkedin.svg"
 			</a>
 		</li>
 	</ul>
-	<p>© 2025 Radoje Jezdic. All rights reserved.</p>
+	<p>© {currentYear} Radoje Jezdic. All rights reserved.</p>
 </footer>
