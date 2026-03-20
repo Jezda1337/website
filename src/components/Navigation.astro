@@ -15,7 +15,9 @@ const navigationList = [
 		navigationList.map((nl) => (
 			<a
 				href={nl.to}
-				class="after:transition-all after:w-0 after:h-[1px] after:block after:bg-white hover:after:w-full">
+                class=`after:transition-all after:w-0 after:h-[1px] after:block after:bg-white hover:after:w-full
+                ${Astro.url.pathname === nl.to ? "after:w-full" : ""}`
+				aria-current={nl.to === Astro.url.pathname ? "page" : null}>
 				{nl.name}
 			</a>
 		))
