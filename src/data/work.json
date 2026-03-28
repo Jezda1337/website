@@ -1,11 +1,58 @@
 [
 	{
+		"id": 5,
+		"job_title": "Full Stack Developer",
+		"logo": "RJ",
+		"url": "https://radoje.dev",
+		"start_date": "Mar 2025",
+		"type": "fulltime",
+		"end_date": "Mar 2026",
+		"tech_stack": [
+			{
+				"id": 1,
+				"name": "Angular",
+				"image": {
+					"src": "/src/assets/angular.svg",
+					"alt": "angular logo",
+					"width": 14,
+					"height": 14
+				}
+			},
+			{
+				"id": 2,
+				"name": "Go",
+				"image": {
+					"src": "/src/assets/go.svg",
+					"alt": "go logo",
+					"width": 14,
+					"height": 14
+				}
+			},
+			{
+				"id": 3,
+				"name": "PostgreSQL",
+				"image": {
+					"src": "/src/assets/postgres.svg",
+					"alt": "postgresql logo",
+					"width": 14,
+					"height": 14
+				}
+			}
+		],
+		"details": [
+			"Architected and shipped full-stack micro-applications for a large-scale event management platform serving thousands of concurrent users.",
+			"Engineered a real-time chat application with WhatsApp-style architecture from scratch, including message delivery status, typing indicators, and media support.",
+			"Built a badge printing system end-to-end (React frontend + Go backend), replacing a manual process and significantly reducing check-in time.",
+			"Designed relational database schemas in PostgreSQL and executed data migrations across all micro-services with zero downtime."
+		]
+	},
+	{
 		"id": 4,
 		"job_title": "Frontend Developer",
 		"logo": "/src/assets/logos/luccid_ai.png",
 		"url": "https://luccid.ai",
 		"start_date": "Feb 2025",
-		"type": "fulltime",
+		"type": "parttime",
 		"end_date": "Sep 2025",
 		"tech_stack": [
 			{
@@ -50,12 +97,10 @@
 			}
 		],
 		"details": [
-			"Built and maintained frontends for several projects as a solo JavaScript developer, focusing on clean UX and responsive design.",
-			"Developed two dashboards: one client-facing (insights, analytics) and one for internal operations (coordination, management).",
-			"Created a flexible chatbot SDK for easy integration into websites and apps, enhancing user interaction and support.",
-			"Worked closely with stakeholders to understand needs and deliver practical, reliable solutions.",
-			"Used modern JavaScript frameworks and tools to keep codebases fast, modular, and maintainable.",
-			"Improved features based on real user feedback and testing to refine usability and functionality."
+			"Developed an embeddable chatbot SDK using React and Redux, deployed across 5+ client platforms and used by thousands of end users.",
+			"Built client-facing and internal analytics dashboards with Next.js and TailwindCSS, giving operations teams real-time visibility into chatbot performance.",
+			"Reduced rendering overhead and improved UI responsiveness by refactoring component architecture and eliminating unnecessary re-renders.",
+			"Collaborated with product, design, and backend teams to ship features on a two-week sprint cycle."
 		]
 	},
 	{
@@ -99,9 +144,9 @@
 			}
 		],
 		"details": [
-			"Resolved bugs and technical issues to enhance system reliability.",
-			"Maintained and improved core projects, ensuring consistent performance.",
-			"Optimized application flow by identifying and eliminating bottlenecks."
+			"Developed the core UI for a climate-tech platform using Vue (Quasar) and SCSS, building a library of reusable components adopted across multiple product teams.",
+			"Improved application performance through iterative profiling and optimization, reducing initial load time and improving Lighthouse scores.",
+			"Worked closely with UX designers to refine usability, contributing to measurably higher user engagement metrics."
 		]
 	},
 	{
@@ -165,12 +210,10 @@
 			}
 		],
 		"details": [
-			"Built and maintained client-side code to ensure functionality and smooth user experience.",
-			"Translated Figma designs into precise Angular components.",
-			"Improved front-end performance and accessibility by adhering to best practices.",
-			"Implemented dynamic forms for KYC workflows, streamlining data collection.",
-			"Wrote over 300 unit tests using Jest to ensure code reliability.",
-			"Contributed to Agile CI/CD workflows to support ongoing development and deployments."
+			"Developed fintech-grade interfaces using React, Redux, and Angular for a platform enabling carbon credit transactions.",
+			"Translated Figma designs into pixel-perfect, accessible UI components, maintaining visual consistency across the product.",
+			"Integrated frontend with backend services (Go + PostgreSQL), implementing KYC flows and data collection forms that processed user verifications.",
+			"Wrote over 300 unit tests using Jest to ensure code reliability."
 		]
 	},
 	{
@@ -180,7 +223,7 @@
 		"url": "https://rutann.rs",
 		"start_date": "Jun 2021",
 		"type": "parttime",
-		"end_date": "Present (part-time)",
+		"end_date": "2025",
 		"tech_stack": [
 			{
 				"id": 1,
@@ -214,9 +257,8 @@
 			}
 		],
 		"details": [
-			"Maintained and updated website content to ensure accuracy and relevance for a local delivery service.",
-			"Managed Linux packages and dependencies to optimize system performance.",
-			"Performed routine server maintenance and tuning to ensure stable operation."
+			"Maintained and extended a production web application (React, TailwindCSS), resolving critical issues and shipping regular updates.",
+			"Managed Linux server infrastructure, performed dependency upgrades, and contributed to CI/CD pipeline improvements that reduced deployment time."
 		]
 	}
 ]
