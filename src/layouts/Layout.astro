@@ -1,4 +1,5 @@
 ---
+import "../styles/global.css"
 import MetaTags from "../components/MetaTags.astro"
 import "@fontsource/poppins"
 import Navigation from "../components/Navigation.astro"
@@ -46,10 +47,17 @@ const { title } = Astro.props
 		<style>
 			body {
 				font-family: "Poppins", sans-serif;
+				a:hover,
+				button:hover {
+					cursor:
+						url("https://cdn.custom-cursor.com/db/pointer/32/Banana_Pointer.png"),
+						pointer;
+				}
 			}
 		</style>
 	</head>
-	<body class="bg-black text-white leading-7 text-balance will-change-auto">
+	<body
+		class="bg-black text-white leading-7 text-balance will-change-auto cursor-[url(https://cdn.custom-cursor.com/db/cursor/32/Banana_Cursor.png),_pointer]">
 		<main
 			class="mx-auto flex min-h-[100dvh] max-w-[600px] pt-[50px] flex-col px-4 md:px-0">
 			<Navigation />

@@ -1,6 +1,4 @@
 ---
-import "../styles/global.css"
-
 import Layout from "../layouts/Layout.astro"
 import WorkCard from "../components/WorkCard.astro"
 import work_data from "../data/work.json"
@@ -9,13 +7,16 @@ import work_data from "../data/work.json"
 <Layout title="work">
 	<section class="space-y-8">
 		<h1
-			class="text-3xl font-bold animate-blur-reveal opacity-0 [animation-delay:_100ms]">
+			class="text-3xl font-bold animate-blur-reveal opacity-0"
+			style="animation-delay: 100ms;">
 			my work
 		</h1>
 		{
 			work_data.map((work, i) => (
 				<div
-					class={`animate-blur-reveal opacity-0 [animation-delay:_${150 + i * 50}ms]`}>
+                    class="animate-blur-reveal opacity-0"}
+                    style={`animation-delay: ${150 + i * 50}ms`}
+                    >
 					<WorkCard {work} />
 				</div>
 			))

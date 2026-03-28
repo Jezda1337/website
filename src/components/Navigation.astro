@@ -15,8 +15,7 @@ const navigationList = [
 		navigationList.map((nl) => (
 			<a
 				href={nl.to}
-                class=`after:transition-all after:w-0 after:h-[1px] after:block after:bg-white hover:after:w-full
-                ${Astro.url.pathname === nl.to ? "after:w-full" : ""}`
+				class="after:transition-[width] after:w-0 after:h-[1px] after:block after:bg-white hover:after:w-full"
 				aria-current={nl.to === Astro.url.pathname ? "page" : null}>
 				{nl.name}
 			</a>
@@ -32,5 +31,11 @@ const navigationList = [
 		sessionStorage.setItem("headerAnimated", "true")
 	} else {
 		header.classList.remove("opacity-0")
+	}
+
+	if (location.pathname.startsWith("/blog")) {
+		header.querySelector("[href='/blog']").classList.add("after:w-full")
+	} else {
+		header.querySelector("[aria-current=page]").classList.add("after:w-full")
 	}
 </script>

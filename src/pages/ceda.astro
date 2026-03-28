@@ -1,6 +1,4 @@
 ---
-import "../styles/global.css"
-
 import { Image } from "astro:assets"
 import Layout from "../layouts/Layout.astro"
 
@@ -21,11 +19,14 @@ const mediaEntries = await Promise.all(
 
 <Layout title="Чеда">
 	<h1
-		class="text-3xl mb-2 font-bold animate-blur-reveal opacity-0 [animation-delay:_100ms]">
+		class="text-3xl mb-2 font-bold animate-blur-reveal opacity-0"
+		style="animation-delay: 100ms;">
 		Чеда
 	</h1>
 
-	<p class="mb-8 animate-blur-reveal opacity-0 [animation-delay:_150ms]">
+	<p
+		class="mb-8 animate-blur-reveal opacity-0"
+		style="animation-delay: 150ms;">
 		my sassy feline overlord, reviews all my code and says
 		<span class="text-purple-500 font-medium">
 			“seriously, how hard is it to style a button?”
@@ -37,9 +38,15 @@ const mediaEntries = await Promise.all(
 		{
 			mediaEntries.map(({ path, image }, i) => (
 				<div
-					class={`overflow-hidden rounded border border-transparent hover:border-zinc-100 hover:z-10 transition-all ease-linear ${[0, 4, 22, 26].includes(i) ? "col-span-2 row-span-2" : ""}`}
+					class={`
+                    animate-blur-reveal
+                    opacity-0 
+                    overflow-hidden rounded border border-transparent hover:border-zinc-100 transition-colors ease-linear ${[0, 4, 22, 26].includes(i) ? "col-span-2 row-span-2" : ""}
+                    cursor-[url(https://cdn.custom-cursor.com/db/pointer/32/Banana_Pointer.png),_pointer]`}
 					data-img-src={image.src}
-					data-img-key={path}>
+                    data-img-key={path}
+                    style=`animation-delay: ${200 + i * 60}ms;`
+                    >
 					<Image
 						src={image}
 						alt="Чеда overlord"
@@ -65,7 +72,7 @@ const mediaEntries = await Promise.all(
 				{
 					scale: [1, 0],
 				},
-				{ duration: 250, fill: "forwards", easing: "linear" },
+                { duration: 250, fill: "forwards", easing: "cubic-bezier(0.60,-0.28,0.74,0.05)" }, // out animation
 			)
 			setTimeout(() => {
 				overlay.remove()
@@ -100,7 +107,7 @@ const mediaEntries = await Promise.all(
 				{
 					duration: 250,
 					fill: "forwards",
-					easing: "linear",
+					easing: "cubic-bezier(0.18,0.89,0.32,1.28)",
 				},
 			)
 

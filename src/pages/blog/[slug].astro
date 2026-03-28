@@ -32,12 +32,12 @@ const description = "Astromnl blog post about " + frontmatter.title
 ---
 
 <Layout title={"blog | " + title}>
-	<section class="animate-blur-reveal opacity-0 [animation-delay:_0ms]">
+	<section
+		class="animate-blur-reveal opacity-0"
+		style="animation-delay: 50ms;">
 		<button
-			onclick="
-			history.back()
-			"
-			class="group mb-2 flex items-center gap-4 transition-all">
+			onclick="history.back()"
+			class="group mb-2 flex items-center gap-4 hover:cursor-pointer">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="16"
@@ -48,7 +48,10 @@ const description = "Astromnl blog post about " + frontmatter.title
 					d="M168.49,199.51a12,12,0,0,1-17,17l-80-80a12,12,0,0,1,0-17l80-80a12,12,0,0,1,17,17L97,128Z"
 				></path>
 			</svg>
-			<span>Go Back</span>
+			<span
+				class="relative after:transition-[width] after:absolute after:bottom-0 after:w-0 after:h-[1px] after:block after:bg-white hover:after:w-full"
+				>Go Back</span
+			>
 		</button>
 
 		<h1 class="text-2xl font-medium leading-8">{title}</h1>

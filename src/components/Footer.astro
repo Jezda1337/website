@@ -8,7 +8,8 @@ const currentYear = new Date().getFullYear()
 ---
 
 <footer
-	class="flex flex-col justify-between mt-12 flex-wrap gap-4 animate-blur-reveal opacity-0 [animation-delay:_350ms]">
+	class="flex flex-col justify-between mt-12 flex-wrap gap-4 animate-blur-reveal opacity-0"
+	style="animation-delay: 350ms;">
 	<ul class="flex items-center gap-4 flex-wrap text-neutral-300">
 		<li>
 			<a
@@ -16,7 +17,7 @@ const currentYear = new Date().getFullYear()
 				rel="noopener noreferrer"
 				target="_blank"
 				aria-label="Check my GitHub profile for more tech view"
-				class="flex items-center gap-2 hover:text-neutral-100 transition-all">
+				class="flex items-center gap-2 hover:text-neutral-100 transition-colors">
 				<Image
 					src={gh}
 					alt="GitHub logo"
@@ -31,7 +32,7 @@ const currentYear = new Date().getFullYear()
 				rel="noopener noreferrer"
 				target="_blank"
 				aria-label="Check my linkedin profile for more details."
-				class="flex items-center gap-2 hover:text-neutral-100 transition-all">
+				class="flex items-center gap-2 hover:text-neutral-100 transition-colors">
 				<Image
 					src={lin}
 					alt="Linkedin logo"

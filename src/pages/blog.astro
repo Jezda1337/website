@@ -1,6 +1,4 @@
 ---
-import "../styles/global.css"
-
 import Layout from "../layouts/Layout.astro"
 import PostCard from "../components/PostCard.astro"
 
@@ -14,14 +12,16 @@ const sortedPosts = posts.sort(
 
 <Layout title="blog">
 	<h1
-		class="text-3xl font-bold mb-8 animate-blur-reveal opacity-0 [animation-delay:_100ms]">
+		class="text-3xl font-bold mb-8 animate-blur-reveal opacity-0"
+		style="animate-delay: 100ms;">
 		my blog
 	</h1>
 	<section class="flex flex-col gap-8">
 		{
 			sortedPosts.map((blog, i) => (
 				<div
-					class={`animate-blur-reveal opacity-0 [animation-delay:_${150 + i * 50}ms]`}>
+					class={`animate-[blur-reveal_1s_cubic-bezier(0.25,0.1,0.25,1)_forwards] opacity-0`}
+					style={`animation-delay: ${150 + i * 50}ms`}>
 					<PostCard {blog} />
 				</div>
 			))

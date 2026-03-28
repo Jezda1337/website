@@ -1,2 +1,19 @@
 @import "tailwindcss";
-@config "../../tailwind.config.cjs";
+/* @config "../../tailwind.config.cjs"; */
+
+@theme {
+	--animate-blur-reveal: blur-reveal 1s cubic-bezier(0.25, 0.1, 0.25, 1)
+		forwards;
+	@keyframes blur-reveal {
+		0% {
+			filter: blur(8px);
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		100% {
+			filter: blur(0);
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+}

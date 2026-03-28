@@ -1,6 +1,4 @@
 ---
-import "../styles/global.css"
-
 import Layout from "../layouts/Layout.astro"
 import Tag from "../components/Tag.astro"
 import TechStack from "../data/tech_stack.json"
@@ -9,39 +7,48 @@ import resume from "../assets/resume.pdf"
 
 <Layout title="home">
 	<article
-		class="flex items-center justify-between mb-8 flex-wrap animate-blur-reveal opacity-0 [animation-delay:_50ms]">
+		class="flex items-center justify-between mb-8 flex-wrap animate-blur-reveal opacity-0"
+		style="animation-delay: 50ms;">
 		<h1 class="text-3xl">hi, i'm radoje 👋</h1>
 		<a
 			href=`${resume}`
 			target="_blank"
 			rel="noopener noreferrer"
-			class="px-6 py-2 border rounded border-zinc-700 text-sm hover:bg-white hover:border-zinc-300 transition-all hover:text-black hover:cursor-pointer"
+			class="px-6 py-2 border rounded border-zinc-700 text-sm hover:bg-white hover:border-zinc-300 transition-colors hover:text-black hover:cursor-pointer"
 			>Resume</a
 		>
 	</article>
 	<article class="flex flex-col gap-4">
-		<p class="animate-blur-reveal opacity-0 [animation-delay:_100ms]">
+		<p
+			class="animate-blur-reveal opacity-0"
+			style="animation-delay: 100ms;">
 			Hi, I’m Radoje Jezdic — a
 			<mark class="bg-neutral-100 text-black rounded-sm px-1"
 				>Full Stack Developer</mark
 			>
 			based in Serbia 🇷🇸.
 		</p>
-		<p class="animate-blur-reveal opacity-0 [animation-delay:_150ms]">
+		<p
+			class="animate-blur-reveal opacity-0"
+			style="animation-delay: 150ms;">
 			I build fast, reliable, and scalable web applications with a focus on
 			<mark class="bg-neutral-100 text-black rounded-sm px-1">clean code</mark> and
 			<mark class="bg-neutral-100 text-black rounded-sm px-1"
 				>user-centered performance</mark
 			>.
 		</p>
-		<p class="animate-blur-reveal opacity-0 [animation-delay:_200ms]">
+		<p
+			class="animate-blur-reveal opacity-0"
+			style="animation-delay: 200ms;">
 			You can explore some of my recent work on the <a
-				class="inline-block after:transition-all after:w-full after:h-[1px] after:block after:bg-white"
+				class="inline-block transition-colors after:w-full after:h-[3px] hover:text-blue-500 after:block after:bg-white"
 				href="/work"
 				>works</a
 			> page.
 		</p>
-		<p class="animate-blur-reveal opacity-0 [animation-delay:_250ms]">
+		<p
+			class="animate-blur-reveal opacity-0"
+			style="animation-delay: 250ms;">
 			I’m always open to new opportunities, collaborations, and solving
 			meaningful problems — feel free to get in touch!
 		</p>
