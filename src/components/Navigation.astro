@@ -38,6 +38,6 @@ const pathname = Astro.url.pathname
 	if (location.pathname.startsWith("/blog")) {
 		header.querySelector("[href='/blog']").classList.add("after:w-full")
 	} else {
-		header.querySelector("[aria-current=page]").classList.add("after:w-full")
+		header.querySelector("[aria-current=page]")?.classList.add("after:w-full")
 	}
 </script>
