@@ -4,6 +4,7 @@ import PostCard from "../components/PostCard.astro"
 
 // adding any just to avoid never -.-"
 // TODO - add collection for blog
+// https://docs.astro.build/en/guides/content-collections/#defining-build-time-content-collections
 const posts = Object.values<any>(
 	import.meta.glob("../data/*.md", { eager: true }),
 )
