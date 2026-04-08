@@ -3,7 +3,12 @@ import "../../styles/global.css"
 
 import Layout from "../../layouts/Layout.astro"
 export async function getStaticPaths(): Promise<Record<string, any>[]> {
-	let allPosts = await Astro.glob("../../data/*.md")
+	// adding any just to avoid never -.-"
+	// TODO - add collection for blog
+	// https://docs.astro.build/en/guides/content-collections/#defining-build-time-content-collections
+	let allPosts = Object.values<any>(
+		import.meta.glob("../../data/*.md", { eager: true }),
+	)
 	let allSortedPosts = allPosts.sort(
 		(a, b) =>
 			new Date(b.frontmatter.date).valueOf() -
