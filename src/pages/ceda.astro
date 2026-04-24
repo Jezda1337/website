@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets"
+import { Image, getImage } from "astro:assets"
 import Layout from "../layouts/Layout.astro"
 
 const mediaModules = import.meta.glob<{ default: ImageMetadata }>(
@@ -9,9 +9,11 @@ const mediaModules = import.meta.glob<{ default: ImageMetadata }>(
 const mediaEntries = await Promise.all(
 	Object.entries(mediaModules).map(async ([path, resolver]) => {
 		const mod = await resolver()
+		const zoom = await getImage({ src: mod.default, width: 1280, format: "webp", quality: "high" })
 		return {
 			path,
 			image: mod.default,
+			zoomSrc: zoom.src,
 		}
 	}),
 )
@@ -34,24 +36,27 @@ const mediaEntries = await Promise.all(
 	</p>
 
 	<section
-		class="grid gap-1 justify-center grid-cols-[repeat(auto-fill,_80px)] auto-rows-[80px] [grid-auto-flow:dense]">
+		class="grid gap-1 justify-center grid-cols-[repeat(auto-fill,_80px)] auto-rows-[80px] [grid-auto-flow:dense] [touch-action:manipulation]">
 		{
-			mediaEntries.map(({ path, image }, i) => (
+			mediaEntries.map(({ path, image, zoomSrc }, i) => (
 				<div
 					class={`
                     animate-blur-reveal
                     opacity-0 
                     overflow-hidden rounded border border-transparent hover:border-zinc-100 transition-colors ease-linear ${[0, 4, 22, 26].includes(i) ? "col-span-2 row-span-2" : ""}
                     cursor-[url(https://cdn.custom-cursor.com/db/pointer/32/Banana_Pointer.png),_pointer]`}
-					data-img-src={image.src}
-                    data-img-key={path}
+					data-img-src={zoomSrc}
+					data-img-index={i}
                     style=`animation-delay: ${200 + i * 60}ms;`
                     >
 					<Image
 						src={image}
+						widths={[160, 320]}
+						sizes="(max-width: 400px) 80px, 160px"
+						format="webp"
+						quality="low"
 						alt="Чеда overlord"
 						class="w-full h-full object-cover rounded block"
-						transition:name={path}
 						loading="eager"
 						decoding="async"
 					/>
@@ -63,61 +68,123 @@ const mediaEntries = await Promise.all(
 
 	<script>
 		const zoomContainer = document.getElementById("zoom-container")
+		const allItems = document.querySelectorAll<HTMLElement>("[data-img-src]")
+		const images = Array.from(allItems).map((el) => el.dataset.imgSrc!)
+		let currentIndex = -1
+		let originRect: DOMRect | null = null
+
+		function getOriginTransform(img: HTMLElement) {
+			if (!originRect) return { x: 0, y: 0, scale: 1 }
+			const imgRect = img.getBoundingClientRect()
+			const x = originRect.left + originRect.width / 2 - (imgRect.left + imgRect.width / 2)
+			const y = originRect.top + originRect.height / 2 - (imgRect.top + imgRect.height / 2)
+			const scale = Math.min(originRect.width / imgRect.width, originRect.height / imgRect.height)
+			return { x, y, scale }
+		}
 
 		function closeZoom() {
 			const overlay = document.getElementById("zoom-overlay")
 			if (!overlay) return
 			const zoomedImg = overlay.querySelector("img")
-			zoomedImg?.animate(
-				{
-					scale: [1, 0],
-				},
-                { duration: 250, fill: "forwards", easing: "cubic-bezier(0.60,-0.28,0.74,0.05)" }, // out animation
-			)
+			if (zoomedImg && originRect) {
+				const { x, y, scale } = getOriginTransform(zoomedImg)
+				zoomedImg.animate(
+					{ transform: [`translate(0,0) scale(1)`, `translate(${x}px,${y}px) scale(${scale})`] },
+					{ duration: 350, fill: "forwards", easing: "cubic-bezier(0.4, 0, 0.2, 1)" },
+				)
+			} else {
+				zoomedImg?.animate(
+					{ opacity: [1, 0], scale: [1, 0.8] },
+					{ duration: 300, fill: "forwards", easing: "cubic-bezier(0.4, 0, 0.2, 1)" },
+				)
+			}
+			overlay.animate({ opacity: [1, 0] }, { duration: 350, fill: "forwards" })
 			setTimeout(() => {
 				overlay.remove()
-			}, 255)
+				currentIndex = -1
+				originRect = null
+			}, 360)
+		}
+
+		function showImage(index: number, animate = true) {
+			currentIndex = ((index % images.length) + images.length) % images.length
+			const overlay = document.getElementById("zoom-overlay")
+			if (!overlay) return
+			const img = overlay.querySelector("img")!
+			img.src = images[currentIndex]
+
+			if (animate) {
+				img.animate(
+					{ opacity: [0, 1], scale: [0.95, 1] },
+					{ duration: 200, fill: "forwards", easing: "ease-out" },
+				)
+			}
+		}
+
+		function openZoom(wrapper: HTMLElement) {
+			const index = Number(wrapper.dataset.imgIndex)
+			currentIndex = index
+			originRect = wrapper.getBoundingClientRect()
+
+			const existing = document.getElementById("zoom-overlay")
+			if (existing) existing.remove()
+
+			const overlay = document.createElement("div")
+			overlay.id = "zoom-overlay"
+			overlay.className = "fixed inset-0 z-50 flex justify-center items-center bg-black/30 backdrop-blur-sm [touch-action:manipulation]"
+
+			const prevBtn = document.createElement("button")
+			prevBtn.dataset.nav = "prev"
+			prevBtn.className = "absolute left-3 top-1/2 -translate-y-1/2 z-10 text-white/70 hover:text-white text-3xl w-10 h-10 flex items-center justify-center rounded-full bg-black/30 hover:bg-black/50 transition-colors"
+			prevBtn.textContent = "‹"
+
+			const nextBtn = document.createElement("button")
+			nextBtn.dataset.nav = "next"
+			nextBtn.className = "absolute right-3 top-1/2 -translate-y-1/2 z-10 text-white/70 hover:text-white text-3xl w-10 h-10 flex items-center justify-center rounded-full bg-black/30 hover:bg-black/50 transition-colors"
+			nextBtn.textContent = "›"
+
+			const zoomedImg = document.createElement("img")
+			zoomedImg.alt = "Zoomed image"
+			zoomedImg.className = "max-h-[90%] max-w-[85%] object-contain rounded shadow-xl relative"
+
+			overlay.append(prevBtn, zoomedImg, nextBtn)
+			zoomContainer?.appendChild(overlay)
+			zoomedImg.src = images[currentIndex]
+
+			overlay.animate({ opacity: [0, 1] }, { duration: 200, fill: "forwards" })
+			const { x, y, scale } = getOriginTransform(zoomedImg)
+			zoomedImg.animate(
+				{ transform: [`translate(${x}px,${y}px) scale(${scale})`, `translate(0,0) scale(1)`] },
+				{ duration: 350, fill: "forwards", easing: "cubic-bezier(0.18, 0.89, 0.32, 1.28)" },
+			)
 		}
 
 		document.addEventListener("click", (e) => {
-			const zoomed = document.getElementById("zoom-overlay")
-			if (zoomed && e.target === zoomed) {
+			const target = e.target as HTMLElement
+			const overlay = document.getElementById("zoom-overlay")
+
+			const nav = target.closest("[data-nav]") as HTMLElement | null
+			if (nav) {
+				e.stopPropagation()
+				showImage(currentIndex + (nav.dataset.nav === "next" ? 1 : -1))
+				return
+			}
+
+			if (overlay && (target === overlay)) {
 				closeZoom()
 				return
 			}
 
-			const wrapper = e.target?.closest("[data-img-src]")
+			const wrapper = target.closest("[data-img-src]") as HTMLElement | null
 			if (!wrapper) return
-
-			const imgSrc = wrapper.dataset.imgSrc
-			const key = wrapper.dataset.imgKey
-
-			closeZoom()
-
-			const overlay = document.createElement("div")
-			overlay.id = "zoom-overlay"
-			overlay.className =
-				"fixed inset-0 z-50 flex justify-center items-center bg-black/30 backdrop-blur-sm"
-			overlay.innerHTML = `<img src="${imgSrc}" loading="eager" alt="Zoomed image" class="max-h-[90%] max-w-[95%] object-contain rounded shadow-xl relative" />`
-			const zoomedImg = overlay.children[0]
-			zoomedImg.animate(
-				{
-					scale: [0, 1],
-				},
-				{
-					duration: 250,
-					fill: "forwards",
-					easing: "cubic-bezier(0.18,0.89,0.32,1.28)",
-				},
-			)
-
-			zoomContainer?.appendChild(overlay)
+			openZoom(wrapper)
 		})
 
 		document.addEventListener("keydown", (e) => {
-			if (e.key === "Escape") {
-				closeZoom()
-			}
+			if (currentIndex < 0) return
+			if (e.key === "Escape") closeZoom()
+			if (e.key === "ArrowRight") showImage(currentIndex + 1)
+			if (e.key === "ArrowLeft") showImage(currentIndex - 1)
 		})
 	</script>
 </Layout>
