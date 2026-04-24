@@ -73,6 +73,24 @@ const mediaEntries = await Promise.all(
 		let currentIndex = -1
 		let originRect: DOMRect | null = null
 
+		const preloadCache = new Map<string, Promise<void>>()
+		function preloadImage(src: string): Promise<void> {
+			if (preloadCache.has(src)) return preloadCache.get(src)!
+			const p = new Promise<void>((resolve) => {
+				const img = new window.Image()
+				img.onload = img.onerror = () => resolve()
+				img.src = src
+			})
+			preloadCache.set(src, p)
+			return p
+		}
+
+		function preloadAdjacent(index: number) {
+			const wrap = (i: number) => ((i % images.length) + images.length) % images.length
+			preloadImage(images[wrap(index - 1)])
+			preloadImage(images[wrap(index + 1)])
+		}
+
 		function getOriginTransform(img: HTMLElement) {
 			if (!originRect) return { x: 0, y: 0, scale: 1 }
 			const imgRect = img.getBoundingClientRect()
@@ -106,12 +124,15 @@ const mediaEntries = await Promise.all(
 			}, 360)
 		}
 
-		function showImage(index: number, animate = true) {
+		async function showImage(index: number, animate = true) {
 			currentIndex = ((index % images.length) + images.length) % images.length
 			const overlay = document.getElementById("zoom-overlay")
 			if (!overlay) return
 			const img = overlay.querySelector("img")!
-			img.src = images[currentIndex]
+			const src = images[currentIndex]
+			await preloadImage(src)
+			if (currentIndex !== ((index % images.length) + images.length) % images.length) return
+			img.src = src
 
 			if (animate) {
 				img.animate(
@@ -119,9 +140,10 @@ const mediaEntries = await Promise.all(
 					{ duration: 200, fill: "forwards", easing: "ease-out" },
 				)
 			}
+			preloadAdjacent(currentIndex)
 		}
 
-		function openZoom(wrapper: HTMLElement) {
+		async function openZoom(wrapper: HTMLElement) {
 			const index = Number(wrapper.dataset.imgIndex)
 			currentIndex = index
 			originRect = wrapper.getBoundingClientRect()
@@ -149,14 +171,19 @@ const mediaEntries = await Promise.all(
 
 			overlay.append(prevBtn, zoomedImg, nextBtn)
 			zoomContainer?.appendChild(overlay)
-			zoomedImg.src = images[currentIndex]
 
 			overlay.animate({ opacity: [0, 1] }, { duration: 200, fill: "forwards" })
+
+			await preloadImage(images[currentIndex])
+			if (currentIndex !== index) return
+			zoomedImg.src = images[currentIndex]
+
 			const { x, y, scale } = getOriginTransform(zoomedImg)
 			zoomedImg.animate(
 				{ transform: [`translate(${x}px,${y}px) scale(${scale})`, `translate(0,0) scale(1)`] },
 				{ duration: 350, fill: "forwards", easing: "cubic-bezier(0.18, 0.89, 0.32, 1.28)" },
 			)
+			preloadAdjacent(currentIndex)
 		}
 
 		document.addEventListener("click", (e) => {
