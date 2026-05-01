@@ -1,6 +1,22 @@
 @import "tailwindcss";
 /* @config "../../tailwind.config.cjs"; */
 
+@utility mask-to-t {
+	mask: linear-gradient(
+		to top,
+		rgba(0, 0, 0, 0) 0%,
+		rgba(0, 0, 0, 0.8) 40%,
+		rgba(0, 0, 0, 1) 100%
+	);
+
+	--webkit-mask-image: linear-gradient(
+		to top,
+		rgba(0, 0, 0, 0) 0%,
+		rgba(0, 0, 0, 0.8) 30%,
+		rgba(0, 0, 0, 1) 100%
+	);
+}
+
 @theme {
 	--animate-blur-reveal: blur-reveal 1s cubic-bezier(0.25, 0.1, 0.25, 1)
 		forwards;
